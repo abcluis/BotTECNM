@@ -27,3 +27,11 @@ app.post('/post', function(req,res){
     jsonResponse.push({ "text": "Hola. " + (Math.random() * 5 + 1).toFixed(0) + " es tu numero de la suerte..." });
     res.send(jsonResponse);
 })
+
+app.post('/school', function(req,res){
+    var jsonResponse = [];
+    console.log('Escuela');
+    console.log(req.body);
+    jsonResponse.push({ "text": "Hola Asi que eres del " + req.body.school });
+    res.send(jsonResponse);
+})
