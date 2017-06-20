@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+var port = process.env.PORT || 80;
+
 app.listen(80, function() {
     console.log('Chatfuel Bot-Server listening on port 80...');
 });
