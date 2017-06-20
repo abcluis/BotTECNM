@@ -3,7 +3,8 @@ var app = express();
 
 var port = process.env.PORT || 80;
 
-app.listen(80, function() {
+app.listen(port, function(err) {
+    if(err) throw err;
     console.log('Chatfuel Bot-Server listening on port 80...');
 });
 
