@@ -32,6 +32,7 @@ app.post('/school', function(req,res){
     var jsonResponse = [];
     console.log('Escuela');
     console.log(req.body);
-    jsonResponse.push({ "text": "Hola Asi que eres del " + req.body.school });
+    var fistName = 'first name';
+    jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
     res.send(jsonResponse);
 })
