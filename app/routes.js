@@ -27,7 +27,7 @@ router.post('/school', function(req,res){
                 "buttons": [
                     {
                     "type": "show_block",
-                    "block_name": "fecha graduacion",
+                    "block_name": "Fecha Graduacion",
                     "title": "Show the block!"
                     },
                     {
