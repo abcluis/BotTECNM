@@ -15,11 +15,37 @@ router.post('/post', function(req,res){
 
 router.post('/school', function(req,res){
     var jsonResponse = [];
-    console.log('Escuela');
-    console.log(req.body);
+
+    var jsonOp = {
+        "messages": [
+            {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                "template_type": "button",
+                "text": "Hello!",
+                "buttons": [
+                    {
+                    "type": "show_block",
+                    "block_name": "some block name",
+                    "title": "Show the block!"
+                    },
+                    {
+                    "type": "web_url",
+                    "url": "http://www.itchihuahuaii.edu.mx",
+                    "title": "Buy Item"
+                    }
+                ]
+                }
+            }
+            }
+        ]
+    }
+
+
     var fistName = 'first name';
     jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
-    res.send(jsonResponse);
+    res.send(jsonOp);
 })
 
 module.exports = router;
