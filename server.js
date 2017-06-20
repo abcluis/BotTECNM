@@ -1,7 +1,13 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({extended: true}));
+
 var port = process.env.PORT || 80;
+
+
 
 app.listen(port, function(err) {
     if(err) throw err;
