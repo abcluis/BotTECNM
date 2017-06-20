@@ -16,7 +16,8 @@ app.get('/', function(req, res) {
 
 app.post('/post', function(req,res){
     var jsonResponse = [];
-    console.log(req);
+    console.log('Body');
+    console.log(req.body);
     jsonResponse.push({ "text": "Hola. " + (Math.random() * 5 + 1).toFixed(0) + " es tu numero de la suerte..." });
     res.send(jsonResponse);
 })
