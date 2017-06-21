@@ -3,6 +3,7 @@
  */
 
 const userService = require('../services/user.service');
+const templates = require('../templates');
 
 module.exports = {
     registerUser : registerUser
@@ -17,6 +18,9 @@ function registerUser(req,res) {
         name : req.body[firstName] + ' ' + req.body[lastName],
         id : req.body[user_id]
     };
+
+
+
 
     userService.createUser(user)
         .then((userCreated)=> {
@@ -46,27 +50,18 @@ function registerUser(req,res) {
             if(err.code === 11000){
                 userService.findOneUser(req.body[user_id])
                     .then((user) => {
-                        res.send({
-                            "messages": [
-                                {"text": "Hola de nuevo " + user.name + " reanudemos la encuesta"},
-                                {
-                                    "attachment": {
-                                        "type":    "template",
-                                        "payload": {
-                                            "template_type": "button",
-                                            "text":          "Reanudar la encuesta",
-                                            "buttons":       [
-                                                {
-                                                    "type":       "show_block",
-                                                    "block_name": "USER Input",
-                                                    "title":      "Ok"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            ]
-                        })
+
+                        let response = templates.createBody();
+                        let text = templates.createText("Hola de nuevo " + user.name + " reanudemos la encuesta");
+                        let card = templates.createCard('Hola esto es una carta de prueba');
+
+                        let btn1 = templates.createButtonBlock('USER input','OK prueba');
+
+                        card.attachment.payload.buttons.push(btn1);
+                        response.messages.push(text);
+                        response.messages.push(card);
+
+                        res.send(response);
                     })
             }else {
                 res.send(err);
