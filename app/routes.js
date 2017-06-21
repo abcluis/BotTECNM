@@ -1,9 +1,15 @@
-var express = require('express');
-var router = express.Router();
-var homeController = require('./controllers/home.controller');
+var express         = require('express');
+var router          = express.Router();
+var homeController  = require('./controllers/home.controller');
+var schoolControler = require('./controllers/school.controller');
+const School        = require('./models/school.model');
+const slugify = require('./utils/slugify');
 
 
 router.get('/', homeController.showHome);
+
+router.get('/api/school', schoolControler.getSchools);
+router.post('/api/school', schoolControler.postSchool);
 
 router.post('/post', function(req,res){
     var jsonResponse = [];
@@ -43,9 +49,21 @@ router.post('/school', function(req,res){
     }
 
 
+
+
     var fistName = 'first name';
     jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
-    res.send(jsonOp);
+
+
+    School.findOne({name: slugify(req.body.school)})
+        .then((result) => {
+            if(result)
+                res.send({ "text": "Hola " + req.body[fistName]  + " tu escuela es: " + result.name });
+            res.send({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
+     
+        })
+        .catch((err) => res.send(err));
+
 })
 
 module.exports = router;
