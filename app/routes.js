@@ -52,11 +52,11 @@ router.post('/school', function(req,res){
 
 
     var fistName = 'first name';
-    jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
+    //jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
 
     console.log(req.body);
 
-    School.findOne({name: slugify(req.body.school)})
+    School.findOne({slug: slugify(req.body.school)})
         .then((result) => {
             
             if(result){
