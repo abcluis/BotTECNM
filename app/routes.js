@@ -10,6 +10,7 @@ router.get('/', homeController.showHome);
 
 router.get('/api/school', schoolControler.getSchools);
 router.post('/api/school', schoolControler.postSchool);
+router.get('/api/school/:name', schoolControler.getOneSchool);
 
 router.post('/post', function(req,res){
     var jsonResponse = [];
@@ -56,19 +57,13 @@ router.post('/school', function(req,res){
 
     console.log(req.body);
 
-    School.findOne({slug: slugify(req.body.school)})
+    School.findOne({'nicks.name' : req.body.school})
         .then((result) => {
-            
-            if(result){
-                console.log('existe');
-                jsonResponse.push({ "text": "Hola " + req.body[fistName]  + " tu escuela es: " + result.name });
-                
-            }
-            else {
-                console.log('nullo');
-                jsonResponse.push({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
-            }
-            res.send(jsonResponse);
+            console.log(req.body.school);
+           console.log(result);
+           if(result) 
+                res.send([{"text" : "Asi que eres del " + result.name}]);
+            res.send([{"text" : "Lo sentimos tu escuela no se encuentra registrada"}]);
      
         })
         .catch((err) => res.send(err));

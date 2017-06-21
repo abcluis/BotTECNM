@@ -2,7 +2,8 @@ const School = require('../models/school.model');
 
 module.exports = {
     postSchool: postSchool,
-    getSchools: getSchools
+    getSchools: getSchools,
+    getOneSchool: getOneSchool
 }
 
 function postSchool(req,res){
@@ -18,4 +19,14 @@ function getSchools(req,res){
     School.find({})
         .then((results) => res.send(results))
         .catch((err) => res.send(err));
+}
+
+function getOneSchool(req, res){
+
+    School.findOne({'nicks.name' : 'itch ii'})
+        .then((result) => {
+            res.send(result)
+        })
+        .catch((err) => res.send(err));
+    
 }

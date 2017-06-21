@@ -8,6 +8,9 @@ const SchoolSchema = new Schema({
         type: String,
         unique: true
     },
+    nicks : [
+        {name: String}
+    ],
     city: String
 });
 
