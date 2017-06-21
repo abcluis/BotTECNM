@@ -58,10 +58,16 @@ router.post('/school', function(req,res){
 
     School.findOne({name: slugify(req.body.school)})
         .then((result) => {
-            console.log(result);
-            if(result)
+            
+            if(result){
+                console.log('existe');
                 res.send({ "text": "Hola " + req.body[fistName]  + " tu escuela es: " + result.name });
-            res.send({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
+            }
+            else {
+                console.log('nullo');
+                res.send({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
+            }
+            
      
         })
         .catch((err) => res.send(err));
