@@ -3,7 +3,7 @@ var router          = express.Router();
 var homeController  = require('./controllers/home.controller');
 var schoolControler = require('./controllers/school.controller');
 const School        = require('./models/school.model');
-const slugify = require('./utils/slugify');
+const slugify       = require('./utils/slugify');
 
 
 router.get('/', homeController.showHome);
@@ -61,9 +61,36 @@ router.post('/school', function(req,res){
         .then((result) => {
             console.log(req.body.school);
            console.log(result);
-           if(result) 
-                res.send([{"text" : "Asi que eres del " + result.name}]);
-            res.send([{"text" : "Lo sentimos tu escuela no se encuentra registrada"}]);
+           if(result) {
+                res.send(
+                    {"messages": [
+                        {"text" : "Asi que eres del " + result.name},
+                        {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                            "template_type": "button",
+                            "text": "Es correcto la informacion?",
+                            "buttons": [
+                                {
+                                "type": "show_block",
+                                "block_name": "Fecha Graduacion",
+                                "title": "Si"
+                                },
+                                {
+                                "type": "show_block",
+                                "block_name": "USER Input",
+                                "title": "No"
+                                }
+                            ]
+                            }
+                            }
+                        }
+                        ]}
+                );
+           }
+                
+            res.send({"messages": [{"text" : "Lo sentimos tu escuela no se encuentra registrada"}]});
      
         })
         .catch((err) => res.send(err));
