@@ -61,13 +61,14 @@ router.post('/school', function(req,res){
             
             if(result){
                 console.log('existe');
-                res.send({ "text": "Hola " + req.body[fistName]  + " tu escuela es: " + result.name });
+                jsonResponse.push({ "text": "Hola " + req.body[fistName]  + " tu escuela es: " + result.name });
+                
             }
             else {
                 console.log('nullo');
-                res.send({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
+                jsonResponse.push({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
             }
-            
+            res.send(jsonResponse);
      
         })
         .catch((err) => res.send(err));
