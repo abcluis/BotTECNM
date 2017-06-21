@@ -54,9 +54,11 @@ router.post('/school', function(req,res){
     var fistName = 'first name';
     jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
 
+    console.log(req.body);
 
     School.findOne({name: slugify(req.body.school)})
         .then((result) => {
+            console.log(result);
             if(result)
                 res.send({ "text": "Hola " + req.body[fistName]  + " tu escuela es: " + result.name });
             res.send({ "text": "Hola " + req.body[fistName]  + " lo sentimos tu escuela no existe" });
