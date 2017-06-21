@@ -55,7 +55,7 @@ function registerUser(req,res) {
                         let text = templates.createText("Hola de nuevo " + user.name + " reanudemos la encuesta");
                         let card = templates.createCard('Hola esto es una carta de prueba');
 
-                        let btn1 = templates.createButtonBlock('USER input','OK prueba');
+                        let btn1 = templates.createButtonBlock('USER Input','OK prueba');
 
                         card.attachment.payload.buttons.push(btn1);
                         response.messages.push(text);
