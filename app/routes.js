@@ -90,7 +90,25 @@ router.post('/school', function(req,res){
                 );
            }
                 
-            res.send({"messages": [{"text" : "Lo sentimos tu escuela no se encuentra registrada"}]});
+            res.send({"messages": [
+                {"text" : "Lo sentimos tu escuela no se encuentra registrada"},
+                {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                            "template_type": "button",
+                            "text": "Puedes volver a ingresar la informacion",
+                            "buttons": [
+                                {
+                                "type": "show_block",
+                                "block_name": "USER Input",
+                                "title": "Ok"
+                                }
+                            ]
+                            }
+                            }
+                        }
+            ]});
      
         })
         .catch((err) => res.send(err));
