@@ -68,7 +68,9 @@ function registerUser(req,res) {
                             ]
                         })
                     })
+            }else {
+                res.send(err);
             }
-            res.send(err);
+
         });
 }
