@@ -58,6 +58,44 @@ router.post('/school', function (req, res) {
     }
 
 
+    /*
+
+    encuesta  = [
+        {
+            "id_alumno" : 2831123129021
+            "escuela" : "Instituto Tecnologico Chihuahua II",
+            "informacion": {
+                "egreso" : 2010,
+                "promedio" : 90.22,
+                "trabajo" : {
+                    "posee" : true,
+                    "lugar" : "TGC",
+                    "puesto" : "programador junior",
+                    "antiguedad" : 2,
+                    "salario" : 10000
+                }
+            }
+        },
+         {
+         "escuela" : "Instituto Tecnologico Chihuahua II",
+         "informacion": {
+             "egreso" : 2010,
+             "promedio" : 90.22,
+             "trabajo" : {
+                 "posee" : true,
+                 "lugar" : "TGC",
+                 "puesto" : "programador junior",
+                 "antiguedad" : 2,
+                 "salario" : 10000
+                }
+            }
+         }
+    ]
+
+     */
+
+
+
     var fistName = 'first name';
     //jsonResponse.push({ "text": "Hola " + req.body[fistName]  + "asi que eres del " + req.body.school });
 
