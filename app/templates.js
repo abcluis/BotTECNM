@@ -3,40 +3,35 @@
  */
 
 module.exports = {
-    createBody:        createBody,
-    createCard:        createCard,
-    createButtonBlock: createButtonBlock,
-    createText:        createText
+    bodyChat:          bodyChat,
+    textChat:          textChat,
+    cardChat:          cardChat,
+    buttonBlockChat:   buttonBlockChat
 };
 
 
-/**
- * Create a body empty for chatfuel
- * @returns {{messages: Array}}
- */
-function createBody() {
-    return {
+
+function bodyChat() {
+
+    this.add = function (text) {
+        this.content.messages.push(text.content);
+    };
+
+    this.content = {
         "messages": []
-    }
+    };
 }
 
-/**
- * Create a simple text message
- * @param text  it is the text that will carry the message
- * @returns {{text: *}}
- */
-function createText(text) {
-    return {
+
+function textChat(text){
+
+    this.content = {
         "text": text
     }
 }
-/**
- * Create a card for chatfuel
- * @param text it is the text that will carry the card
- * @returns {{attachment: {type: string, payload: {template_type: string, text: *, buttons: Array}}}}
- */
-function createCard(text) {
-    return {
+
+function cardChat(text){
+    this.content = {
         "attachment": {
             "type":    "template",
             "payload": {
@@ -46,18 +41,18 @@ function createCard(text) {
             }
         }
     }
-}
 
-/**
- * Create a button for chatfuel
- * @param name, the name of the chatfueld block that will redirect
- * @param text, text of button
- * @returns {{type: string, block_name: *, title: *}}
- */
-function createButtonBlock(name, text) {
-    return {
-        "type":       "show_block",
-        "block_name": name,
-        "title":      text
+    this.addButton = function(button){
+        this.content.attachment.payload.buttons.push(button.content);
     }
 }
+
+function buttonBlockChat(title,blockName){
+    this.content = {
+        "type":       "show_block",
+        "block_name": blockName,
+        "title":      title
+    }
+}
+
+
