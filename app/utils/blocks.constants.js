@@ -3,6 +3,7 @@
  */
 module.exports = {
 
-    BLOCK_SCHOOL : 'USER Input'
+    BLOCK_SCHOOL : 'USER Input',
+    BLOCK_DATEGRAD: 'Fecha Graduacion'
 
 };

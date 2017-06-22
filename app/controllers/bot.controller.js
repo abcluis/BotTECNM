@@ -32,6 +32,52 @@ function registerUser(req,res) {
                 response.add(card);
                 res.send(response.content);
 
+
+/*
+
+    userService.createUser(user)
+        .then((userCreated)=> {
+            res.send({
+                "messages": [
+                    {"text": "Hola " + userCreated.name + " gracias por participar en esta encuesta"},
+                    {
+                        "attachment": {
+                            "type":    "template",
+                            "payload": {
+                                "template_type": "button",
+                                "text":          "Comenzemos la encuesta",
+                                "buttons":       [
+                                    {
+                                        "type":       "show_block",
+                                        "block_name": "USER Input",
+                                        "title":      "Ok"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            })
+        })
+        .catch((err) => {
+            if(err.code === 11000){
+                userService.findOneUser(req.body[user_id])
+                    .then((user) => {
+
+                        let response = templates.createBody();
+                        let text = templates.createText("Hola de nuevo " + user.name + " reanudemos la encuesta");
+                        let card = templates.createCard('Hola esto es una carta de prueba');
+
+                        let btn1 = templates.createButtonBlock(blocks.BLOCK_SCHOOL,'Desde el inicio');
+                        let btn2 = templates.createButtonBlock(blocks.BLOCK_DATEGRAD,'Desde fecha de graduacion');
+
+                        card.attachment.payload.buttons.push(btn1, btn2);
+                        response.messages.push(text);
+                        response.messages.push(card);
+
+                        res.send(response);
+                    })
+*/
             }else {
                 return userService.createUser(userBody);
             }
