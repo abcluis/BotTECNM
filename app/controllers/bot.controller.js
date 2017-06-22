@@ -123,7 +123,7 @@ function registerSchool(req,res){
                 
             }else {
                 let body = new templates.bodyChat();
-                let card = new templates.cardChat('Puedes volver a ingresar la informacion');
+                let card = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
                 let btnOk = new templates.buttonBlockChat('OK', blocks.BLOCK_SCHOOL);
 
                 card.addButton(btnOk);
