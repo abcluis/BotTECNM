@@ -5,8 +5,7 @@ const schoolControler = require('./controllers/school.controller');
 const userController  = require('./controllers/user.controller');
 const School          = require('./models/school.model');
 const slugify         = require('./utils/slugify');
-
-const botController = require('./controllers/bot.controller.js');
+const botController   = require('./controllers/bot.controller.js');
 
 router.get('/', homeController.showHome);
 
@@ -27,7 +26,6 @@ router.post('/post', function (req, res) {
     jsonResponse.push({"text": "Hola. " + (Math.random() * 5 + 1).toFixed(0) + " es tu numero de la suerte..."});
     res.send(jsonResponse);
 });
-
 
 
 router.post('/school', function (req, res) {

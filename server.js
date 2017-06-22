@@ -1,7 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var mongoose = require('mongoose');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json()); 
@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(require('./app/routes'));
 
 
-var port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
 
 
 mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function(err){

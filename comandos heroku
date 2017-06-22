@@ -1,3 +1,4 @@
+git pull heroku master
 git add .
 git commit -m "added route api user"
 git push heroku master
