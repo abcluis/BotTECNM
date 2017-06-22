@@ -59,8 +59,7 @@ function registerUser(req,res) {
                         let btn1 = templates.createButtonBlock(blocks.BLOCK_SCHOOL,'Desde el inicio');
                         let btn2 = templates.createButtonBlock(blocks.BLOCK_DATEGRAD,'Desde fecha de graduacion');
 
-                        //card.attachment.payload.buttons.push(btn1, btn2);
-                        text.attachment.payload.buttons.push(btn1, btn2);
+                        card.attachment.payload.buttons.push(btn1, btn2);
                         response.messages.push(text);
                         response.messages.push(card);
 
