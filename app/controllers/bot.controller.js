@@ -30,10 +30,8 @@ function registerUser(req,res) {
                 let card = new templates.cardChat('Vamos a continuar con la encuesta');
                 let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_SCHOOL);
                 let btn2 = new templates.buttonBlockChat('Desde fecha egreso', blocks.BLOCK_DATEGRAD);
-                let btn3 = new templates.buttonBlockChat('Calidad Docentes', blocks.BLOCK_QUALITY);
                 card.addButton(btn1);
                 card.addButton(btn2);
-                card.addButton(btn3);
                 response.add(text);
                 response.add(card);
                 res.send(response.content);

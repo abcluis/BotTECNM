@@ -4,7 +4,6 @@
 module.exports = {
 
     BLOCK_SCHOOL : 'USER Input',
-    BLOCK_DATEGRAD: 'Fecha Graduacion',
-    BLOCK_QUALITY: 'CalidadDocentes'
-
+    BLOCK_DATEGRAD: 'Fecha Graduacion'
+    
 };
