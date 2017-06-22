@@ -33,6 +33,7 @@ function registerUser(req,res) {
                 let btn3 = new templates.buttonBlockChat('Calidad Docentes', blocks.BLOCK_QUALITY);
                 card.addButton(btn1);
                 card.addButton(btn2);
+                card.addButton(btn3);
                 response.add(text);
                 response.add(card);
                 res.send(response.content);
