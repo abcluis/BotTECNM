@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "add blocks ...."
+git commit -m "add survey model"
 git push heroku master
 
 MESSENGER_ID = 1453872458011175

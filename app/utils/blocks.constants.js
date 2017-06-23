@@ -4,7 +4,6 @@
 module.exports = {
 
     BLOCK_SCHOOL : 'USER Input',
-    BLOCK_DATEGRAD: 'Fecha Graduacion',
     BLOCK_FULL_NAME: 'NombreCompleto',
     BLOCK_NUMBER_CONTROL: 'NumeroControl',
     BLOCK_BIRTHDATE: 'FechaNacimiento',

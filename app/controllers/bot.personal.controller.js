@@ -9,7 +9,8 @@ const blocks = require('../utils/blocks.constants');
 
 module.exports = {
     registerUser : registerUser,
-    registerSchool: registerSchool
+    registerSchool: registerSchool,
+    registerControl: registerControl
 };
 
 function registerUser(req,res) {
@@ -35,53 +36,6 @@ function registerUser(req,res) {
                 response.add(text);
                 response.add(card);
                 res.send(response.content);
-
-
-/*
-
-    userService.createUser(user)
-        .then((userCreated)=> {
-            res.send({
-                "messages": [
-                    {"text": "Hola " + userCreated.name + " gracias por participar en esta encuesta"},
-                    {
-                        "attachment": {
-                            "type":    "template",
-                            "payload": {
-                                "template_type": "button",
-                                "text":          "Comenzemos la encuesta",
-                                "buttons":       [
-                                    {
-                                        "type":       "show_block",
-                                        "block_name": "USER Input",
-                                        "title":      "Ok"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                ]
-            })
-        })
-        .catch((err) => {
-            if(err.code === 11000){
-                userService.findOneUser(req.body[user_id])
-                    .then((user) => {
-
-                        let response = templates.createBody();
-                        let text = templates.createText("Hola de nuevo " + user.name + " reanudemos la encuesta");
-                        let card = templates.createCard('Hola esto es una carta de prueba');
-
-                        let btn1 = templates.createButtonBlock(blocks.BLOCK_SCHOOL,'Desde el inicio');
-                        let btn2 = templates.createButtonBlock(blocks.BLOCK_DATEGRAD,'Desde fecha de graduacion');
-
-                        card.attachment.payload.buttons.push(btn1, btn2);
-                        response.messages.push(text);
-                        response.messages.push(card);
-
-                        res.send(response);
-                    })
-*/
             }else {
                 return userService.createUser(userBody);
             }
@@ -113,7 +67,7 @@ function registerSchool(req,res){
             if (result) {
                 let body = new templates.bodyChat();
                 let card = new templates.cardChat('Asi que eres del ' + result.name);
-                let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_DATEGRAD);
+                let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
                 let btnNo = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
                 card.addButton(btnYes);
                 card.addButton(btnNo);
@@ -130,7 +84,10 @@ function registerSchool(req,res){
                 body.add(card);
                 res.send(body.content);
             }
-
         })
         .catch((err) => res.send(err));
+}
+
+function registerControl(req,res) {
+
 }
