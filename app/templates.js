@@ -58,11 +58,22 @@ function buttonBlockChat(title,blockName){
 
 function redirectChat(blockName) {
     this.content = {
-        "messages": [
-            {"text": "Please type again"}
-        ],
-        "redirect_to_blocks": [blockName]
+        "messages":[
+            {
+                "text":"Abbiamo trovato queste professioni che sembrano essere quello che cercavi!",
+                "quick_replies":[
+                    {
+                        "title":"TITLE",
+                        "set_attributes":{
+                            "tipologia":"avvocato"
+                        },
+                        "block_names": blockName
+                    }
+                ]
+            }
+        ]
     }
+
 }
 
 
