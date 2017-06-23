@@ -119,7 +119,12 @@ function registerPersonalData(req,res) {
             let redirectBlock = new templates.redirectChat(nextBlock(field));
 
             response.add(redirectBlock);
-            res.send(response.content);
+            res.send({
+                "messages": [
+                    {"text": "Please type again"}
+                ],
+                "redirect_to_blocks": ["number_control"]
+            });
         })
         .catch((err) => res.send(err));
 

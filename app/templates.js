@@ -60,7 +60,6 @@ function redirectChat(blockName) {
     this.content = {
         "redirect_to_blocks": ["number_control", "full_name"]
     }
-
 }
 
 
