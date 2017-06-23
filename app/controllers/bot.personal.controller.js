@@ -115,9 +115,11 @@ function registerPersonalData(req,res) {
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 
+            let response = new templates.bodyChat();
             let redirectBlock = new templates.redirectChat(nextBlock(field));
 
-            res.send(redirectBlock.content)
+            response.add(redirectBlock);
+            res.send(response.content);
         })
         .catch((err) => res.send(err));
 
