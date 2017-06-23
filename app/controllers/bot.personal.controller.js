@@ -3,6 +3,7 @@
  */
 
 const userService = require('../services/user.service');
+const surveyService = require('../services/survey.service');
 const School          = require('../models/school.model');
 const templates = require('../templates');
 const blocks = require('../utils/blocks.constants');
@@ -22,6 +23,17 @@ function registerUser(req,res) {
         name : req.body[firstName] + ' ' + req.body[lastName],
         id : req.body[user_id]
     };
+
+    surveyService.findOneSurvey(req.body[user_id])
+        .then((survey) => {
+            if(!survey){
+                return surveyService.createSurvey({id_student : req.body[user_id]});
+            }
+        });
+
+
+
+
     userService.findOneUser(req.body[user_id])
         .then((user) => {
             if(user){

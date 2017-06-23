@@ -3,8 +3,6 @@ const router          = express.Router();
 const homeController  = require('./controllers/home.controller');
 const schoolControler = require('./controllers/school.controller');
 const userController  = require('./controllers/user.controller');
-const School          = require('./models/school.model');
-const slugify         = require('./utils/slugify');
 const botController   = require('./controllers/bot.personal.controller.js');
 
 router.get('/', homeController.showHome);

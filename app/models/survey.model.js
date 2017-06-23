@@ -6,7 +6,10 @@ let mongoose = require('mongoose');
 let Schema   = mongoose.Schema;
 
 let surveySchema = new Schema({
-    id_student:    Number,
+    id_student:    {
+        type:   String,
+        unique: true
+    },
     school:        String,
     personal_data: {
         full_name:         String,
