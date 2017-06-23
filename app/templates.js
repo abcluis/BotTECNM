@@ -58,20 +58,7 @@ function buttonBlockChat(title,blockName){
 
 function redirectChat(blockName) {
     this.content = {
-        "messages":[
-            {
-                "text":"Abbiamo trovato queste professioni che sembrano essere quello che cercavi!",
-                "quick_replies":[
-                    {
-                        "title":"TITLE",
-                        "set_attributes":{
-                            "tipologia":"avvocato"
-                        },
-                        "block_names": blockName
-                    }
-                ]
-            }
-        ]
+        "redirect_to_blocks": ["number_control", "full_name"]
     }
 
 }
