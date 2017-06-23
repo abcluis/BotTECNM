@@ -120,11 +120,15 @@ function registerPersonalData(req,res) {
 
             response.add(redirectBlock);
             res.send({
-                "messages": [
-                    {"text": "Please type again"}
-                ],
-                "redirect_to_blocks": ["number_control"]
-            });
+                    "type": "show_block",
+                    "block_name": "Finish",
+                    "title": "Finish Shopping"
+                },
+                {
+                    "type": "show_block",
+                    "block_names": ["Block1", "Block2"],
+                    "title": "Finish Shopping"
+                });
         })
         .catch((err) => res.send(err));
 
