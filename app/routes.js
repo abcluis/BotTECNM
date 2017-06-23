@@ -17,11 +17,7 @@ router.post('/api/user', userController.postUser);
 
 router.post('/bot/start', botController.registerUser);
 router.post('/bot/school', botController.registerSchool);
-router.post('/bot/ncontrol', botController.registerSchool);
-router.post('/bot/birthdate', botController.registerSchool);
-router.post('/bot/curp', botController.registerSchool);
-router.post('/bot/gender', botController.registerSchool);
-router.post('/bot/fullname', botController.registerSchool);
+router.post('/bot/personal/data', botController.registerPersonalData);
 
 router.post('/post', function (req, res) {
     var jsonResponse = [];

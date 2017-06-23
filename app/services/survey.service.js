@@ -5,7 +5,9 @@ const Survey = require('../models/survey.model');
 
 module.exports = {
     findOneSurvey: findOneSurvey,
-    createSurvey:  createSurvey
+    createSurvey:  createSurvey,
+    updatePersonalData:  updatePersonalData,
+
 };
 
 
@@ -18,6 +20,15 @@ function createSurvey(body) {
     return survey.save();
 }
 
-function updatePersonalData() {
-    
+function updatePersonalData(id, field, value) {
+
+    return Survey.findOne({id_student:id})
+        .then((survey) => {
+            if(survey){
+                survey.personal_data[field] = value;
+                return survey.save();
+            }
+
+        });
+
 }

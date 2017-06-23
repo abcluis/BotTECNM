@@ -8,14 +8,15 @@ const School          = require('../models/school.model');
 const templates = require('../templates');
 const blocks = require('../utils/blocks.constants');
 
+let user_id = 'messenger user id';
 module.exports = {
     registerUser : registerUser,
     registerSchool: registerSchool,
-    registerControl: registerControl
+    registerPersonalData: registerPersonalData
 };
 
 function registerUser(req,res) {
-    let user_id = 'messenger user id';
+
     let firstName = 'first name';
     let lastName = 'last name';
 
@@ -100,6 +101,19 @@ function registerSchool(req,res){
         .catch((err) => res.send(err));
 }
 
-function registerControl(req,res) {
+function registerPersonalData(req,res) {
+
+    let keys = Object.keys(req.body);
+
+    // id   field   value
+
+    let id = req.body[user_id];
+    let field = keys[1];
+    let value = req.body[field];
+
+    surveyService.updatePersonalData(id, field, value)
+        .then((survey) => res.send(survey))
+        .catch((err) => res.send(err));
+
 
 }
