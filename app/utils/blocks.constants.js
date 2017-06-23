@@ -2,7 +2,6 @@
  * Created by usuario1 on 6/21/2017.
  */
 module.exports = {
-
     BLOCK_SCHOOL : 'USER Input',
     BLOCK_FULL_NAME: 'NombreCompleto',
     BLOCK_NUMBER_CONTROL: 'NumeroControl',
