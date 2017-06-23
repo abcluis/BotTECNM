@@ -16,7 +16,7 @@ let surveySchema = new Schema({
         control_number:    Number,
         birthdate:         String,
         curp:              String,
-        gender:            String,
+        true_gender:       String,
         civil_status:      String,
         address:           String,
         city:              String,
