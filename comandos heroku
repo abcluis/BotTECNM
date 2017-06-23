@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "add survey model"
+git commit -m "add next block function"
 git push heroku master
 
 //

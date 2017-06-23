@@ -2,11 +2,12 @@
  * Created by usuario1 on 6/21/2017.
  */
 
-const userService = require('../services/user.service');
+const userService   = require('../services/user.service');
 const surveyService = require('../services/survey.service');
-const School          = require('../models/school.model');
-const templates = require('../templates');
-const blocks = require('../utils/blocks.constants');
+const School        = require('../models/school.model');
+const templates     = require('../templates');
+const blocks        = require('../utils/blocks.constants');
+const nextBlock     = require('../utils/blocks.order');
 
 let user_id = 'messenger user id';
 module.exports = {
@@ -112,7 +113,12 @@ function registerPersonalData(req,res) {
     let value = req.body[field];
 
     surveyService.updatePersonalData(id, field, value)
-        .then((survey) => res.send(survey))
+        .then((survey) => {
+
+            let redirectBlock = new templates.redirectChat(nextBlock(field));
+
+            res.send(redirectBlock.content)
+        })
         .catch((err) => res.send(err));
 
 

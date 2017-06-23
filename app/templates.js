@@ -6,7 +6,8 @@ module.exports = {
     bodyChat:          bodyChat,
     textChat:          textChat,
     cardChat:          cardChat,
-    buttonBlockChat:   buttonBlockChat
+    buttonBlockChat:   buttonBlockChat,
+    redirectChat:   redirectChat
 };
 
 
@@ -52,6 +53,12 @@ function buttonBlockChat(title,blockName){
         "type":       "show_block",
         "block_name": blockName,
         "title":      title
+    }
+}
+
+function redirectChat(blockName) {
+    this.content = {
+        "redirect_to_blocks": [blockName]
     }
 }
 
