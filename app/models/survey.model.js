@@ -18,7 +18,7 @@ let surveySchema = new Schema({
         curp:              String,
         true_gender:       String,
         civil_status:      String,
-        address:           String,
+        actual_address:    String,
         city:              String,
         municipality:      String,
         state:             String,
