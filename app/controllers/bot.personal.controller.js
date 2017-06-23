@@ -119,16 +119,15 @@ function registerPersonalData(req,res) {
             let redirectBlock = new templates.redirectChat(nextBlock(field));
 
             response.add(redirectBlock);
-            res.send({
-                    "type": "show_block",
-                    "block_name": "Finish",
-                    "title": "Finish Shopping"
-                },
-                {
-                    "type": "show_block",
-                    "block_names": ["Block1", "Block2"],
-                    "title": "Finish Shopping"
-                });
+            let body = new templates.bodyChat();
+            let card = new templates.cardChat('La informacion es correcta ' + value + ' ?');
+            let btnYes = new templates.buttonBlockChat('Yes', nextBlock(field));
+            let btnNo = new templates.buttonBlockChat('No', field);
+            card.addButton(btnYes);
+            card.addButton(btnNo);
+            body.add(card);
+            console.log(body.content);
+            res.send(body.content);
         })
         .catch((err) => res.send(err));
 
