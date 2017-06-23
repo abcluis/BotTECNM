@@ -58,6 +58,9 @@ function buttonBlockChat(title,blockName){
 
 function redirectChat(blockName) {
     this.content = {
+        "messages": [
+            {"text": "Please type again"}
+        ],
         "redirect_to_blocks": [blockName]
     }
 }
