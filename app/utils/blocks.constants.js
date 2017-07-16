@@ -24,11 +24,10 @@ module.exports = {
     BLOCK_PACKAGE_COMP : 'package_comp',
     // II. PERT,DISP,REC
     BLOCK_INTRO: 'II. Intro',
-        BLOCK_INTRO: 'II. Intro',
     BLOCK_QUALITY_TEACHERS: 'quality_teachers',
     BLOCK_STUDY_PLAN: 'study_plan',
     BLOCK_OPORTUNITY_PART: 'oportunity_part',
-    BLOCK_EMPHASIS_INV: 'emphasis_inv',
+    BLOCK_EMPHASIS_INV: 'emphasis_invest',
     BLOCK_SATISFACTION_COND: 'satisfaction_cond',
     BLOCK_EXP_RESIDENCE: 'experience_residence',
 };
