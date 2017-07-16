@@ -41,7 +41,7 @@ function registerUser(req,res) {
                 let response = new templates.bodyChat();
                 let text = new templates.textChat('Hola bienvenido de nuevo ' + user.name);  
                 let card = new templates.cardChat('Vamos a continuar con la encuesta');
-                let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_SCHOOL);
+                let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_OTHER_LANGUAGE);
                 let btn2 = new templates.buttonBlockChat('Desde fecha egreso', blocks.BLOCK_DATEGRAD);
                 card.addButton(btn1);
                 card.addButton(btn2);
@@ -99,12 +99,13 @@ function registerSchool(req,res){
 
 function registerPersonalData(req,res) {
     let keys = Object.keys(req.body);
+
     // id   field   value
     let id = req.body[user_id];
     let field = keys[1];
     let value;
     if (field == 'package_comp'){
-        value = req.body[field].split('');
+        value = req.body[field].split(',');
     }else{
         value = req.body[field]
     }
