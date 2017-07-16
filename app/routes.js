@@ -1,10 +1,10 @@
-const express         = require('express');
-const router          = express.Router();
-const homeController  = require('./controllers/home.controller');
-const schoolControler = require('./controllers/school.controller');
-const userController  = require('./controllers/user.controller');
-const botController   = require('./controllers/bot.personal.controller.js');
-
+const express          = require('express');
+const router           = express.Router();
+const homeController   = require('./controllers/home.controller');
+const schoolControler  = require('./controllers/school.controller');
+const userController   = require('./controllers/user.controller');
+const botController    = require('./controllers/bot.personal.controller.js');
+const botPertContoller = require('./controllers/bot.pertinence.controller');
 router.get('/', homeController.showHome);
 
 router.get('/api/school', schoolControler.getSchools);
@@ -18,6 +18,9 @@ router.post('/api/user', userController.postUser);
 router.post('/bot/start', botController.registerUser);
 router.post('/bot/school', botController.registerSchool);
 router.post('/bot/personal/data', botController.registerPersonalData);
+
+// PERTINENCIA Y DISPONIBILIDAD DE MEDIOS
+router.post('/bot/pertinence/data', botPertContoller.registerPertData);
 
 router.post('/post', function (req, res) {
     var jsonResponse = [];

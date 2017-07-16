@@ -22,7 +22,8 @@ function registerUser(req,res) {
     let lastName = 'last name';
 
     let userBody = {
-        name : req.body[firstName] + ' ' + req.body[lastName],
+        name: `${req.body[firstName]} ${req.body[lastName]}`,
+        //name : req.body[firstName] + ' ' + req.body[lastName],
         id : req.body[user_id]
     };
 
@@ -34,12 +35,9 @@ function registerUser(req,res) {
         });
 
 
-
-
     userService.findOneUser(req.body[user_id])
         .then((user) => {
             if(user){
-                
                 let response = new templates.bodyChat();
                 let text = new templates.textChat('Hola bienvenido de nuevo ' + user.name);  
                 let card = new templates.cardChat('Vamos a continuar con la encuesta');
@@ -63,7 +61,6 @@ function registerUser(req,res) {
                 card.addButton(btn1);
                 response.add(text);
                 response.add(card);
-                
                 res.send(response.content);
             }else {
 
@@ -74,8 +71,6 @@ function registerUser(req,res) {
 }
 
 function registerSchool(req,res){
-
-
     School.findOne({'nicks.name': req.body.school})
         .then((result) => {
             if (result) {
@@ -103,15 +98,16 @@ function registerSchool(req,res){
 }
 
 function registerPersonalData(req,res) {
-
     let keys = Object.keys(req.body);
-
     // id   field   value
-
     let id = req.body[user_id];
     let field = keys[1];
-    let value = req.body[field];
-
+    let value;
+    if (field == 'package_comp'){
+        value = req.body[field].split('');
+    }else{
+        value = req.body[field]
+    }
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 
@@ -130,6 +126,4 @@ function registerPersonalData(req,res) {
             res.send(body.content);
         })
         .catch((err) => res.send(err));
-
-
 }

@@ -9,7 +9,6 @@ module.exports = {
     getUsers:   getUsers
 };
 
-
 function postUser(req, res) {
     userService.createUser(req.body)
         .then((result) => res.send(result))

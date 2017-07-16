@@ -28,5 +28,4 @@ function getOneSchool(req, res){
             res.send(result)
         })
         .catch((err) => res.send(err));
-    
 }

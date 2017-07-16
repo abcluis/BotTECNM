@@ -25,7 +25,6 @@ function bodyChat() {
 
 
 function textChat(text){
-
     this.content = {
         "text": text
     }
