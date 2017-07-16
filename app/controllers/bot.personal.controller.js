@@ -83,12 +83,10 @@ function registerSchool(req,res){
                 body.add(card);
                 console.log(body.content);
                 res.send(body.content);
-                
             }else {
                 let body = new templates.bodyChat();
                 let card = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
                 let btnOk = new templates.buttonBlockChat('OK', blocks.BLOCK_SCHOOL);
-
                 card.addButton(btnOk);
                 body.add(card);
                 res.send(body.content);
@@ -104,11 +102,8 @@ function registerPersonalData(req,res) {
     let id = req.body[user_id];
     let field = keys[1];
     let value;
-    if (field == 'package_comp'){
-        value = req.body[field].split(',');
-    }else{
-        value = req.body[field]
-    }
+    value = req.body[field]
+
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 

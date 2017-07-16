@@ -20,6 +20,7 @@ router.post('/bot/school', botController.registerSchool);
 router.post('/bot/personal/data', botController.registerPersonalData);
 
 // PERTINENCIA Y DISPONIBILIDAD DE MEDIOS
+router.post('/bot/pertinence/init', botPertContoller.initPertData);
 router.post('/bot/pertinence/data', botPertContoller.registerPertData);
 
 router.post('/post', function (req, res) {
