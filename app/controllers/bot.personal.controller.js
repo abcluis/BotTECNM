@@ -106,6 +106,7 @@ function registerPersonalData(req,res) {
     value = req.body[field]
 
     if(field === 'package_comp'){
+        let arreglo = req.body[field].split(',');
         value = arreglo.map(function(item,index){
 	    return {
     	    name : item
