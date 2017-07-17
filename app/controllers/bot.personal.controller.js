@@ -105,6 +105,14 @@ function registerPersonalData(req,res) {
     let value;
     value = req.body[field]
 
+    if(field === 'package_comp'){
+        value = arreglo.map(function(item,index){
+	    return {
+    	    name : item
+	    }
+    });
+    }
+
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 

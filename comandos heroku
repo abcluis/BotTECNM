@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "fix constants"
+git commit -m "test of package route"
 git push heroku master
 
 //
