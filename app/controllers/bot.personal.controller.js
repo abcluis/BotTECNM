@@ -134,7 +134,7 @@ function registerPackages(req,res){
     	    name : item
 	    }
     });
-
+    console.log(values);
     surveyService.updatePackageComp(id,values)
         .then((survey) => { 
             let response = new templates.bodyChat();
