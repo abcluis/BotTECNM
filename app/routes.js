@@ -18,7 +18,7 @@ router.post('/api/user', userController.postUser);
 router.post('/bot/start', botController.registerUser);
 router.post('/bot/school', botController.registerSchool);
 router.post('/bot/personal/data', botController.registerPersonalData);
-router.post('/bot/test', botController.registerPackages);
+//router.post('/bot/test', botController.registerPackages);
 
 
 // PERTINENCIA Y DISPONIBILIDAD DE MEDIOS

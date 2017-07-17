@@ -133,29 +133,3 @@ function registerPersonalData(req,res) {
         })
         .catch((err) => res.send(err));
 }
-
-function registerPackages(req,res){
-    let id = req.body[user_id];
-
-    let arreglo = req.body['package_comp'].split(',');
-    let values = arreglo.map(function(item,index){
-	    return {
-    	    name : item
-	    }
-    });
-    surveyService.updatePackageComp(id,values)
-        .then((survey) => { 
-            let response = new templates.bodyChat();
-                let text = new templates.textChat('Estos son tus datos');  
-                let card = new templates.cardChat('Son correctos: ' + req.body['package_comp']);
-                let btn1 = new templates.buttonBlockChat('OK',nextBlock(blocks.BLOCK_PACKAGE_COMP));
-                let btn2 = new templates.buttonBlockChat('Volver a ingresarlos', blocks.BLOCK_PACKAGE_COMP);
-                card.addButton(btn1);
-                card.addButton(btn2);
-                response.add(text);
-                response.add(card);
-                res.send(response.content);
-        })
-        .catch((err) => res.send(err));
-    
-}
