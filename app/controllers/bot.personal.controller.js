@@ -138,7 +138,7 @@ function registerPackages(req,res){
         .then((survey) => { 
             console.log('Todo salio bien');
             let response = new templates.bodyChat();
-            let redirectBlock = new templates.redirectChat(nextBlock(field));
+            let redirectBlock = new templates.redirectChat(nextBlock('package_comp'));
 
             response.add(redirectBlock);
             let body = new templates.bodyChat();
