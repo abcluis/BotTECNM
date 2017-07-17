@@ -7,8 +7,7 @@ module.exports = {
   findOneSurvey: findOneSurvey,
   createSurvey: createSurvey,
   updatePersonalData: updatePersonalData,
-  updatePertinenceData: updatePertinenceData,
-  updatePackageComp: updatePackageComp
+  updatePertinenceData: updatePertinenceData
 };
 
 function findOneSurvey(id) {
