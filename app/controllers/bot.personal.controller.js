@@ -136,20 +136,16 @@ function registerPackages(req,res){
     });
     surveyService.updatePackageComp(id,values)
         .then((survey) => { 
-            console.log('Todo salio bien');
             let response = new templates.bodyChat();
-            let redirectBlock = new templates.redirectChat(nextBlock('package_comp'));
-
-            response.add(redirectBlock);
-            let body = new templates.bodyChat();
-            let card = new templates.cardChat('La informacion es correcta ' + req.body['package_comp'] + ' ?');
-            let btnYes = new templates.buttonBlockChat('Yes', nextBlock(field));
-            let btnNo = new templates.buttonBlockChat('No', field);
-            card.addButton(btnYes);
-            card.addButton(btnNo);
-            body.add(card);
-            console.log(body.content);
-            res.send(body.content);
+                let text = new templates.textChat('Todo esto salio bien');  
+                let card = new templates.cardChat('Vamos a continuar oks');
+                let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_INTRO);
+                let btn2 = new templates.buttonBlockChat('Desde fecha egreso', blocks.BLOCK_DATEGRAD);
+                card.addButton(btn1);
+                card.addButton(btn2);
+                response.add(text);
+                response.add(card);
+                res.send(response.content);
         })
         .catch((err) => res.send(err));
     
