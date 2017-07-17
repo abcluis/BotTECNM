@@ -137,10 +137,10 @@ function registerPackages(req,res){
     surveyService.updatePackageComp(id,values)
         .then((survey) => { 
             let response = new templates.bodyChat();
-                let text = new templates.textChat('Todo esto salio bien');  
-                let card = new templates.cardChat('Vamos a continuar oks');
-                let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_INTRO);
-                let btn2 = new templates.buttonBlockChat('Desde fecha egreso', blocks.BLOCK_DATEGRAD);
+                let text = new templates.textChat('Estos son tus datos');  
+                let card = new templates.cardChat('Son correctos: ' + req.body['package_comp']);
+                let btn1 = new templates.buttonBlockChat('OK',nextBlock(blocks.BLOCK_PACKAGE_COMP));
+                let btn2 = new templates.buttonBlockChat('Volver a ingresarlos', blocks.BLOCK_PACKAGE_COMP);
                 card.addButton(btn1);
                 card.addButton(btn2);
                 response.add(text);
