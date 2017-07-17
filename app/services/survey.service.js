@@ -30,9 +30,14 @@ function updatePersonalData(id, field, value) {
 }
 
 function updatePackageComp(id, values) {
+
+  console.log('update package');
+
   return Survey.findOne({ id_student : id})
     .then(survey => {
       survey.package_comp = values;
+      console.log('surve actual');
+      console.log(survey);
       return survey.save();
     });
 }
