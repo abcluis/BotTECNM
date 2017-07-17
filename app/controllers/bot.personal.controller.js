@@ -13,8 +13,7 @@ let user_id = 'messenger user id';
 module.exports = {
     registerUser : registerUser,
     registerSchool: registerSchool,
-    registerPersonalData: registerPersonalData,
-    registerPackages : registerPackages
+    registerPersonalData: registerPersonalData
 };
 
 function registerUser(req,res) {
@@ -105,14 +104,18 @@ function registerPersonalData(req,res) {
     let value;
     value = req.body[field]
 
+
+    // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if(field === 'package_comp'){
         let arreglo = req.body[field].split(',');
         value = arreglo.map(function(item,index){
-	    return {
-    	    name : item
-	    }
-    });
+            return {
+                name : item
+            }
+        });
     }
+
+    let confirm = req.body[field];
 
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
@@ -122,7 +125,7 @@ function registerPersonalData(req,res) {
 
             response.add(redirectBlock);
             let body = new templates.bodyChat();
-            let card = new templates.cardChat('La informacion es correcta ' + value + ' ?');
+            let card = new templates.cardChat('La informacion es correcta ' + confirm + ' ?');
             let btnYes = new templates.buttonBlockChat('Yes', nextBlock(field));
             let btnNo = new templates.buttonBlockChat('No', field);
             card.addButton(btnYes);

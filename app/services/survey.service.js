@@ -29,15 +29,6 @@ function updatePersonalData(id, field, value) {
   });
 }
 
-function updatePackageComp(id, values) {
-
-  return Survey.findOne({ id_student : id})
-    .then(survey => {
-      survey.personal_data.package_comp = values;
-      return survey.save();
-    });
-}
-
 function updatePertinenceData(id, field, value) {
   return Survey.findOne({ id_student: id }).then(survey =>{
     if (survey){
