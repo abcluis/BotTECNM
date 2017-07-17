@@ -18,10 +18,13 @@ router.post('/api/user', userController.postUser);
 router.post('/bot/start', botController.registerUser);
 router.post('/bot/school', botController.registerSchool);
 router.post('/bot/personal/data', botController.registerPersonalData);
+router.post('/bot/test', botController.registerPackages);
+
 
 // PERTINENCIA Y DISPONIBILIDAD DE MEDIOS
 router.post('/bot/pertinence/init', botPertContoller.initPertData);
 router.post('/bot/pertinence/data', botPertContoller.registerPertData);
+
 
 router.post('/post', function (req, res) {
     var jsonResponse = [];
