@@ -134,9 +134,9 @@ function registerPackages(req,res){
     	    name : item
 	    }
     });
-    console.log(values);
     surveyService.updatePackageComp(id,values)
         .then((survey) => { 
+            console.log('Todo salio bien');
             let response = new templates.bodyChat();
             let redirectBlock = new templates.redirectChat(nextBlock(field));
 
