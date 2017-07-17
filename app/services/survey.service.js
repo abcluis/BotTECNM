@@ -35,7 +35,7 @@ function updatePackageComp(id, values) {
 
   return Survey.findOne({ id_student : id})
     .then(survey => {
-      survey.package_comp = values;
+      survey.personal_data.package_comp = values;
       console.log('surve actual');
       console.log(survey);
       return survey.save();
