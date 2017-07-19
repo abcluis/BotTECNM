@@ -7,7 +7,8 @@ module.exports = {
   findOneSurvey: findOneSurvey,
   createSurvey: createSurvey,
   updatePersonalData: updatePersonalData,
-  updatePertinenceData: updatePertinenceData
+  updatePertinenceData: updatePertinenceData,
+  updateJobLocationData: updateJobLocationData,
 };
 
 function findOneSurvey(id) {
@@ -32,6 +33,15 @@ function updatePertinenceData(id, field, value) {
   return Survey.findOne({ id_student: id }).then(survey =>{
     if (survey){
       survey.pertinence[field] = value;
+      return survey.save();
+    }
+  });
+}
+
+function updateJobLocationData(id, field, value) {
+  return Survey.findOne({ id_student: id }).then(survey =>{
+    if (survey){
+      survey.work_aspect[field] = value;
       return survey.save();
     }
   });

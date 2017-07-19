@@ -43,11 +43,13 @@ let surveySchema = new Schema({
         experience_residence: String
     },
     work_aspect:   {
-        currently: String,
-        study:     {
-            type:       String,
-            speciality: String
-        },
+        actual_activity: String,
+        activity_studies: String, 
+        // {
+        //     type:       String,
+        //     speciality: String
+        // },
+
         work:      {
             time_get:              String,
             how_get:               String,
