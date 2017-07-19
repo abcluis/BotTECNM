@@ -41,7 +41,7 @@ function registerUser(req,res) {
                 let response = new templates.bodyChat();
                 let text = new templates.textChat('Hola bienvenido de nuevo ' + user.name);  
                 let card = new templates.cardChat('Vamos a continuar con la encuesta');
-                let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_PACKAGE_COMP);
+                let btn1 = new templates.buttonBlockChat('OK',blocks.BLOCK_INTRO_II);
                 let btn2 = new templates.buttonBlockChat('Desde fecha egreso', blocks.BLOCK_DATEGRAD);
                 card.addButton(btn1);
                 card.addButton(btn2);
