@@ -2,6 +2,7 @@
  * Created by usuario1 on 6/21/2017.
  */
 module.exports = {
+    BLOCK_HOME: 'II. Intro',
     BLOCK_SCHOOL : 'school',
     BLOCK_FULL_NAME: 'full_name',
     BLOCK_NUMBER_CONTROL: 'number_control',
