@@ -10,6 +10,9 @@ module.exports = {
 };
 
 function postUser(req, res) {
+
+    console.log(req);
+
     userService.createUser(req.body)
         .then((result) => res.send(result))
         .catch((err) => res.send(err));

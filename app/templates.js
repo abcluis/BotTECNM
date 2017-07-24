@@ -3,13 +3,12 @@
  */
 
 module.exports = {
-    bodyChat:          bodyChat,
-    textChat:          textChat,
-    cardChat:          cardChat,
-    buttonBlockChat:   buttonBlockChat,
-    redirectChat:   redirectChat
+    bodyChat:        bodyChat,
+    textChat:        textChat,
+    cardChat:        cardChat,
+    buttonBlockChat: buttonBlockChat,
+    redirectChat:    redirectChat
 };
-
 
 
 function bodyChat() {
@@ -24,13 +23,13 @@ function bodyChat() {
 }
 
 
-function textChat(text){
+function textChat(text) {
     this.content = {
         "text": text
     }
 }
 
-function cardChat(text){
+function cardChat(text) {
     this.content = {
         "attachment": {
             "type":    "template",
@@ -42,12 +41,12 @@ function cardChat(text){
         }
     }
 
-    this.addButton = function(button){
+    this.addButton = function (button) {
         this.content.attachment.payload.buttons.push(button.content);
     }
 }
 
-function buttonBlockChat(title,blockName){
+function buttonBlockChat(title, blockName) {
     this.content = {
         "type":       "show_block",
         "block_name": blockName,
