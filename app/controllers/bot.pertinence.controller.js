@@ -27,7 +27,7 @@ function registerPertData(req, res) {
   //res.send({ id: id, field: field, value: value });
   surveyService
     .updatePertinenceData(id, field, value)
-    .then(survey => {
+    .then(() => {
       let response = new templates.bodyChat();
       let redirectBlock = new templates.redirectChat(nextBlock(field));
 

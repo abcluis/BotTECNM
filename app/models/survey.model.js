@@ -12,25 +12,25 @@ let surveySchema = new Schema({
     },
     school:        String,
     personal_data: {
-        full_name:          String,
-        control_number:     Number,
-        birthdate:          String,
-        curp:               String,
-        true_gender:        String,
-        civil_status:       String,
-        actual_address:     String,
-        actual_city:        String,
-        actual_municipality:String,
-        actual_state:       String,
-        phone:              Number,
-        email:              String,
-        phone_alt:          Number,
-        career_speciality:  String,
-        date_graduate:      String,
-        certificated:       Boolean,
-        english_mastery:    String,
-        other_mastery:      String,
-        package_comp:      [
+        full_name:           String,
+        control_number:      Number,
+        birthdate:           String,
+        curp:                String,
+        true_gender:         String,
+        civil_status:        String,
+        actual_address:      String,
+        actual_city:         String,
+        actual_municipality: String,
+        actual_state:        String,
+        phone:               Number,
+        email:               String,
+        phone_alt:           Number,
+        career_speciality:   String,
+        date_graduate:       String,
+        certificated:        Boolean,
+        english_mastery:     String,
+        other_mastery:       String,
+        package_comp:        [
             {name: String}
         ]
     },
@@ -43,34 +43,28 @@ let surveySchema = new Schema({
         experience_residence: String
     },
     work_aspect:   {
-        actual_activity: String,
-        activity_studies: String, 
-        // {
-        //     type:       String,
-        //     speciality: String
-        // },
+        actual_activity:       String,
+        activity_studies:      String,
+        time_get:              String,
+        how_get:               String,
+        requirements:          [
+            {description: String}
+        ],
+        language_use:          String,
+        speak_language:        String,
+        write_language:        String,
+        read_language:         String,
+        listen_language:       String,
+        old_job:               String,
+        salary:                Number,
+        level_job:             String,
+        work_condition:        String,
+        work_study_relation:   String,
+        organism:              String,
+        main_activity_company: String
 
-        work:      {
-            time_get:              String,
-            how_get:               String,
-            requirements:          [
-                {description: String}
-            ],
-            language_use:          String,
-            speak_language:        String,
-            write_language:        String,
-            read_language:         String,
-            listen_language:       String,
-            old_job:               String,
-            salary:                Number,
-            level_job:             String,
-            work_condition:        String,
-            work_study_relation:   String,
-            organism:              String,
-            main_activity_company: String
-
-        }
     }
+
 });
 
 let survey = mongoose.model('Survey', surveySchema);

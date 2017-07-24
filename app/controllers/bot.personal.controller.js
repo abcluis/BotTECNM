@@ -23,7 +23,6 @@ function registerUser(req,res) {
 
     let userBody = {
         name: `${req.body[firstName]} ${req.body[lastName]}`,
-        //name : req.body[firstName] + ' ' + req.body[lastName],
         id : req.body[user_id]
     };
 

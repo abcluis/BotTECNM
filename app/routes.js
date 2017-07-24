@@ -1,11 +1,14 @@
 const express               = require('express');
 const router                = express.Router();
+
 const homeController        = require('./controllers/home.controller');
 const schoolControler       = require('./controllers/school.controller');
 const userController        = require('./controllers/user.controller');
 const botController         = require('./controllers/bot.personal.controller.js');
 const botPertContoller      = require('./controllers/bot.pertinence.controller');
-const botJobLocatController = require('./controllers/bot.job.location.controller');
+const botJobLocalController = require('./controllers/bot.job.location.controller');
+
+
 router.get('/', homeController.showHome);
 
 router.get('/api/school', schoolControler.getSchools);
@@ -27,8 +30,8 @@ router.post('/bot/pertinence/init', botPertContoller.initPertData);
 router.post('/bot/pertinence/data', botPertContoller.registerPertData);
 
 //UBICACION LABORAL
-router.post('/bot/joblocation/init', botJobLocatController.initJobLocation);
-router.post('/bot/joblocation/data', botJobLocatController.registerJobLocation);
+router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
+router.post('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 
 
 module.exports = router;
