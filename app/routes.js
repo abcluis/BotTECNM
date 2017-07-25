@@ -21,7 +21,7 @@ router.get('/api/user/:id', userController.getOneUser);
 router.post('/api/user', userController.postUser);
 
 router.post('/bot/start', botController.registerUser);
-router.post('/bot/school', botController.registerSchool);
+router.get('/bot/school', botController.registerSchool);
 router.get('/bot/personal/data', botController.registerPersonalData);
 //router.post('/bot/test', botController.registerPackages);
 

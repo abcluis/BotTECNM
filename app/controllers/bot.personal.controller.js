@@ -88,7 +88,7 @@ function registerSchool(req, res) {
         ]
     });
 
-    School.findOne({'nicks.name': req.body.school})
+    School.findOne({'nicks.name': req.query.school})
         .then((result) => {
             if (result) {
                 let body   = new templates.bodyChat();
@@ -98,7 +98,6 @@ function registerSchool(req, res) {
                 card.addButton(btnYes);
                 card.addButton(btnNo);
                 body.add(card);
-                console.log(body.content);
                 res.send(body.content);
             } else {
                 let body  = new templates.bodyChat();
