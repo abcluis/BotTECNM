@@ -62,7 +62,6 @@ let surveySchema = new Schema({
         work_study_relation:   String,
         organism:              String,
         main_activity_company: String
-
     }
 
 });
