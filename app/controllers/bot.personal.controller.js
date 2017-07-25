@@ -17,7 +17,7 @@ let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
 
 let user_id = 'messenger user id';
-let HOME = blocks.BLOCK_SCHOOL;
+let HOME = blocks.BLOCK_FULL_NAME;
 
 module.exports = {
     registerUser:         registerUser,
@@ -97,6 +97,10 @@ function registerPersonalData(req, res) {
     let field = keys[1];
     let value;
     value     = req.body[field];
+
+    res.send({
+        "redirect_to_blocks": ["Welcome Message", "Default Answer"]
+    });
 
 
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
