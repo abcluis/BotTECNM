@@ -14,6 +14,7 @@ router.get('/', homeController.showHome);
 router.get('/api/school', schoolControler.getSchools);
 router.post('/api/school', schoolControler.postSchool);
 router.get('/api/school/:name', schoolControler.getOneSchool);
+router.post('/api/nick/', schoolControler.addNicks);
 
 router.get('/api/user', userController.getUsers);
 router.get('/api/user/:id', userController.getOneUser);

@@ -68,6 +68,26 @@ function registerUser(req, res) {
 }
 
 function registerSchool(req, res) {
+
+    res.send({
+        "messages": [
+            {
+                "text":  "Eres del",
+                "quick_replies": [
+                    {
+                        "title":"Loved it!",
+                        "block_name": "Block 1"
+                    },
+                    {
+                        "title":"Not really...",
+                        "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
+                        "type":"json_plugin_url"
+                    }
+                ]
+            }
+        ]
+    });
+
     School.findOne({'nicks.name': req.body.school})
         .then((result) => {
             if (result) {
@@ -101,7 +121,6 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.query[field];
 
-    console.log("https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432");
 
     if (field === 'full_name') {
         /*res.send({
@@ -135,24 +154,7 @@ function registerPersonalData(req, res) {
             ]
         });*/
 
-        res.send({
-            "messages": [
-                {
-                    "text":  "Did you enjoy the last game of the CF Rockets?",
-                    "quick_replies": [
-                        {
-                            "title":"Loved it!",
-                            "block_name": "Block 1"
-                        },
-                        {
-                            "title":"Not really...",
-                            "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
-                            "type":"json_plugin_url"
-                        }
-                    ]
-                }
-            ]
-        });
+
 
     }
 
