@@ -69,24 +69,7 @@ function registerUser(req, res) {
 
 function registerSchool(req, res) {
 
-    res.send({
-        "messages": [
-            {
-                "text":  "Eres del",
-                "quick_replies": [
-                    {
-                        "title":"Loved it!",
-                        "block_name": "Block 1"
-                    },
-                    {
-                        "title":"Not really...",
-                        "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
-                        "type":"json_plugin_url"
-                    }
-                ]
-            }
-        ]
-    });
+
 
     School.findOne({'nicks.name': req.query.school})
         .then((result) => {
@@ -98,7 +81,27 @@ function registerSchool(req, res) {
                 card.addButton(btnYes);
                 card.addButton(btnNo);
                 body.add(card);
-                res.send(body.content);
+
+                res.send({
+                    "messages": [
+                        {
+                            "text":  "Eres del",
+                            "quick_replies": [
+                                {
+                                    "title":"Loved it!",
+                                    "block_name": "Block 1"
+                                },
+                                {
+                                    "title":result.name,
+                                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
+                                    "type":"json_plugin_url"
+                                }
+                            ]
+                        }
+                    ]
+                });
+
+                //res.send(body.content);
             } else {
                 let body  = new templates.bodyChat();
                 let card  = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
