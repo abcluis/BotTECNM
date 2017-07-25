@@ -122,16 +122,14 @@ function registerPersonalData(req, res) {
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 
-            let response      = new templates.bodyChat();
-            let redirectBlock = new templates.redirectChat(nextBlock(field));
 
-            response.add(redirectBlock);
-            let body   = new templates.bodyChat();
+            let body   = new BodyCF();
             let text = new TextCF('La siguiente pregunta es : ');
             body.add(text);
             let btnYes = new templates.buttonBlockChat('Yes', nextBlock(field));
             let btnNo  = new templates.buttonBlockChat('No', field);
-
+            console.log(body.content);
+            console.log('Despues');
             body.content.redirect_to_blocks.push(nextBlock(field));
             console.log(body.content);
             res.send(body.content);
