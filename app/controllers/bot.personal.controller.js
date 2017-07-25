@@ -35,7 +35,12 @@ function registerUser(req, res) {
         id:   req.body[user_id]
     };
 
-    surveyService.findOneSurvey(req.body[user_id]);
+    surveyService.findOneSurvey(req.body[user_id])
+        .then((survey) => {
+            if (!survey) {
+                return surveyService.createSurvey({id_student: req.body[user_id]});
+            }
+        });
 
 
     userService.findOneUser(req.body[user_id])
@@ -55,10 +60,10 @@ function registerUser(req, res) {
                 return userService.createUser(user);
             }
         })
-        .then((user) => {
-            if (user) {
+        .then((response) => {
+            if (response) {
                 let response = new templates.bodyChat();
-                let text     = new templates.textChat('Hola bienvenido ' + user.name);
+                let text     = new templates.textChat('Hola bienvenido ' + response.name);
                 let card     = new templates.cardChat('Esto es una encuesta de los egresados gracias por tu participacion, empezemos');
                 let btn1     = new templates.buttonBlockChat('OK', blocks.BLOCK_SCHOOL);
                 card.addButton(btn1);
