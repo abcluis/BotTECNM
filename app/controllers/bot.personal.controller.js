@@ -104,11 +104,11 @@ function registerPersonalData(req, res) {
                 "quick_replies": [
                     {
                         "title":"Loved it!",
-                        "block_name": "number_control"
+                        "block_name": blocks.BLOCK_FULL_NAME
                     },
                     {
                         "title":"CURP",
-                        "block_name": "curp"
+                        "block_name": blocks.BLOCK_SCHOOL
                     }
                 ]
             }
