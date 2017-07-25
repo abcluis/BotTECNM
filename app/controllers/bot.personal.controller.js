@@ -107,22 +107,36 @@ function registerPersonalData(req, res) {
         res.send({
             "messages": [
                 {
-                    "text":          "Did you enjoy the last game of the CF Rockets?",
-                    "quick_replies": [
-                        {
-                            "title":      "Loved it!",
-                            "block_name": blocks.BLOCK_FULL_NAME
-                        },
-                        {
-                            "title": "Not really...",
-                            "url":   "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432",
-                            "type":  "json_plugin_url"
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "button",
+                            "text": "Hello!",
+                            "buttons": [
+                                {
+                                    "type": "show_block",
+                                    "block_name": "name of block",
+                                    "title": "Show Block"
+                                },
+                                {
+                                    "type": "web_url",
+                                    "url": "https://rockets.chatfuel.com",
+                                    "title": "Visit Website"
+                                },
+                                {
+                                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432",
+                                    "type":"json_plugin_url",
+                                    "title":"Postback"
+                                }
+                            ]
                         }
-                    ]
+                    }
                 }
             ]
         });
     }
+
+
 
     /*
      Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
