@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "refactorice el user service"
+git commit -m "full name home block"
 git push heroku master
 
 //
