@@ -113,7 +113,7 @@ function registerPersonalData(req, res) {
                     },
                     {
                         "title":"Not really...",
-                        "url": "https://rockets.chatfuel.com/api/sad-match",
+                        "url": "http://localhost:3000/bot/personal/data?messenger user id=" + id + "&number_control=32432",
                         "type":"json_plugin_url"
                     }
                 ]
