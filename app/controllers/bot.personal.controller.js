@@ -94,7 +94,8 @@ function registerSchool(req, res) {
                                 },
                                 {
                                     "title":"No",
-                                    "block_name": blocks.BLOCK_SCHOOL
+                                    "block_name": blocks.BLOCK_SCHOOL,
+                                    "type": "show_block"
                                 }
 
                             ]
