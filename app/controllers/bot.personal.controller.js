@@ -49,9 +49,9 @@ function registerUser(req, res) {
             let response = new BodyCF();
             let text     = new TextCF('Hola bienvenido ' + data.name);
             let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion');
-            let btn1     = new ButtonCF('OK', HOME);
+            let btn1     = new ButtonCF('Desde el inicio', HOME);
             if (data.last_block) {
-                let btn2 = new ButtonCF('Comenzar desde : ' + data.last_block, data.last_block);
+                let btn2 = new ButtonCF('Desde la ultima vez', data.last_block);
                 card.addButton(btn2);
             }
             card.addButton(btn1);
