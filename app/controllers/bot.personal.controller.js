@@ -101,6 +101,7 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.query[field];
 
+    console.log("https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432");
 
     res.send({
         "messages": [
