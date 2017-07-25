@@ -130,6 +130,7 @@ function registerPersonalData(req, res) {
             let btnNo  = new templates.buttonBlockChat('No', field);
             console.log(body.content);
             console.log('Despues');
+            body.content.redirect_to_blocks = [];
             body.content.redirect_to_blocks.push(nextBlock(field));
             console.log(body.content);
             res.send(body.content);
