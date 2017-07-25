@@ -5,11 +5,11 @@
         .module('main')
         .service('SurveyService', SurveyService);
 
-    SurveyService.$inject = ['$resource'];
+    SurveyService.$inject = ['$resource','InfoService'];
 
     /* @ngInject */
-    function SurveyService($resource) {
-        return $resource('http://localhost:3000/api/survey/:id', {id: "@id"});
+    function SurveyService($resource,InfoService) {
+        return $resource(InfoService.baseUrl() + '/api/survey/:id', {id: "@id"});
     }
 
 })();
