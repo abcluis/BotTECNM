@@ -18,7 +18,7 @@
             .state('home', {
                 url :         '/',
                 templateUrl : 'app/components/home/home.html',
-                controller :  'HomeController as $ctrl',
+                controller :  'HomeController as vm',
                 resolve: {
                     surveys : ['SurveyService', function (SurveyService) {
                         return SurveyService.query().$promise;

@@ -7,7 +7,8 @@
     angular
         .module('main', [
             'ui.router',
-            'ngResource'
+            'ngResource',
+            'chart.js'
         ]);
 
 })();

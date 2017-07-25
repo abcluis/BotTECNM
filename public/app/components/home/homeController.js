@@ -16,6 +16,9 @@
         var vm   = this;
         vm.surveys = surveys;
 
+        vm.labels = ["Instituto Tecnologico Chihuahua II", "Instituto Tecnologico Delicias", "Otros"];
+        vm.data = [3, 1, 1];
+
     }
 
 })();
