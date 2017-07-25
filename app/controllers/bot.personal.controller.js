@@ -103,24 +103,26 @@ function registerPersonalData(req, res) {
 
     console.log("https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432");
 
-    res.send({
-        "messages": [
-            {
-                "text":  "Did you enjoy the last game of the CF Rockets?",
-                "quick_replies": [
-                    {
-                        "title":"Loved it!",
-                        "block_name": blocks.BLOCK_FULL_NAME
-                    },
-                    {
-                        "title":"Not really...",
-                        "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432",
-                        "type":"json_plugin_url"
-                    }
-                ]
-            }
-        ]
-    });
+    if (field === 'full_name') {
+        res.send({
+            "messages": [
+                {
+                    "text":          "Did you enjoy the last game of the CF Rockets?",
+                    "quick_replies": [
+                        {
+                            "title":      "Loved it!",
+                            "block_name": blocks.BLOCK_FULL_NAME
+                        },
+                        {
+                            "title": "Not really...",
+                            "url":   "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432",
+                            "type":  "json_plugin_url"
+                        }
+                    ]
+                }
+            ]
+        });
+    }
 
     /*
      Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
