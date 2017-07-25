@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function findOneSurvey(id) {
-    return Survey.findOneAndUpdate({ id_student: id },{}, { upsert: true });
+    return Survey.findOneAndUpdate({ id_student: id },{},{upsert:true});
   //return Survey.findOne({ id_student: id });
 }
 
