@@ -98,6 +98,8 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.body[field];
 
+    console.log(req.query);
+
     res.send({
         "messages": [
             {"text": "Please type again"}
