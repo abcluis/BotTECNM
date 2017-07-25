@@ -37,7 +37,6 @@ module.exports = {
     BLOCK_SPECIALITY_INST:"speciality_inst",
     BLOCK_TIME_GETJOB:"time_getjob",
     BLOCK_HOW_GOTJOB:"how_gotjob",
-    BLOCK_GOT_JOBOTHER:"got_jobother",
     BLOCK_RECRUITMENT_REQS:"recruitment_reqs",
     BLOCK_LANGUAGE_JOB:"language_job",
     BLOCK_PERC_SKILLS:"perc_skills",
