@@ -82,28 +82,8 @@ function registerSchool(req, res) {
                 card.addButton(btnNo);
                 body.add(card);
 
-                res.send({
-                    "messages": [
-                        {
-                            "text":  "Eres del " + result.name,
-                            "quick_replies": [
-                                {
-                                    "title":"Asi es",
-                                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
-                                    "type":"json_plugin_url"
-                                },
-                                {
-                                    "title":"No",
-                                    "block_name": blocks.BLOCK_SCHOOL,
-                                    "type": "show_block"
-                                }
 
-                            ]
-                        }
-                    ]
-                });
-
-                //res.send(body.content);
+                res.send(body.content);
             } else {
                 let body  = new templates.bodyChat();
                 let card  = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
