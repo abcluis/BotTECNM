@@ -50,9 +50,12 @@ function registerUser(req, res) {
             let text     = new TextCF('Hola bienvenido ' + data.name);
             let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion');
             let btn1     = new ButtonCF('OK', HOME);
-            let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ', HOME);
+            if (data.last_block) {
+                let btn2 = new ButtonCF('Comenzar desde : ' + data.last_block, data.last_block);
+                card.addButton(btn2);
+            }
             card.addButton(btn1);
-            card.addButton(btn2);
+
             response.add(text);
             response.add(card);
             res.send(response.content);
@@ -98,6 +101,16 @@ function registerPersonalData(req, res) {
     value     = req.query[field];
 
 
+    /*
+        Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
+     */
+
+    let user = {
+        id: id,
+        last_block : field
+    };
+
+
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
         let arreglo = req.query[field].split(',');
@@ -110,7 +123,10 @@ function registerPersonalData(req, res) {
 
     let confirm = req.body[field];
 
-    surveyService.updatePersonalData(id, field, value)
+    userService.updateLastBlock(user)
+        .then((data) => {
+            return surveyService.updatePersonalData(id, field, value);
+        })
         .then((survey) => {
 
 

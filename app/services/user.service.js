@@ -4,10 +4,11 @@
 const User = require('../models/user.model');
 
 module.exports = {
-    findUsers: findUsers,
-    findOneUser: findOneUser,
-    createUser: createUser,
-    findOneOrCreate: findOneOrCreate
+    findUsers:       findUsers,
+    findOneUser:     findOneUser,
+    createUser:      createUser,
+    findOneOrCreate: findOneOrCreate,
+    updateLastBlock: updateLastBlock
 };
 
 function findUsers() {
@@ -19,13 +20,31 @@ function findOneUser(id) {
 }
 
 function findOneOrCreate(user) {
+
+
     return User.findOne({id: user.id})
-        .then((data)=> {
-            if(data) {
+        .then((data) => {
+            if (data) {
                 return data;
-            }else {
+            } else {
                 return User.create(user);
             }
+        })
+
+}
+
+function updateLastBlock(user) {
+    return User.findOne({id: user.id})
+        .then((data) => {
+            if(data){
+                data.last_block = user.last_block;
+                return data.save();
+            }else {
+                throw new Error('User not register yet');
+            }
+        })
+        .catch((err) => {
+            return err;
         })
 }
 

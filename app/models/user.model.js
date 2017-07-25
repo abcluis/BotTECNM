@@ -6,6 +6,7 @@ const userSchema = new Schema({
         type:   Number,
         unique: true
     },
+    last_block : String,
     name: String,
     created_at: Date
 });

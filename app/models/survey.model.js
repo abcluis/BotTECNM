@@ -13,7 +13,7 @@ let surveySchema = new Schema({
     school:        String,
     personal_data: {
         full_name:           String,
-        control_number:      Number,
+        number_control:      Number,
         birthdate:           String,
         curp:                String,
         true_gender:         String,
