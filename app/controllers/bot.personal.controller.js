@@ -99,7 +99,10 @@ function registerPersonalData(req, res) {
     value     = req.body[field];
 
     res.send({
-        "redirect_to_blocks": ["Welcome Message", "Default Answer"]
+        "messages": [
+            {"text": "Please type again"}
+        ],
+        "redirect_to_blocks": ["When?"]
     });
 
 
