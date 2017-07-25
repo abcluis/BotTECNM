@@ -17,7 +17,7 @@ let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
 
 let user_id = 'messenger user id';
-let HOME = blocks.BLOCK_FULL_NAME;
+let HOME    = blocks.BLOCK_FULL_NAME;
 
 module.exports = {
     registerUser:         registerUser,
@@ -42,7 +42,6 @@ function registerUser(req, res) {
                 return surveyService.createSurvey({id_student: req.body[user_id]});
             }
         });
-
 
 
     userService.findOneOrCreate(user)
@@ -98,14 +97,14 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.query[field];
 
-/*
-    res.send({
-        "messages": [
-            {"text": "Please type again"}
-        ],
-        "redirect_to_blocks": ["number_control"]
-    });
-*/
+    /*
+     res.send({
+     "messages": [
+     {"text": "Please type again"}
+     ],
+     "redirect_to_blocks": ["number_control"]
+     });
+     */
 
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
@@ -123,16 +122,11 @@ function registerPersonalData(req, res) {
         .then((survey) => {
 
 
-            let body   = new BodyCF();
+            let body = new BodyCF();
             let text = new TextCF('La siguiente pregunta es : ');
             body.add(text);
-            let btnYes = new templates.buttonBlockChat('Yes', nextBlock(field));
-            let btnNo  = new templates.buttonBlockChat('No', field);
-            console.log(body.content);
-            console.log('Despues');
             body.content.redirect_to_blocks = [];
             body.content.redirect_to_blocks.push(nextBlock(field));
-            console.log(body.content);
             res.send(body.content);
         })
         .catch((err) => res.send(err));
