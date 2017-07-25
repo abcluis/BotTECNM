@@ -5,9 +5,8 @@
 const userService   = require('../services/user.service');
 const surveyService = require('../services/survey.service');
 const School        = require('../models/school.model');
-
-const blocks    = require('../utils/blocks.constants');
-const nextBlock = require('../utils/blocks.order');
+const blocks        = require('../utils/blocks.constants');
+const nextBlock     = require('../utils/blocks.order');
 
 const templates = require('../templates');
 
@@ -35,6 +34,25 @@ function registerUser(req, res) {
         name: `${req.body[firstName]} ${req.body[lastName]}`,
         id:   req.body[user_id]
     };
+
+    res.send({
+        "messages": [
+            {
+                "text":  "Did you enjoy the last game of the CF Rockets?",
+                "quick_replies": [
+                    {
+                        "title":"Loved it!",
+                        "block_name": "Block 1"
+                    },
+                    {
+                        "title":"Not really...",
+                        "url": "https://rockets.chatfuel.com/api/sad-match",
+                        "type":"json_plugin_url"
+                    }
+                ]
+            }
+        ]
+    });
 
     surveyService.findOneSurvey(req.body[user_id])
         .then((survey) => {
@@ -102,12 +120,12 @@ function registerPersonalData(req, res) {
 
 
     /*
-        Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
+     Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
      */
 
     let user = {
-        id: id,
-        last_block : nextBlock(field)
+        id:         id,
+        last_block: nextBlock(field)
     };
 
 

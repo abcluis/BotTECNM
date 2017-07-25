@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "other fix in last block"
+git commit -m "testing quick replies"
 git push heroku master
 
 //
