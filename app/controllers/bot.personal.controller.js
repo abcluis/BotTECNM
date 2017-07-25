@@ -44,7 +44,7 @@ function registerUser(req, res) {
                 let response = new BodyCF();
                 let text     = new TextCF('Hola bienvenido de nuevo ' + response.name);
                 let card     = new CardCF('Vamos a continuar con la encuesta');
-                let btn1     = new ButtonCF('OK', blocks.BLOCK_INTRO_II);
+                let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
                 let btn2     = new ButtonCF('Desde fecha egreso', blocks.BLOCK_HOME);
                 card.addButton(btn1);
                 card.addButton(btn2);
