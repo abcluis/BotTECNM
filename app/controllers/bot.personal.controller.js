@@ -50,8 +50,8 @@ function registerUser(req, res) {
             let response = new BodyCF();
             let text     = new TextCF('Hola bienvenido ' + data.name);
             let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion');
-            let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
-            let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ',HOME);
+            let btn1     = new ButtonCF('OK', HOME);
+            let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ', HOME);
             card.addButton(btn1);
             card.addButton(btn2);
             response.add(text);
