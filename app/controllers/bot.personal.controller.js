@@ -102,7 +102,7 @@ function registerPersonalData(req, res) {
         "messages": [
             {"text": "Please type again"}
         ],
-        "redirect_to_blocks": ["When?"]
+        "redirect_to_blocks": ["number_control"]
     });
 
 
