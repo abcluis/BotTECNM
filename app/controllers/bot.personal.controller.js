@@ -35,24 +35,7 @@ function registerUser(req, res) {
         id:   req.body[user_id]
     };
 
-    res.send({
-        "messages": [
-            {
-                "text":  "Did you enjoy the last game of the CF Rockets?",
-                "quick_replies": [
-                    {
-                        "title":"Loved it!",
-                        "block_name": blocks.BLOCK_FULL_NAME
-                    },
-                    {
-                        "title":"Not really...",
-                        "url": "https://rockets.chatfuel.com/api/sad-match",
-                        "type":"json_plugin_url"
-                    }
-                ]
-            }
-        ]
-    });
+
 
     surveyService.findOneSurvey(req.body[user_id])
         .then((survey) => {
@@ -118,6 +101,25 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.query[field];
 
+
+    res.send({
+        "messages": [
+            {
+                "text":  "Did you enjoy the last game of the CF Rockets?",
+                "quick_replies": [
+                    {
+                        "title":"Loved it!",
+                        "block_name": blocks.BLOCK_FULL_NAME
+                    },
+                    {
+                        "title":"Not really...",
+                        "url": "https://rockets.chatfuel.com/api/sad-match",
+                        "type":"json_plugin_url"
+                    }
+                ]
+            }
+        ]
+    });
 
     /*
      Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
