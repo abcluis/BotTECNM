@@ -45,12 +45,13 @@ let surveySchema = new Schema({
     work_aspect:   {
         actual_activity:       String,
         activity_studies:      String,
-        time_get:              String,
-        how_get:               String,
-        requirements:          [
+        speciality_inst:       String,
+        time_getjob:           String,
+        how_gotjob:            String,
+        recruitment_reqs:          [
             {description: String}
         ],
-        language_use:          String,
+        language_job:          String,
         speak_language:        String,
         write_language:        String,
         read_language:         String,
