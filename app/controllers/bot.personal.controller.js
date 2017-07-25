@@ -124,7 +124,7 @@ function registerPersonalData(req, res) {
                                     "title": "Visit Website"
                                 },
                                 {
-                                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432",
+                                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
                                     "type":"json_plugin_url",
                                     "title":"Postback"
                                 }
