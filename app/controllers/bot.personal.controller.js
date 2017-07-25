@@ -100,14 +100,16 @@ function registerPersonalData(req, res) {
     res.send({
         "messages": [
             {
-                "text":  "Did you enjoy the last game of the CF Rockets?",
+                "text":          "Did you enjoy the last game of the CF Rockets?",
                 "quick_replies": [
                     {
-                        "title":"Loved it!",
+                        "type":       "show_block",
+                        "title":      "Loved it!",
                         "block_name": blocks.BLOCK_FULL_NAME
                     },
                     {
-                        "title":"CURP",
+                        "type":       "show_block",
+                        "title":      "CURP",
                         "block_name": blocks.BLOCK_SCHOOL
                     }
                 ]
