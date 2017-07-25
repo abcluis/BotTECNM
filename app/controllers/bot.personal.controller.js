@@ -42,7 +42,7 @@ function registerUser(req, res) {
                 "quick_replies": [
                     {
                         "title":"Loved it!",
-                        "block_name": "Block 1"
+                        "block_name": blocks.BLOCK_FULL_NAME
                     },
                     {
                         "title":"Not really...",
