@@ -17,7 +17,7 @@ mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', funct
     if(err) 
         throw err;
     console.log('Connected to BotTECNM db');
-})
+});
 
 
 app.listen(port, function(err) {
