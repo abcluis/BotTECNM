@@ -90,23 +90,22 @@ function registerSchool(req, res) {
 }
 
 function registerPersonalData(req, res) {
-    let keys = Object.keys(req.body);
+    let keys = Object.keys(req.query);
 
     // id   field   value
-    let id    = req.body[user_id];
+    let id    = req.query[user_id];
     let field = keys[1];
     let value;
-    value     = req.body[field];
+    value     = req.query[field];
 
-    console.log(req.query);
-
+/*
     res.send({
         "messages": [
             {"text": "Please type again"}
         ],
         "redirect_to_blocks": ["number_control"]
     });
-
+*/
 
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
@@ -128,13 +127,12 @@ function registerPersonalData(req, res) {
 
             response.add(redirectBlock);
             let body   = new templates.bodyChat();
-            let card   = new templates.cardChat('La informacion es correcta ' + confirm + ' ?');
+            let text = new TextCF('La siguiente pregunta es : ');
+            body.add(text);
             let btnYes = new templates.buttonBlockChat('Yes', nextBlock(field));
             let btnNo  = new templates.buttonBlockChat('No', field);
-            card.addButton(btnYes);
-            card.addButton(btnNo);
-            body.add(card);
-            console.log(body.content);
+
+            body.content.redirect_to_blocks.push(nextBlock(field));
             res.send(body.content);
         })
         .catch((err) => res.send(err));
