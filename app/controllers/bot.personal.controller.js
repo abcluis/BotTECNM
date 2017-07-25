@@ -104,7 +104,7 @@ function registerPersonalData(req, res) {
     console.log("https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger user id=" + id + "&number_control=32432");
 
     if (field === 'full_name') {
-        res.send({
+        /*res.send({
             "messages": [
                 {
                     "attachment": {
@@ -133,7 +133,27 @@ function registerPersonalData(req, res) {
                     }
                 }
             ]
+        });*/
+
+        res.send({
+            "messages": [
+                {
+                    "text":  "Did you enjoy the last game of the CF Rockets?",
+                    "quick_replies": [
+                        {
+                            "title":"Loved it!",
+                            "block_name": "Block 1"
+                        },
+                        {
+                            "title":"Not really...",
+                            "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
+                            "type":"json_plugin_url"
+                        }
+                    ]
+                }
+            ]
         });
+
     }
 
 
