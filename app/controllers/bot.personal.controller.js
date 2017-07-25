@@ -107,7 +107,7 @@ function registerPersonalData(req, res) {
 
     let user = {
         id: id,
-        last_block : field
+        last_block : nextBlock(field)
     };
 
 
