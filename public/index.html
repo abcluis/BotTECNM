@@ -12,26 +12,22 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     
 </head>
-<body>
+<body ng-app="main">
 
     <div class="jumbotron text-center">
-        <h2>Seguimiento a los egresados</h2>
-        <h3>de los tecnológicos</h3>
+        <h2>Bienvenido a la pagina de seguimiento de egresados</h2>
     </div>
 
-    <div>
-        <script>
-            (function() {
-                var cx = '016603212042839584985:ee8zwejpq3a';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-            })();
-            </script>
-            <gcse:search></gcse:search>
-    </div>
+    <ui-view></ui-view>
+
+    <script src="assets/lib/js/angular.min.js"></script>
+    <script src="assets/lib/js/angular-resource.min.js"></script>
+    <script src="assets/lib/js/angular-ui-router.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/components/home/homeController.js"></script>
+    <script src="app/shared/API/survey.service.js"></script>
+
+
 </body>
 </html>
