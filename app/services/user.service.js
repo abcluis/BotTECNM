@@ -6,7 +6,8 @@ const User = require('../models/user.model');
 module.exports = {
     findUsers: findUsers,
     findOneUser: findOneUser,
-    createUser: createUser
+    createUser: createUser,
+    findOneOrCreate: findOneOrCreate
 };
 
 function findUsers() {
@@ -15,6 +16,17 @@ function findUsers() {
 
 function findOneUser(id) {
     return User.findOne({id: id});
+}
+
+function findOneOrCreate(user) {
+    return User.findOne({id: user.id})
+        .then((data)=> {
+            if(data) {
+                return data;
+            }else {
+                return User.create(user);
+            }
+        })
 }
 
 function createUser(user) {

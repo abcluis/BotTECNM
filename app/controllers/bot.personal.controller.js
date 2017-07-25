@@ -9,7 +9,6 @@ const School        = require('../models/school.model');
 const blocks    = require('../utils/blocks.constants');
 const nextBlock = require('../utils/blocks.order');
 
-// Templates para la respuesta de chatfuel
 const templates = require('../templates');
 
 let BodyCF   = templates.bodyChat;
@@ -43,37 +42,25 @@ function registerUser(req, res) {
             }
         });
 
-    let response = new BodyCF();
 
-    userService.findOneUser(req.body[user_id])
-        .then((result) => {
-            if (result) {
-                let text     = new TextCF('Hola bienvenido de nuevo ' + result.name);
-                let card     = new CardCF('Vamos a continuar con la encuesta');
-                let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
-                let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ', blocks.BLOCK_HOME);
-                card.addButton(btn1);
-                card.addButton(btn2);
-                response.add(text);
-                response.add(card);
-                res.send(response.content);
-            } else {
-                return userService.createUser(user);
-            }
-        })
-        .then((result) => {
-            if (result) {
-                let text     = new TextCF('Hola bienvenido ' + result.name);
-                let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion, empezemos');
-                let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
-                card.addButton(btn1);
-                response.add(text);
-                response.add(card);
-                res.send(response.content);
-            }
 
+    userService.findOneOrCreate(user)
+        .then((data) => {
+            let response = new BodyCF();
+            let text     = new TextCF('Hola bienvenido ' + data.name);
+            let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion');
+            let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
+            let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ', blocks.BLOCK_HOME);
+            card.addButton(btn1);
+            card.addButton(btn2);
+            response.add(text);
+            response.add(card);
+            res.send(response.content);
         })
-        .catch((err) => res.send(err));
+        .catch((err) => {
+            console.log(err);
+        });
+
 }
 
 function registerSchool(req, res) {

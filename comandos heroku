@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "refactor the survey service"
+git commit -m "refactorice el user service"
 git push heroku master
 
 //
