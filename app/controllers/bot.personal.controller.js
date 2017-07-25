@@ -97,14 +97,23 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.query[field];
 
-    /*
-     res.send({
-     "messages": [
-     {"text": "Please type again"}
-     ],
-     "redirect_to_blocks": ["number_control"]
-     });
-     */
+    res.send({
+        "messages": [
+            {
+                "text":  "Did you enjoy the last game of the CF Rockets?",
+                "quick_replies": [
+                    {
+                        "title":"Loved it!",
+                        "block_name": "number_control"
+                    },
+                    {
+                        "title":"CURP",
+                        "block_name": "curp"
+                    }
+                ]
+            }
+        ]
+    });
 
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
