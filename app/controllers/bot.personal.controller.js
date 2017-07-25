@@ -88,14 +88,15 @@ function registerSchool(req, res) {
                             "text":  "Eres del " + result.name,
                             "quick_replies": [
                                 {
-                                    "title":"No",
-                                    "block_name": "Block 1"
-                                },
-                                {
                                     "title":"Asi es",
                                     "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
                                     "type":"json_plugin_url"
+                                },
+                                {
+                                    "title":"No",
+                                    "block_name": blocks.BLOCK_SCHOOL
                                 }
+
                             ]
                         }
                     ]
