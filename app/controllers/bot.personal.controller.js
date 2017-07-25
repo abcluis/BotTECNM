@@ -30,6 +30,7 @@ function registerUser(req, res) {
     let firstName = 'first name';
     let lastName  = 'last name';
 
+
     let user = {
         name: `${req.body[firstName]} ${req.body[lastName]}`,
         id:   req.body[user_id]
@@ -42,15 +43,15 @@ function registerUser(req, res) {
             }
         });
 
+    let response = new BodyCF();
 
     userService.findOneUser(req.body[user_id])
-        .then((response) => {
-            if (response) {
-                let response = new BodyCF();
-                let text     = new TextCF('Hola bienvenido de nuevo ' + response.name);
+        .then((result) => {
+            if (result) {
+                let text     = new TextCF('Hola bienvenido de nuevo ' + result.name);
                 let card     = new CardCF('Vamos a continuar con la encuesta');
                 let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
-                let btn2     = new ButtonCF('Desde fecha egreso', blocks.BLOCK_HOME);
+                let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ', blocks.BLOCK_HOME);
                 card.addButton(btn1);
                 card.addButton(btn2);
                 response.add(text);
@@ -60,18 +61,15 @@ function registerUser(req, res) {
                 return userService.createUser(user);
             }
         })
-        .then((response) => {
-            if (response) {
-                let response = new templates.bodyChat();
-                let text     = new templates.textChat('Hola bienvenido ' + response.name);
-                let card     = new templates.cardChat('Esto es una encuesta de los egresados gracias por tu participacion, empezemos');
-                let btn1     = new templates.buttonBlockChat('OK', blocks.BLOCK_SCHOOL);
+        .then((result) => {
+            if (result) {
+                let text     = new TextCF('Hola bienvenido ' + result.name);
+                let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion, empezemos');
+                let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
                 card.addButton(btn1);
                 response.add(text);
                 response.add(card);
                 res.send(response.content);
-            } else {
-
             }
 
         })
