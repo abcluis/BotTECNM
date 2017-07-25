@@ -17,6 +17,7 @@ let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
 
 let user_id = 'messenger user id';
+let HOME = blocks.BLOCK_SCHOOL;
 
 module.exports = {
     registerUser:         registerUser,
@@ -50,7 +51,7 @@ function registerUser(req, res) {
             let text     = new TextCF('Hola bienvenido ' + data.name);
             let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion');
             let btn1     = new ButtonCF('OK', blocks.BLOCK_HOME);
-            let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ', blocks.BLOCK_HOME);
+            let btn2     = new ButtonCF('Desde donde lo dejaste la ultima vez ',HOME);
             card.addButton(btn1);
             card.addButton(btn2);
             response.add(text);
