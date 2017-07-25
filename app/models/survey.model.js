@@ -73,8 +73,6 @@ let surveySchema = new Schema({
         fax_iii:               String,
         email_iii:             String,
         webpage_iii:           String,
-        city_iii:              String,
-        city_iii:              String,
         boss_namejob:          String,
         economic_sector:       String,
         comp_orgsize:          String,
