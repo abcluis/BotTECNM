@@ -7,7 +7,8 @@ module.exports = {
     textChat:        textChat,
     cardChat:        cardChat,
     buttonBlockChat: buttonBlockChat,
-    redirectChat:    redirectChat
+    redirectChat:    redirectChat,
+    quickChat: quickChat
 };
 
 
@@ -15,6 +16,15 @@ function bodyChat() {
 
     this.add = function (text) {
         this.content.messages.push(text.content);
+    };
+
+    this.addQuick = function (quick) {
+        if(this.content.quick_replies){
+            this.content.quick_replies = [];
+            this.content.quick_replies.push(quick.content);
+        }else {
+            this.content.quick_replies.push(quick.content);
+        }
     };
 
     this.content = {
@@ -39,7 +49,7 @@ function cardChat(text) {
                 "buttons":       []
             }
         }
-    }
+    };
 
     this.addButton = function (button) {
         this.content.attachment.payload.buttons.push(button.content);
@@ -57,6 +67,13 @@ function buttonBlockChat(title, blockName) {
 function redirectChat(blockName) {
     this.content = {
         "redirect_to_blocks": ["number_control", "full_name"]
+    }
+}
+
+function quickChat(title, block) {
+    this.content = {
+        "title":title,
+        "block_name": block
     }
 }
 
