@@ -15,6 +15,9 @@
     function HomeController(surveys) {
         var vm   = this;
         vm.surveys = surveys;
+
+        // TODO : ABSTRAER TODA LA LOGICA A UN SERVICE
+
         vm.radar = surveys.map(function(element){
             return [
                 castPertinence(element.pertinence.emphasis_invest),
@@ -53,6 +56,10 @@
             suma.map((function (el,index) {
                 promedio[index] = el / radar.length;
             }));
+
+            promedio = promedio.map(function (el) {
+                return Number((el).toFixed(1));
+            });
 
             return promedio;
         }
