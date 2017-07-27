@@ -30,7 +30,6 @@ function registerUser(req, res) {
     let lastName  = 'last name';
 
 
-    console.log(req.headers);
 
     let user = {
         name: `${req.body[firstName]} ${req.body[lastName]}`,
@@ -131,7 +130,6 @@ function registerPersonalData(req, res) {
             return surveyService.updatePersonalData(id, field, value);
         })
         .then((survey) => {
-
 
             let body = new BodyCF();
             let text = new TextCF('La siguiente pregunta es : ');
