@@ -30,6 +30,8 @@ function registerUser(req, res) {
     let lastName  = 'last name';
 
 
+    console.log(req.headers);
+
     let user = {
         name: `${req.body[firstName]} ${req.body[lastName]}`,
         id:   req.body[user_id]
@@ -105,48 +107,6 @@ function registerPersonalData(req, res) {
     let value;
     value     = req.query[field];
 
-
-    if (field === 'full_name') {
-        /*res.send({
-            "messages": [
-                {
-                    "attachment": {
-                        "type": "template",
-                        "payload": {
-                            "template_type": "button",
-                            "text": "Hello!",
-                            "buttons": [
-                                {
-                                    "type": "show_block",
-                                    "block_name": "name of block",
-                                    "title": "Show Block"
-                                },
-                                {
-                                    "type": "web_url",
-                                    "url": "https://rockets.chatfuel.com",
-                                    "title": "Visit Website"
-                                },
-                                {
-                                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?messenger%20user%20id=1453872458011175&number_control=32432",
-                                    "type":"json_plugin_url",
-                                    "title":"Postback"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        });*/
-
-
-
-    }
-
-
-
-    /*
-     Aqui vamos a definir un objeto usuario para guardar el ultimo bloque
-     */
 
     let user = {
         id:         id,
