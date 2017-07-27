@@ -8,6 +8,11 @@ const userController        = require('./controllers/user.controller');
 const botController         = require('./controllers/bot.personal.controller.js');
 const botPertContoller      = require('./controllers/bot.pertinence.controller');
 const botJobLocalController = require('./controllers/bot.job.location.controller');
+const validations           = require('./middlewares/validations');
+const validationsErrors     = require('./middlewares/validations.errors.js');
+
+router.use(validations);
+router.use(validationsErrors);
 
 
 router.get('/', homeController.showHome);
