@@ -24,7 +24,8 @@
                         return SurveyService.query().$promise
                             .then((surveys) => {
                                 surveys = surveys.filter(function (element) {
-                                    return element.pertinence.emphasis_invest &&
+                                    return element.pertinence &&
+                                        element.pertinence.emphasis_invest &&
                                         element.pertinence.experience_residence &&
                                         element.pertinence.oportunity_part &&
                                         element.pertinence.quality_teachers &&

@@ -71,20 +71,19 @@ function registerUser(req, res) {
 function registerSchool(req, res) {
 
 
+    let survey;
+    let id = req.query['messenger user id'];
 
-    School.findOne({'nicks.name': req.query.school})
+    surveyService.findOneSurvey(id)
+        .then((result) => {
+            survey = result;
+            return School.findOne({'nicks.name': req.query.school});
+        })
         .then((result) => {
             if (result) {
-                let body   = new templates.bodyChat();
-                let card   = new templates.cardChat('Asi que eres del ' + result.name);
-                let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
-                let btnNo  = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
-                card.addButton(btnYes);
-                card.addButton(btnNo);
-                body.add(card);
 
-
-                res.send(body.content);
+                survey.school = result.name;
+                return survey.save();
             } else {
                 let body  = new templates.bodyChat();
                 let card  = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
@@ -93,6 +92,16 @@ function registerSchool(req, res) {
                 body.add(card);
                 res.send(body.content);
             }
+        })
+        .then((result) => {
+            let body   = new templates.bodyChat();
+            let card   = new templates.cardChat('Asi que eres del ' + result.school);
+            let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
+            let btnNo  = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
+            card.addButton(btnYes);
+            card.addButton(btnNo);
+            body.add(card);
+            res.send(body.content);
         })
         .catch((err) => res.send(err));
 }
