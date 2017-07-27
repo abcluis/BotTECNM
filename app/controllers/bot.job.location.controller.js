@@ -45,8 +45,7 @@ function registerJobLocation(req, res) {
     };
     let arreglo = value.match(/\d+/g).map(n => parseInt(n));
     value = arreglo.map(item => {
-      console.log("respuestas: " + answers[item]);
-      return { description: item };
+      return { description: answers[item] };
     });
   }
   let user = {
