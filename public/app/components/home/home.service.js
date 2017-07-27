@@ -12,8 +12,12 @@
     function HomeService() {
 
         this.getDataRadar = getDataRadar;
+        this.changeDataRadar = changeDataRadar;
 
         function getDataRadar(surveys) {
+
+
+
             let radar = surveys.map(function(element){
                 return [
                     castPertinence(element.pertinence.emphasis_invest),
@@ -29,6 +33,15 @@
 
         }
 
+        function changeDataRadar(surveys, school) {
+            surveys = surveys.filter(function (element) {
+                return element.school === school;
+            });
+
+            let data = getDataRadar(surveys);
+
+            return data;
+        }
 
         function castPertinence(word) {
             if(word === 'Muy buena'){

@@ -84,7 +84,7 @@ let survey1 = new Survey({
 
 let survey2 = new Survey({
     id_student:    2,
-    school:        'Instituto Tecnologico de Chihuahua II',
+    school:        'Instituto Tecnologico de Chihuahua',
     personal_data: {
         full_name:           'Mario Alberto Guillen',
         number_control:      432432432,

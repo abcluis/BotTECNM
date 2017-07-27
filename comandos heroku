@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "testing quick replies"
+git commit -m "tadd function search by school in pertinence"
 git push heroku master
 
 //

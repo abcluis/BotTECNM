@@ -21,10 +21,19 @@
                 controller :  'HomeController as vm',
                 resolve: {
                     surveys : ['SurveyService', function (SurveyService) {
-                        return SurveyService.query().$promise;
-                    }],
-                    dataRadar : ['HomeService','surveys', function (HomeService,surveys) {
-                        return HomeService.getDataRadar(surveys);
+                        return SurveyService.query().$promise
+                            .then((surveys) => {
+                                surveys = surveys.filter(function (element) {
+                                    return element.pertinence.emphasis_invest &&
+                                        element.pertinence.experience_residence &&
+                                        element.pertinence.oportunity_part &&
+                                        element.pertinence.quality_teachers &&
+                                        element.pertinence.satisfaction_cond &&
+                                        element.pertinence.study_plan;
+                                });
+
+                                return surveys;
+                            });
                     }]
                 }
             });
