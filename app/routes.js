@@ -34,7 +34,7 @@ router.get('/bot/personal/data', botController.registerPersonalData);
 
 // PERTINENCIA Y DISPONIBILIDAD DE MEDIOS
 router.post('/bot/pertinence/init', botPertContoller.initPertData);
-router.post('/bot/pertinence/data', botPertContoller.registerPertData);
+router.get('/bot/pertinence/data', botPertContoller.registerPertData);
 
 //UBICACION LABORAL
 router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);

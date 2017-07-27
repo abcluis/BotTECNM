@@ -1,13 +1,20 @@
 const surveyService = require("../services/survey.service");
-const templates     = require("../templates");
-const blocks        = require("../utils/blocks.constants");
-const nextBlock     = require("../utils/blocks.order");
+const templates = require("../templates");
+const blocks = require("../utils/blocks.constants");
+const nextBlock = require("../utils/blocks.order");
+const userService = require("../services/user.service");
 
-let user_id = "messenger user id";
 module.exports = {
   registerPertData: registerPertData,
   initPertData: initPertData
 };
+
+let BodyCF = templates.bodyChat;
+let TextCF = templates.textChat;
+let CardCF = templates.cardChat;
+let ButtonCF = templates.buttonBlockChat;
+
+let user_id = "messenger user id";
 
 function initPertData(req, res) {
   let response = new templates.bodyChat();
@@ -20,28 +27,29 @@ function initPertData(req, res) {
 }
 
 function registerPertData(req, res) {
-  let keys = Object.keys(req.body);
-  let id = req.body[user_id];
+  let keys = Object.keys(req.query);
+  let id = req.query[user_id];
   let field = keys[1];
-  let value = req.body[field];
-  //res.send({ id: id, field: field, value: value });
-  surveyService
-    .updatePertinenceData(id, field, value)
-    .then(() => {
-      let response = new templates.bodyChat();
-      let redirectBlock = new templates.redirectChat(nextBlock(field));
+  let value = req.query[field];
 
-      response.add(redirectBlock);
-      let body = new templates.bodyChat();
-      let card = new templates.cardChat(
-        "La informacion es correcta " + value + " ?"
-      );
-      let btnYes = new templates.buttonBlockChat("Yes", nextBlock(field));
-      let btnNo = new templates.buttonBlockChat("No", field);
-      card.addButton(btnYes);
-      card.addButton(btnNo);
-      body.add(card);
+  let user = {
+    id: id,
+    last_block: nextBlock(field)
+  };
+
+  userService
+    .updateLastBlock(user)
+    .then(data => {
+      return surveyService.updatePertinenceData(id, field, value);
+    })
+    .then(survey => {
+      let body = new BodyCF();
+      let text = new TextCF("La siguiente pregunta es : ");
+      body.add(text);
+      body.content.redirect_to_blocks = [];
+      body.content.redirect_to_blocks.push(nextBlock(field));
       res.send(body.content);
     })
     .catch(err => res.send(err));
+  //res.send({ id: id, field: field, value: value });
 }

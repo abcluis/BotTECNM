@@ -1,8 +1,8 @@
-const userService   = require('../services/user.service');
+const userService = require("../services/user.service");
 const surveyService = require("../services/survey.service");
-const templates     = require("../templates");
-const blocks        = require("../utils/blocks.constants");
-const nextBlock     = require("../utils/blocks.order");
+const templates = require("../templates");
+const blocks = require("../utils/blocks.constants");
+const nextBlock = require("../utils/blocks.order");
 
 let user_id = "messenger user id";
 module.exports = {
@@ -26,7 +26,16 @@ function registerJobLocation(req, res) {
   let field = keys[1];
   let value = req.body[field];
   // res.send({ id: id, field: field, value: value });
-   surveyService
+
+  // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
+  if (field === "recruitment_reqs") {
+    let arreglo = req.body[field].split(",");
+    value = arreglo.map(item =>{ 
+      return {description: item}
+    });
+  }
+
+  surveyService
     .updateJobLocationData(id, field, value)
     .then(() => {
       let response = new templates.bodyChat();
@@ -44,5 +53,5 @@ function registerJobLocation(req, res) {
       body.add(card);
       res.send(body.content);
     })
-    .catch(err => res.send(err)); 
+    .catch(err => res.send(err));
 }
