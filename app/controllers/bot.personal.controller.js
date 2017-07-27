@@ -16,7 +16,7 @@ let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
 
 let user_id = 'messenger user id';
-let HOME    = blocks.BLOCK_FULL_NAME;
+let HOME    = blocks.BLOCK_QUALITY_TEACHERS;
 
 module.exports = {
     registerUser:         registerUser,

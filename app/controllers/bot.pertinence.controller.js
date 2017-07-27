@@ -37,11 +37,8 @@ function registerPertData(req, res) {
     last_block: nextBlock(field)
   };
 
-  userService
-    .updateLastBlock(user)
-    .then(data => {
-      return surveyService.updatePertinenceData(id, field, value);
-    })
+  userService.updateLastBlock(user)
+    .then(data => surveyService.updatePertinenceData(id, field, value))
     .then(survey => {
       let body = new BodyCF();
       let text = new TextCF("La siguiente pregunta es : ");

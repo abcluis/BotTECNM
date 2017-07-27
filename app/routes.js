@@ -38,7 +38,7 @@ router.get('/bot/pertinence/data', botPertContoller.registerPertData);
 
 //UBICACION LABORAL
 router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
-router.post('/bot/joblocation/data', botJobLocalController.registerJobLocation);
+router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 
 
 module.exports = router;

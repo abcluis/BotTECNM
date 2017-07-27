@@ -41,11 +41,7 @@ function updatePertinenceData(id, field, value) {
 function updateJobLocationData(id, field, value) {
   return Survey.findOne({ id_student: id }).then(survey =>{
     if (survey){
-      console.log('encontre encuesta');
       survey.work_aspect[field] = value;
-      console.log(`value: ${value}`);
-      console.log(`field ${field}`);
-      console.log(`${survey.work_aspect[field]}`);
       return survey.save();
     }
   });
