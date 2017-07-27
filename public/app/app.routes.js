@@ -22,6 +22,9 @@
                 resolve: {
                     surveys : ['SurveyService', function (SurveyService) {
                         return SurveyService.query().$promise;
+                    }],
+                    dataRadar : ['HomeService','surveys', function (HomeService,surveys) {
+                        return HomeService.getDataRadar(surveys);
                     }]
                 }
             });
