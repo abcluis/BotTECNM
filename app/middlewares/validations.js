@@ -9,12 +9,15 @@ function validations(req,res,next) {
     let keys = Object.keys(req.query);
     let field = keys[1];
 
+
     if(field === 'curp'){
         if(validateCurp(req.query[field])){
             next();
         }else {
             next(new Error('Por favor ingresa una curp valida'));
         }
+    }else {
+        next();
     }
 }
 
