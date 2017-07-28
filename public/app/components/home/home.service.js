@@ -44,13 +44,13 @@
         }
 
         function castPertinence(word) {
-            if(word === 'Muy buena'){
+            if(word === 'Muy buena' || word === 'Muy bueno'){
                 return 100
-            }else if (word === 'Buena'){
+            }else if (word === 'Buena' || word === 'Bueno'){
                 return 80
             }else if (word === 'Regular'){
                 return 60
-            }else if (word === 'Mala'){
+            }else if (word === 'Mala' || word === 'Malo'){
                 return 40
             }
         }
