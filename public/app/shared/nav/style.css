@@ -1,0 +1,11 @@
+li.txt-overflow {
+    white-space: nowrap;
+    width: 11%;
+    overflow: hidden;
+}
+
+li.txt-overflow:hover {
+    text-overflow: inherit;
+    overflow: visible;
+    width: initial;
+}
