@@ -30,21 +30,10 @@ function registerUser(req, res) {
     let lastName  = 'last name';
 
 
-
     let user = {
         name: `${req.body[firstName]} ${req.body[lastName]}`,
         id:   req.body[user_id]
     };
-
-
-
-    surveyService.findOneSurvey(req.body[user_id])
-        .then((survey) => {
-            if (!survey) {
-                return surveyService.createSurvey({id_student: req.body[user_id]});
-            }
-        });
-
 
     userService.findOneOrCreate(user)
         .then((data) => {
@@ -69,7 +58,6 @@ function registerUser(req, res) {
 }
 
 function registerSchool(req, res) {
-
 
     let survey;
     let id = req.query['messenger user id'];
@@ -112,9 +100,7 @@ function registerPersonalData(req, res) {
     // id   field   value
     let id    = req.query[user_id];
     let field = keys[1];
-    let value;
-    value     = req.query[field];
-
+    let value = req.query[field];
 
     let user = {
         id:         id,
@@ -131,8 +117,6 @@ function registerPersonalData(req, res) {
             }
         });
     }
-
-    let confirm = req.body[field];
 
     userService.updateLastBlock(user)
         .then((data) => {
