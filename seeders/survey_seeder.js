@@ -1,5 +1,6 @@
 let Survey       = require('../app/models/survey.model');
 const mongoose   = require('mongoose');
+let surveys      = require('./surveys.json');
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function (err) {
@@ -197,6 +198,7 @@ let survey3 = new Survey({
     }
 });
 
+
 survey1.save()
     .then((data) => {
         console.log('Guardado ------ 1');
@@ -212,3 +214,9 @@ survey1.save()
     .catch((err) => {
         console.log(err);
     });
+
+for (let i = 0; i < surveys.length; i++) {
+    let temp = new Survey(surveys[i]);
+    temp.save();
+}
+console.log('Listo.....');

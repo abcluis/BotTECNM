@@ -1,0 +1,291 @@
+[33mcommit 14dc02031ba8e0edef0d037844115a2e8243bc30[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Thu Jul 27 19:49:05 2017 -0600
+
+    test speciality
+
+[33mcommit de5d9cafc845f4649c94af9928c0de0acf722f06[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Thu Jul 27 10:42:27 2017 -0600
+
+    route school
+
+[33mcommit 2fea60c1e14d5fa7bf174d6f9be18c8abeba98b9[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Wed Jul 26 22:06:35 2017 -0600
+
+    fix validation curp
+
+[33mcommit 4257215714f4c46d5a131d046e978c20e0fbd20f[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Wed Jul 26 21:59:55 2017 -0600
+
+    add validation in curp
+
+[33mcommit d409d4b5c3bec5d24852fe02f08c304b25a7b965[m
+Author: Hugo <hugo_val28@hotmail.com>
+Date:   Wed Jul 26 21:51:56 2017 -0600
+
+    Se cambio a get bot.joblocation.controller
+
+[33mcommit 30ec2dbeab4ed58cc186d3d994afd4b5745eac19[m
+Author: Hugo <hugo_val28@hotmail.com>
+Date:   Wed Jul 26 21:27:10 2017 -0600
+
+    Se cambio a get bot.joblocation.controller
+
+[33mcommit 2150e7f21bf30e48c5fdeee4b1e30577f36f6de7[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Wed Jul 26 21:07:09 2017 -0600
+
+    testing.....
+
+[33mcommit d97da632d634ce0e9b1b294f552c88b4b52391c0[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Wed Jul 26 20:59:41 2017 -0600
+
+    testing.....
+
+[33mcommit 4d46b123cfb7efb587162c3e461ddfdf614c4f11[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Wed Jul 26 20:55:35 2017 -0600
+
+    tadd function search by school in pertinence
+
+[33mcommit 304f081e8e1214935c8918062bbc850e6780bc68[m
+Author: Hugo <hugo_val28@hotmail.com>
+Date:   Wed Jul 26 20:17:26 2017 -0600
+
+    Se cambio a get bot.pertinence.controller
+
+[33mcommit 80d13f59407d2c0e9e03aac0c986b2a320d91f4b[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Wed Jul 26 19:23:30 2017 -0600
+
+    abstract home controller in home.service
+
+[33mcommit f8db565ee691554b1c6d124ea140fa89c5725ac1[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 21:00:04 2017 -0600
+
+    upgrade view home.html
+
+[33mcommit 05ca781c62f151ae01bfb486e4e59edca453d7a1[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 20:34:28 2017 -0600
+
+    añadido la grafica de pertinencia con los datos reales de la api
+
+[33mcommit 51f36c6dfd544c8df8b1e6e5b875cbc3f143bf2a[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 17:23:27 2017 -0600
+
+    add test chart
+
+[33mcommit a7eb3f274c94e29db9ae9f394d046b19bae7dde7[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 16:50:17 2017 -0600
+
+    add infoService
+
+[33mcommit 85411b1d1f8b1f97f33e40f85f4bb0bf2fe5b1c3[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 16:40:57 2017 -0600
+
+    añadido el crud de survey
+
+[33mcommit c4673919a774ff59957d49b4f28e7d1ec74b212a[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 16:40:30 2017 -0600
+
+    Se creo la estructura basica del proyecto en angular
+
+[33mcommit f8dbe9ed98c025c5686c307beaf53d40ecc3a45f[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 16:39:48 2017 -0600
+
+    Se creo el componente home que sera la vista principal al arrancar la pagina
+
+[33mcommit f3a0596685baf46b8d1c7a0e26ceb54f14cc8698[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:53:45 2017 -0600
+
+    testing quick replies
+
+[33mcommit 422fafcc7778fce24b755b36905b5ac86f6ff096[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:51:00 2017 -0600
+
+    testing quick replies
+
+[33mcommit 502ebf150facca6540ba084604e712d937ca1ffa[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:47:54 2017 -0600
+
+    testing quick replies
+
+[33mcommit 8f9786722e04ee13fe0cc8439ef4ba6b1bd08f12[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:42:44 2017 -0600
+
+    testing quick replies
+
+[33mcommit 5b2dd7a3bf080455315c11a47a0bb11d3f3ee114[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:41:03 2017 -0600
+
+    testing quick replies
+
+[33mcommit 5e559afb56d2e374a0f2addd5098ad0994e2efca[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:39:28 2017 -0600
+
+    testing quick replies
+
+[33mcommit 565c344762fc0a77be0efb34adfd7c07779c0d38[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:35:58 2017 -0600
+
+    testing quick replies
+
+[33mcommit 902d7e329e5e441d92d8187f67d19d3135eff74f[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:03:45 2017 -0600
+
+    testing quick replies
+
+[33mcommit 75fa8d6621b0d26839de22547166e01bd1d0d88b[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:02:06 2017 -0600
+
+    testing quick replies
+
+[33mcommit 7773f731db4b1947f59cb686fc66b54a62a30063[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 12:00:24 2017 -0600
+
+    testing quick replies
+
+[33mcommit 83f1c24bf1d421d283e5da114b4615c5d2266ea3[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:52:40 2017 -0600
+
+    testing quick replies
+
+[33mcommit a7df37e02ba73a5856772119639b524255dc5e08[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:47:25 2017 -0600
+
+    testing quick replies
+
+[33mcommit bb6b28ba167a66a02bc3b725fa98ad618db3160e[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:44:35 2017 -0600
+
+    testing quick replies
+
+[33mcommit 619ccd8b4350237d3ef60607d71f0002de734cc5[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:43:04 2017 -0600
+
+    testing quick replies
+
+[33mcommit 10f92b3143c7329cd04cf7907b970a7e4ebddbe9[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:40:15 2017 -0600
+
+    testing quick replies
+
+[33mcommit 629b62db8b7ff1703778cc5fe50683109e3c9d92[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:39:28 2017 -0600
+
+    testing quick replies
+
+[33mcommit 2a516f2769ef4eb0f7822b5597c7966370b598b2[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:38:47 2017 -0600
+
+    testing quick replies
+
+[33mcommit f0ac8d3eec81042feba332e51ad74792d0e968a0[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:19:14 2017 -0600
+
+    other fix in last block
+
+[33mcommit 51297b75c2ae4b030e7b255f03fb0db066dafc46[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:16:56 2017 -0600
+
+    little fix in last block
+
+[33mcommit 38092b83d6b9ee419c54e0da26a898c86ddce658[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 11:14:29 2017 -0600
+
+    implement function last block in start of survey
+
+[33mcommit 67b1e249cdceeb73e8916892a46f54c04204e830[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 08:09:23 2017 -0600
+
+    Heroku Exec
+
+[33mcommit 2d7150c1827251f439789be98eb3323536490161[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 08:01:02 2017 -0600
+
+    Heroku Exec
+
+[33mcommit 0968269fa06b5e3da7321b35b76f1871947eff7c[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 07:33:41 2017 -0600
+
+    fixing the ngrok
+
+[33mcommit 8704149dff2f6085f6f5425fb096918d38f6c79f[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 07:29:29 2017 -0600
+
+    add ngrok
+
+[33mcommit f62c16cc9d390355c3703080a9c314cabe16d993[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Tue Jul 25 07:22:13 2017 -0600
+
+    add Procfile
+
+[33mcommit 15a2259e8550167f1b78de8b6fa42b863c45d83c[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Mon Jul 24 21:03:58 2017 -0600
+
+    full name home block
+
+[33mcommit 0858521aecf113a256d8fd62bc0d7b7aac224aec[m
+Merge: 0b0d498 9517b0a
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Mon Jul 24 21:01:20 2017 -0600
+
+    Merge branch 'master' of https://git.heroku.com/peaceful-mesa-57140
+
+[33mcommit 0b0d498ddfbfa815ebe5872b2a20164af03a727a[m
+Author: abcluis <abc_luis30@hotmail.com>
+Date:   Mon Jul 24 21:00:52 2017 -0600
+
+    full name home block
+
+[33mcommit 9517b0ae3484a5da7a8ae5d5f54e0f229fbff752[m
+Author: Hugo <hugo_val28@hotmail.com>
+Date:   Mon Jul 24 21:00:08 2017 -0600
+
+    survey model, blocks constants
+
+[33mcommit 78e4bd41a2cce12073ddf8b1337419b95be37af8[m
+Author: Hugo <hugo_val28@hotmail.com>
+Date:   Mon Jul 24 20:58:58 2017 -0600
+
+    survey model, blocks constants
+
+[33mcommit fd393156e5b70b524d89529545cada983b014aef[m
+Author: abcluis

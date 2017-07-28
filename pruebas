@@ -1,0 +1,74 @@
+
+[
+  '{{repeat(5, 7)}}',
+  {
+  id_student:    '{{ index() + 1 }}',
+    school:        '{{random("Instituto Tecnologico de Chihuahua II", "Instituto Tecnologico de Chihuahua", "Instituto Tecnologico de Parral")}}',
+    personal_data: {
+        full_name:           '{{firstName()}} {{surname()}}',
+        number_control:      '{{integer(200000, 300000)}}',
+        birthdate:           '30/08/1995',
+        curp:                'GAGL9508303212',
+        true_gender:         '{{gender()}}',
+        civil_status:        '{{random("Soltero", "Casado" , "Otro")}}',
+        actual_address:      '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+     actual_city:         '{{city()}}',
+      actual_municipality: '{{city()}}',
+      actual_state:        '{{state()}}',
+        phone:               '+52 {{phone()}}',
+        email:               '{{email()}}',
+        phone_alt:           '+1 {{phone()}}',
+        career:              'Ingenieria En {{random("Sistemas", "Informatica" , "Industrial", "Gestion empresarial")}}',
+        speciality:          '{{random("Sistemas", "Informatica" , "Industrial", "Gestion empresarial")}}',
+      certificated:        '{{bool()}}',
+        english_mastery:     '{{random("20", "40" , "60", "80")}}',
+        other_mastery:       '{{random("Chino", "Aleman" , "Ninguno")}}',
+        package_comp:        [
+            {name: 'SQL'}
+        ]
+    },
+    pertinence:    {
+        quality_teachers:     '{{random("Muy buena", "Buena" , "Regular", "Mala")}}',
+        study_plan:           '{{random("Muy buena", "Buena" , "Regular", "Mala")}}',
+        oportunity_part:      '{{random("Muy buena", "Buena" , "Regular", "Mala")}}',
+        emphasis_invest:      '{{random("Muy buena", "Buena" , "Regular", "Mala")}}',
+        satisfaction_cond:    '{{random("Muy buena", "Buena" , "Regular", "Mala")}}',
+        experience_residence: '{{random("Muy buena", "Buena" , "Regular", "Mala")}}'
+    },
+    work_aspect:   {
+        actual_activity:    '{{random("Trabaja", "Estudia" , "Estudia y trabaja", "Estudia y trabaja")}}',
+        activity_studies:   'Ninguno',
+        speciality_inst:    'Ninguna',
+        time_getjob:        '{{random("Antes de egresar", "Menos de 6 meses" , "6 meses a 1 año", "Más de un año")}}',
+        how_gotjob:         '{{random("Bolsa trabajo plante", "Contactos personales" , "Residencia prof.", "Medios masivos cmncc")}}',
+        recruitment_reqs:   [
+            {description: 'Idioma Extranjero'}
+        ],
+        language_job:       'Inglés',
+        perc_speak:         '{{random("20", "40" , "60", "80", "100")}}',
+        perc_write:         '{{random("20", "40" , "60", "80", "100")}}',
+        perc_read:          '{{random("20", "40" , "60", "80", "100")}}',
+        perc_listen:        '{{random("20", "40" , "60", "80", "100")}}',
+        years_antiguaty:    '{{random("Menos de un año", "Un año" , "Dos años", "Tres años", "Más de tres años")}}',
+        year_income:        '{{integer(2010, 2017)}}',
+        minimum_salary:     '{{integer(10000, 40000)}}',
+        hierarchical_level: '{{random("Tecnico", "Supervisor" , "Jefe de area", "Funcionario", "Directivo")}}',
+        work_condition:     '{{random("Base", "Eventual" , "Contrato")}}',
+        work_studyrel:      '{{random("20%", "40%" , "60%", "80%", "100%")}}',
+        organism:           '{{random("Publico", "Privado" , "Social", "80", "100")}}',
+        business_act:       '{{random("Tecnologico", "Industrial" , "Salud", "Seguridad")}}',
+      social_reason:      '{{company()}} SA',
+        address_iii:        '{{street()}}',
+      city_iii:           '{{city()}}',
+      municipality_iii:   '{{state()}}',
+        state_iii:          '{{state()}}',
+      tel_ext_iii:        '{{phone()}}',
+      fax_iii:            '{{phone()}}',
+      email_iii:          '{{email()}}',
+      webpage_iii:        '{{company()}}.com',
+      boss_namejob:       '{{firstName()}} {{surname()}}',
+        economic_sector:    '{{random("Tecnologico", "Industrial" , "Salud", "Seguridad")}}',
+        comp_orgsize:       '{{random("Microempresa (1-30)", "Pequeña (31-100)" , "Mediana (101-500)", "Grande (más de 500)")}}'
+}
+  }
+    ]

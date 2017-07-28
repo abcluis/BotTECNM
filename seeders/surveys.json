@@ -1,0 +1,2222 @@
+[
+  {
+    "id_student": 4,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Velazquez Duke",
+      "number_control": 238370,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Casado",
+      "actual_address": "261 Essex Street, Robinette, Texas, 6477",
+      "actual_city": "Orovada",
+      "actual_municipality": "Babb",
+      "actual_state": "Vermont",
+      "phone": "+52 (814) 400-3270",
+      "email": "velazquezduke@kegular.com",
+      "phone_alt": "+1 (966) 455-2510",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Industrial",
+      "certificated": true,
+      "english_mastery": 80,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Buena",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 80,
+      "perc_read": 20,
+      "perc_listen": 100,
+      "years_antiguaty": "Un año",
+      "year_income": 2012,
+      "minimum_salary": 20363,
+      "hierarchical_level": "Supervisor",
+      "work_condition": "Contrato",
+      "work_studyrel": "100%",
+      "organism": 100,
+      "business_act": "Salud",
+      "social_reason": "Insuron SA",
+      "address_iii": "Clifton Place",
+      "city_iii": "Graball",
+      "municipality_iii": "American Samoa",
+      "state_iii": "Georgia",
+      "tel_ext_iii": "(860) 433-2956",
+      "fax_iii": "(842) 565-3456",
+      "email_iii": "velazquezduke@insuron.com",
+      "webpage_iii": "Applideck.com",
+      "boss_namejob": "Marjorie Patel",
+      "economic_sector": "Salud",
+      "comp_orgsize": "Microempresa (1-30)"
+    }
+  },
+  {
+    "id_student": 5,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Lucia Bush",
+      "number_control": 224945,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Soltero",
+      "actual_address": "778 Exeter Street, Maxville, Ohio, 6892",
+      "actual_city": "Brownlee",
+      "actual_municipality": "Seymour",
+      "actual_state": "Connecticut",
+      "phone": "+52 (875) 552-2091",
+      "email": "luciabush@applideck.com",
+      "phone_alt": "+1 (872) 404-3475",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Gestion empresarial",
+      "certificated": true,
+      "english_mastery": 20,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Regular",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Regular",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 20,
+      "perc_read": 100,
+      "perc_listen": 60,
+      "years_antiguaty": "Dos años",
+      "year_income": 2012,
+      "minimum_salary": 34249,
+      "hierarchical_level": "Tecnico",
+      "work_condition": "Eventual",
+      "work_studyrel": "40%",
+      "organism": "Social",
+      "business_act": "Tecnologico",
+      "social_reason": "Acium SA",
+      "address_iii": "Rutland Road",
+      "city_iii": "Williston",
+      "municipality_iii": "South Carolina",
+      "state_iii": "District Of Columbia",
+      "tel_ext_iii": "(822) 480-3953",
+      "fax_iii": "(889) 461-2143",
+      "email_iii": "luciabush@acium.com",
+      "webpage_iii": "Sloganaut.com",
+      "boss_namejob": "Caldwell Jordan",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Microempresa (1-30)"
+    }
+  },
+  {
+    "id_student": 6,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Day Rowland",
+      "number_control": 200805,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Soltero",
+      "actual_address": "429 Franklin Street, Roland, Delaware, 1065",
+      "actual_city": "Echo",
+      "actual_municipality": "Bladensburg",
+      "actual_state": "Montana",
+      "phone": "+52 (904) 401-2070",
+      "email": "dayrowland@sloganaut.com",
+      "phone_alt": "+1 (948) 463-2802",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Informatica",
+      "certificated": false,
+      "english_mastery": 80,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Mala",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Muy buena",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 100,
+      "perc_write": 80,
+      "perc_read": 40,
+      "perc_listen": 80,
+      "years_antiguaty": "Un año",
+      "year_income": 2015,
+      "minimum_salary": 38880,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Eventual",
+      "work_studyrel": "40%",
+      "organism": 100,
+      "business_act": "Seguridad",
+      "social_reason": "Amtas SA",
+      "address_iii": "Poplar Street",
+      "city_iii": "Haring",
+      "municipality_iii": "Maine",
+      "state_iii": "New Jersey",
+      "tel_ext_iii": "(960) 536-3745",
+      "fax_iii": "(964) 531-3750",
+      "email_iii": "dayrowland@amtas.com",
+      "webpage_iii": "Xixan.com",
+      "boss_namejob": "Penny Ewing",
+      "economic_sector": "Salud",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 7,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Jana Frederick",
+      "number_control": 242318,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Otro",
+      "actual_address": "516 Flatlands Avenue, Ypsilanti, Louisiana, 2425",
+      "actual_city": "Finderne",
+      "actual_municipality": "Elwood",
+      "actual_state": "Northern Mariana Islands",
+      "phone": "+52 (803) 528-3227",
+      "email": "janafrederick@xixan.com",
+      "phone_alt": "+1 (986) 438-2674",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Industrial",
+      "certificated": false,
+      "english_mastery": 80,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Buena",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 40,
+      "perc_write": 80,
+      "perc_read": 100,
+      "perc_listen": 80,
+      "years_antiguaty": "Dos años",
+      "year_income": 2011,
+      "minimum_salary": 24653,
+      "hierarchical_level": "Tecnico",
+      "work_condition": "Base",
+      "work_studyrel": "60%",
+      "organism": 100,
+      "business_act": "Salud",
+      "social_reason": "Zidant SA",
+      "address_iii": "Lamont Court",
+      "city_iii": "Lowell",
+      "municipality_iii": "Nevada",
+      "state_iii": "Oregon",
+      "tel_ext_iii": "(864) 469-2261",
+      "fax_iii": "(864) 574-3573",
+      "email_iii": "janafrederick@zidant.com",
+      "webpage_iii": "Limage.com",
+      "boss_namejob": "Figueroa Greer",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 8,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Swanson Spence",
+      "number_control": 223544,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Soltero",
+      "actual_address": "742 Sullivan Street, Mulberry, Colorado, 4545",
+      "actual_city": "Kersey",
+      "actual_municipality": "Jeff",
+      "actual_state": "Indiana",
+      "phone": "+52 (962) 549-2969",
+      "email": "swansonspence@limage.com",
+      "phone_alt": "+1 (806) 517-3823",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 60,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Muy buena",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Muy buena",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 40,
+      "perc_write": 40,
+      "perc_read": 100,
+      "perc_listen": 80,
+      "years_antiguaty": "Más de tres años",
+      "year_income": 2017,
+      "minimum_salary": 27603,
+      "hierarchical_level": "Directivo",
+      "work_condition": "Eventual",
+      "work_studyrel": "60%",
+      "organism": 100,
+      "business_act": "Tecnologico",
+      "social_reason": "Zenthall SA",
+      "address_iii": "Willow Street",
+      "city_iii": "Greensburg",
+      "municipality_iii": "Iowa",
+      "state_iii": "Washington",
+      "tel_ext_iii": "(924) 410-3537",
+      "fax_iii": "(907) 581-3377",
+      "email_iii": "swansonspence@zenthall.com",
+      "webpage_iii": "Yogasm.com",
+      "boss_namejob": "Robinson Gilbert",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 9,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Walters Hendrix",
+      "number_control": 246123,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Casado",
+      "actual_address": "979 Garnet Street, Dixie, Virginia, 751",
+      "actual_city": "Bennett",
+      "actual_municipality": "Chelsea",
+      "actual_state": "Alabama",
+      "phone": "+52 (843) 451-2956",
+      "email": "waltershendrix@yogasm.com",
+      "phone_alt": "+1 (856) 528-3663",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 60,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Buena",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Regular"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 80,
+      "perc_read": 60,
+      "perc_listen": 20,
+      "years_antiguaty": "Más de tres años",
+      "year_income": 2016,
+      "minimum_salary": 25144,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Base",
+      "work_studyrel": "40%",
+      "organism": "Privado",
+      "business_act": "Tecnologico",
+      "social_reason": "Comtrak SA",
+      "address_iii": "Kane Street",
+      "city_iii": "Fannett",
+      "municipality_iii": "Wisconsin",
+      "state_iii": "Hawaii",
+      "tel_ext_iii": "(806) 410-3683",
+      "fax_iii": "(908) 493-2759",
+      "email_iii": "waltershendrix@comtrak.com",
+      "webpage_iii": "Diginetic.com",
+      "boss_namejob": "Burt Hensley",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 10,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Kaye Russo",
+      "number_control": 276802,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Otro",
+      "actual_address": "231 Williams Avenue, Grill, Utah, 514",
+      "actual_city": "Efland",
+      "actual_municipality": "Ruckersville",
+      "actual_state": "South Dakota",
+      "phone": "+52 (945) 428-2916",
+      "email": "kayerusso@diginetic.com",
+      "phone_alt": "+1 (859) 449-2196",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 40,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Buena",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Muy buena",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Regular"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 40,
+      "perc_read": 80,
+      "perc_listen": 60,
+      "years_antiguaty": "Dos años",
+      "year_income": 2011,
+      "minimum_salary": 15473,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Contrato",
+      "work_studyrel": "100%",
+      "organism": 100,
+      "business_act": "Tecnologico",
+      "social_reason": "Nutralab SA",
+      "address_iii": "Garland Court",
+      "city_iii": "Jacksonburg",
+      "municipality_iii": "New Mexico",
+      "state_iii": "Illinois",
+      "tel_ext_iii": "(999) 413-2957",
+      "fax_iii": "(968) 517-2861",
+      "email_iii": "kayerusso@nutralab.com",
+      "webpage_iii": "Roboid.com",
+      "boss_namejob": "Deleon Hawkins",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 11,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Whitney Horton",
+      "number_control": 211491,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Otro",
+      "actual_address": "438 Alice Court, Chamizal, North Carolina, 2362",
+      "actual_city": "Machias",
+      "actual_municipality": "Limestone",
+      "actual_state": "Massachusetts",
+      "phone": "+52 (966) 440-2326",
+      "email": "whitneyhorton@roboid.com",
+      "phone_alt": "+1 (953) 481-3812",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Gestion empresarial",
+      "certificated": true,
+      "english_mastery": 20,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Mala",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Mala"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 80,
+      "perc_read": 80,
+      "perc_listen": 100,
+      "years_antiguaty": "Más de tres años",
+      "year_income": 2010,
+      "minimum_salary": 18551,
+      "hierarchical_level": "Supervisor",
+      "work_condition": "Eventual",
+      "work_studyrel": "60%",
+      "organism": 100,
+      "business_act": "Seguridad",
+      "social_reason": "Pyramax SA",
+      "address_iii": "Brigham Street",
+      "city_iii": "Brecon",
+      "municipality_iii": "California",
+      "state_iii": "Pennsylvania",
+      "tel_ext_iii": "(993) 528-3249",
+      "fax_iii": "(914) 471-2963",
+      "email_iii": "whitneyhorton@pyramax.com",
+      "webpage_iii": "Duoflex.com",
+      "boss_namejob": "Diana Martinez",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Mediana (101-500)"
+    }
+  },
+  {
+    "id_student": 12,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Therese Kline",
+      "number_control": 218628,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Soltero",
+      "actual_address": "604 Monaco Place, Camptown, Arkansas, 7947",
+      "actual_city": "Eastmont",
+      "actual_municipality": "Ruffin",
+      "actual_state": "Oklahoma",
+      "phone": "+52 (847) 483-2569",
+      "email": "theresekline@duoflex.com",
+      "phone_alt": "+1 (996) 511-3695",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Sistemas",
+      "certificated": false,
+      "english_mastery": 80,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Regular",
+      "study_plan": "Buena",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Buena",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 100,
+      "perc_read": 80,
+      "perc_listen": 80,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2017,
+      "minimum_salary": 35844,
+      "hierarchical_level": "Directivo",
+      "work_condition": "Eventual",
+      "work_studyrel": "20%",
+      "organism": "Privado",
+      "business_act": "Seguridad",
+      "social_reason": "Eclipsent SA",
+      "address_iii": "Little Street",
+      "city_iii": "Cavalero",
+      "municipality_iii": "Idaho",
+      "state_iii": "New Hampshire",
+      "tel_ext_iii": "(929) 415-3779",
+      "fax_iii": "(988) 447-3599",
+      "email_iii": "theresekline@eclipsent.com",
+      "webpage_iii": "Apex.com",
+      "boss_namejob": "Mollie Avery",
+      "economic_sector": "Salud",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 13,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Tanner Dillard",
+      "number_control": 234873,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Otro",
+      "actual_address": "965 Wolf Place, Layhill, Puerto Rico, 6344",
+      "actual_city": "Tooleville",
+      "actual_municipality": "Crawfordsville",
+      "actual_state": "Kentucky",
+      "phone": "+52 (999) 477-2825",
+      "email": "tannerdillard@apex.com",
+      "phone_alt": "+1 (888) 465-3025",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 80,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Buena",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Buena",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Menos de 6 meses",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 20,
+      "perc_read": 20,
+      "perc_listen": 80,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2013,
+      "minimum_salary": 26613,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Base",
+      "work_studyrel": "100%",
+      "organism": "Publico",
+      "business_act": "Salud",
+      "social_reason": "Blurrybus SA",
+      "address_iii": "Hopkins Street",
+      "city_iii": "Glenshaw",
+      "municipality_iii": "Mississippi",
+      "state_iii": "Alaska",
+      "tel_ext_iii": "(893) 480-3174",
+      "fax_iii": "(994) 546-2574",
+      "email_iii": "tannerdillard@blurrybus.com",
+      "webpage_iii": "Liquicom.com",
+      "boss_namejob": "Rosie Allen",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Mediana (101-500)"
+    }
+  },
+  {
+    "id_student": 14,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Collier Scott",
+      "number_control": 269681,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Casado",
+      "actual_address": "440 Harway Avenue, Grazierville, Federated States Of Micronesia, 9015",
+      "actual_city": "Holcombe",
+      "actual_municipality": "Topaz",
+      "actual_state": "Nebraska",
+      "phone": "+52 (918) 473-2891",
+      "email": "collierscott@liquicom.com",
+      "phone_alt": "+1 (949) 507-3406",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Sistemas",
+      "certificated": false,
+      "english_mastery": 40,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 80,
+      "perc_read": 60,
+      "perc_listen": 20,
+      "years_antiguaty": "Tres años",
+      "year_income": 2012,
+      "minimum_salary": 30871,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Base",
+      "work_studyrel": "60%",
+      "organism": 100,
+      "business_act": "Tecnologico",
+      "social_reason": "Martgo SA",
+      "address_iii": "Bryant Street",
+      "city_iii": "Titanic",
+      "municipality_iii": "Tennessee",
+      "state_iii": "New York",
+      "tel_ext_iii": "(822) 400-3687",
+      "fax_iii": "(838) 564-2873",
+      "email_iii": "collierscott@martgo.com",
+      "webpage_iii": "Krag.com",
+      "boss_namejob": "Mayer Caldwell",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 15,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "James Nunez",
+      "number_control": 220887,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Otro",
+      "actual_address": "488 Sackman Street, Trucksville, Rhode Island, 7650",
+      "actual_city": "Bluetown",
+      "actual_municipality": "Roosevelt",
+      "actual_state": "Palau",
+      "phone": "+52 (863) 560-3727",
+      "email": "jamesnunez@krag.com",
+      "phone_alt": "+1 (852) 480-2008",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Gestion empresarial",
+      "certificated": false,
+      "english_mastery": 80,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Mala",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 40,
+      "perc_write": 20,
+      "perc_read": 40,
+      "perc_listen": 100,
+      "years_antiguaty": "Más de tres años",
+      "year_income": 2014,
+      "minimum_salary": 22435,
+      "hierarchical_level": "Supervisor",
+      "work_condition": "Base",
+      "work_studyrel": "60%",
+      "organism": "Privado",
+      "business_act": "Salud",
+      "social_reason": "Boink SA",
+      "address_iii": "Gem Street",
+      "city_iii": "Como",
+      "municipality_iii": "Missouri",
+      "state_iii": "West Virginia",
+      "tel_ext_iii": "(964) 495-2490",
+      "fax_iii": "(820) 416-2278",
+      "email_iii": "jamesnunez@boink.com",
+      "webpage_iii": "Sybixtex.com",
+      "boss_namejob": "Wilkins Shepherd",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 16,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Annmarie Baldwin",
+      "number_control": 204056,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Casado",
+      "actual_address": "296 Doscher Street, Conestoga, Minnesota, 422",
+      "actual_city": "Yettem",
+      "actual_municipality": "Lithium",
+      "actual_state": "Michigan",
+      "phone": "+52 (881) 484-3636",
+      "email": "annmariebaldwin@sybixtex.com",
+      "phone_alt": "+1 (991) 496-2656",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Informatica",
+      "certificated": false,
+      "english_mastery": 80,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Regular",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 100,
+      "perc_write": 20,
+      "perc_read": 80,
+      "perc_listen": 40,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2016,
+      "minimum_salary": 28480,
+      "hierarchical_level": "Directivo",
+      "work_condition": "Base",
+      "work_studyrel": "60%",
+      "organism": 100,
+      "business_act": "Tecnologico",
+      "social_reason": "Bleeko SA",
+      "address_iii": "Minna Street",
+      "city_iii": "Laurelton",
+      "municipality_iii": "Kansas",
+      "state_iii": "Guam",
+      "tel_ext_iii": "(885) 537-3230",
+      "fax_iii": "(843) 463-2758",
+      "email_iii": "annmariebaldwin@bleeko.com",
+      "webpage_iii": "Steelfab.com",
+      "boss_namejob": "Skinner Hines",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 17,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Eileen Arnold",
+      "number_control": 280727,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Soltero",
+      "actual_address": "318 Seigel Street, Riceville, Florida, 5659",
+      "actual_city": "Thomasville",
+      "actual_municipality": "Waterford",
+      "actual_state": "Arizona",
+      "phone": "+52 (892) 526-3733",
+      "email": "eileenarnold@steelfab.com",
+      "phone_alt": "+1 (816) 407-3730",
+      "career": "Ingenieria En Informatica",
+      "speciality": "Sistemas",
+      "certificated": false,
+      "english_mastery": 60,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Regular",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Muy buena",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 60,
+      "perc_read": 60,
+      "perc_listen": 40,
+      "years_antiguaty": "Un año",
+      "year_income": 2016,
+      "minimum_salary": 22809,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Eventual",
+      "work_studyrel": "80%",
+      "organism": "Social",
+      "business_act": "Salud",
+      "social_reason": "Netagy SA",
+      "address_iii": "Stockton Street",
+      "city_iii": "Bridgetown",
+      "municipality_iii": "Wyoming",
+      "state_iii": "Marshall Islands",
+      "tel_ext_iii": "(859) 421-2611",
+      "fax_iii": "(803) 485-2707",
+      "email_iii": "eileenarnold@netagy.com",
+      "webpage_iii": "Makingway.com",
+      "boss_namejob": "Dianne Sandoval",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 18,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Parrish Faulkner",
+      "number_control": 268181,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Otro",
+      "actual_address": "750 Dodworth Street, Dodge, North Dakota, 612",
+      "actual_city": "Clinton",
+      "actual_municipality": "Hiseville",
+      "actual_state": "Virgin Islands",
+      "phone": "+52 (870) 540-2776",
+      "email": "parrishfaulkner@makingway.com",
+      "phone_alt": "+1 (878) 479-3164",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Sistemas",
+      "certificated": false,
+      "english_mastery": 20,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Buena",
+      "oportunity_part": "Regular",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "6 meses a 1 año",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 40,
+      "perc_write": 20,
+      "perc_read": 40,
+      "perc_listen": 100,
+      "years_antiguaty": "Un año",
+      "year_income": 2015,
+      "minimum_salary": 29404,
+      "hierarchical_level": "Tecnico",
+      "work_condition": "Contrato",
+      "work_studyrel": "100%",
+      "organism": 100,
+      "business_act": "Tecnologico",
+      "social_reason": "Pheast SA",
+      "address_iii": "Hawthorne Street",
+      "city_iii": "Brookfield",
+      "municipality_iii": "Texas",
+      "state_iii": "Vermont",
+      "tel_ext_iii": "(828) 520-2278",
+      "fax_iii": "(988) 418-3636",
+      "email_iii": "parrishfaulkner@pheast.com",
+      "webpage_iii": "Corepan.com",
+      "boss_namejob": "Ladonna Ryan",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 19,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Ortega Holcomb",
+      "number_control": 284448,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Soltero",
+      "actual_address": "174 Sumner Place, Bloomington, American Samoa, 8681",
+      "actual_city": "Chautauqua",
+      "actual_municipality": "Edmund",
+      "actual_state": "Georgia",
+      "phone": "+52 (906) 414-2153",
+      "email": "ortegaholcomb@corepan.com",
+      "phone_alt": "+1 (863) 526-3848",
+      "career": "Ingenieria En Industrial",
+      "speciality": "Gestion empresarial",
+      "certificated": true,
+      "english_mastery": 80,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Regular",
+      "study_plan": "Mala",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Mala"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 40,
+      "perc_read": 80,
+      "perc_listen": 40,
+      "years_antiguaty": "Más de tres años",
+      "year_income": 2015,
+      "minimum_salary": 16744,
+      "hierarchical_level": "Supervisor",
+      "work_condition": "Contrato",
+      "work_studyrel": "100%",
+      "organism": "Social",
+      "business_act": "Tecnologico",
+      "social_reason": "Locazone SA",
+      "address_iii": "Wythe Avenue",
+      "city_iii": "Harleigh",
+      "municipality_iii": "Ohio",
+      "state_iii": "Connecticut",
+      "tel_ext_iii": "(929) 571-2124",
+      "fax_iii": "(910) 465-3326",
+      "email_iii": "ortegaholcomb@locazone.com",
+      "webpage_iii": "Aquafire.com",
+      "boss_namejob": "Jennifer Munoz",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Microempresa (1-30)"
+    }
+  },
+  {
+    "id_student": 20,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Meredith Rice",
+      "number_control": 283823,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Otro",
+      "actual_address": "161 Tudor Terrace, Greer, South Carolina, 8393",
+      "actual_city": "Gordon",
+      "actual_municipality": "Bellfountain",
+      "actual_state": "District Of Columbia",
+      "phone": "+52 (900) 480-3520",
+      "email": "meredithrice@aquafire.com",
+      "phone_alt": "+1 (898) 458-3976",
+      "career": "Ingenieria En Gestion empresarial",
+      "speciality": "Gestion empresarial",
+      "certificated": true,
+      "english_mastery": 80,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Mala",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 100,
+      "perc_read": 80,
+      "perc_listen": 60,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2010,
+      "minimum_salary": 29349,
+      "hierarchical_level": "Supervisor",
+      "work_condition": "Contrato",
+      "work_studyrel": "20%",
+      "organism": "Privado",
+      "business_act": "Salud",
+      "social_reason": "Satiance SA",
+      "address_iii": "Frost Street",
+      "city_iii": "Gwynn",
+      "municipality_iii": "Delaware",
+      "state_iii": "Montana",
+      "tel_ext_iii": "(907) 473-3208",
+      "fax_iii": "(915) 576-2954",
+      "email_iii": "meredithrice@satiance.com",
+      "webpage_iii": "Balooba.com",
+      "boss_namejob": "Cheryl Duran",
+      "economic_sector": "Salud",
+      "comp_orgsize": "Mediana (101-500)"
+    }
+  },
+  {
+    "id_student": 21,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Viola William",
+      "number_control": 210454,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Casado",
+      "actual_address": "864 Cass Place, Avoca, Maine, 553",
+      "actual_city": "Madrid",
+      "actual_municipality": "Omar",
+      "actual_state": "New Jersey",
+      "phone": "+52 (802) 477-2896",
+      "email": "violawilliam@balooba.com",
+      "phone_alt": "+1 (900) 517-2109",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Industrial",
+      "certificated": true,
+      "english_mastery": 60,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Muy buena",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 100,
+      "perc_read": 100,
+      "perc_listen": 20,
+      "years_antiguaty": "Un año",
+      "year_income": 2015,
+      "minimum_salary": 34810,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Eventual",
+      "work_studyrel": "100%",
+      "organism": 100,
+      "business_act": "Tecnologico",
+      "social_reason": "Xplor SA",
+      "address_iii": "Willmohr Street",
+      "city_iii": "Rosine",
+      "municipality_iii": "Louisiana",
+      "state_iii": "Northern Mariana Islands",
+      "tel_ext_iii": "(860) 442-2606",
+      "fax_iii": "(857) 551-3462",
+      "email_iii": "violawilliam@xplor.com",
+      "webpage_iii": "Kage.com",
+      "boss_namejob": "Sonya Franco",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 22,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Walton Contreras",
+      "number_control": 289196,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Otro",
+      "actual_address": "742 Glen Street, Guthrie, Nevada, 3418",
+      "actual_city": "Orviston",
+      "actual_municipality": "Woodruff",
+      "actual_state": "Oregon",
+      "phone": "+52 (897) 497-2642",
+      "email": "waltoncontreras@kage.com",
+      "phone_alt": "+1 (855) 556-2580",
+      "career": "Ingenieria En Informatica",
+      "speciality": "Informatica",
+      "certificated": false,
+      "english_mastery": 20,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Muy buena",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 80,
+      "perc_read": 40,
+      "perc_listen": 100,
+      "years_antiguaty": "Dos años",
+      "year_income": 2015,
+      "minimum_salary": 22068,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Eventual",
+      "work_studyrel": "80%",
+      "organism": 80,
+      "business_act": "Salud",
+      "social_reason": "Nipaz SA",
+      "address_iii": "Bayview Place",
+      "city_iii": "Ferney",
+      "municipality_iii": "Colorado",
+      "state_iii": "Indiana",
+      "tel_ext_iii": "(827) 545-2973",
+      "fax_iii": "(951) 405-2038",
+      "email_iii": "waltoncontreras@nipaz.com",
+      "webpage_iii": "Gronk.com",
+      "boss_namejob": "Love Humphrey",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 23,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Shepherd Ray",
+      "number_control": 238696,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Casado",
+      "actual_address": "986 Borinquen Pl, Lemoyne, Iowa, 4647",
+      "actual_city": "Jackpot",
+      "actual_municipality": "Bowie",
+      "actual_state": "Washington",
+      "phone": "+52 (952) 436-3541",
+      "email": "shepherdray@gronk.com",
+      "phone_alt": "+1 (957) 447-3189",
+      "career": "Ingenieria En Informatica",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 80,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 80,
+      "perc_read": 40,
+      "perc_listen": 20,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2011,
+      "minimum_salary": 20979,
+      "hierarchical_level": "Jefe de area",
+      "work_condition": "Base",
+      "work_studyrel": "60%",
+      "organism": "Publico",
+      "business_act": "Salud",
+      "social_reason": "Chillium SA",
+      "address_iii": "Hunterfly Place",
+      "city_iii": "Sanders",
+      "municipality_iii": "Virginia",
+      "state_iii": "Alabama",
+      "tel_ext_iii": "(937) 579-2653",
+      "fax_iii": "(834) 440-2794",
+      "email_iii": "shepherdray@chillium.com",
+      "webpage_iii": "Orbixtar.com",
+      "boss_namejob": "Harding Aguirre",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Mediana (101-500)"
+    }
+  },
+  {
+    "id_student": 24,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Valenzuela Richards",
+      "number_control": 271862,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Casado",
+      "actual_address": "172 Sunnyside Court, Wescosville, Wisconsin, 9752",
+      "actual_city": "Bellamy",
+      "actual_municipality": "Fairhaven",
+      "actual_state": "Hawaii",
+      "phone": "+52 (878) 513-3957",
+      "email": "valenzuelarichards@orbixtar.com",
+      "phone_alt": "+1 (875) 527-3275",
+      "career": "Ingenieria En Informatica",
+      "speciality": "Gestion empresarial",
+      "certificated": false,
+      "english_mastery": 80,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Regular",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Regular"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 80,
+      "perc_read": 60,
+      "perc_listen": 100,
+      "years_antiguaty": "Un año",
+      "year_income": 2012,
+      "minimum_salary": 27134,
+      "hierarchical_level": "Funcionario",
+      "work_condition": "Eventual",
+      "work_studyrel": "80%",
+      "organism": "Publico",
+      "business_act": "Industrial",
+      "social_reason": "Earbang SA",
+      "address_iii": "Schenck Place",
+      "city_iii": "Springdale",
+      "municipality_iii": "Utah",
+      "state_iii": "South Dakota",
+      "tel_ext_iii": "(837) 436-3582",
+      "fax_iii": "(937) 502-3128",
+      "email_iii": "valenzuelarichards@earbang.com",
+      "webpage_iii": "Dogspa.com",
+      "boss_namejob": "Jocelyn Blake",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 25,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Nancy Potter",
+      "number_control": 217691,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Soltero",
+      "actual_address": "176 Anna Court, Waverly, New Mexico, 5319",
+      "actual_city": "Gratton",
+      "actual_municipality": "Davenport",
+      "actual_state": "Illinois",
+      "phone": "+52 (835) 492-3275",
+      "email": "nancypotter@dogspa.com",
+      "phone_alt": "+1 (930) 532-2772",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Sistemas",
+      "certificated": false,
+      "english_mastery": 60,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Mala",
+      "oportunity_part": "Regular",
+      "emphasis_invest": "Muy buena",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Menos de 6 meses",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 20,
+      "perc_read": 60,
+      "perc_listen": 100,
+      "years_antiguaty": "Un año",
+      "year_income": 2010,
+      "minimum_salary": 22705,
+      "hierarchical_level": "Jefe de area",
+      "work_condition": "Base",
+      "work_studyrel": "80%",
+      "organism": "Publico",
+      "business_act": "Salud",
+      "social_reason": "Orbalix SA",
+      "address_iii": "Louisa Street",
+      "city_iii": "Warren",
+      "municipality_iii": "North Carolina",
+      "state_iii": "Massachusetts",
+      "tel_ext_iii": "(821) 467-2235",
+      "fax_iii": "(918) 482-2135",
+      "email_iii": "nancypotter@orbalix.com",
+      "webpage_iii": "Opticom.com",
+      "boss_namejob": "Jacobson Clay",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 26,
+    "school": "Instituto Tecnologico de Parral",
+    "personal_data": {
+      "full_name": "Corina Cox",
+      "number_control": 256211,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Soltero",
+      "actual_address": "544 Vandalia Avenue, Chaparrito, California, 9658",
+      "actual_city": "Salvo",
+      "actual_municipality": "Carbonville",
+      "actual_state": "Pennsylvania",
+      "phone": "+52 (949) 513-3887",
+      "email": "corinacox@opticom.com",
+      "phone_alt": "+1 (860) 550-2810",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 60,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Regular",
+      "oportunity_part": "Buena",
+      "emphasis_invest": "Buena",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Menos de 6 meses",
+      "how_gotjob": "Residencia prof.",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 100,
+      "perc_write": 80,
+      "perc_read": 80,
+      "perc_listen": 100,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2017,
+      "minimum_salary": 11681,
+      "hierarchical_level": "Jefe de area",
+      "work_condition": "Contrato",
+      "work_studyrel": "40%",
+      "organism": "Privado",
+      "business_act": "Industrial",
+      "social_reason": "Cognicode SA",
+      "address_iii": "Elizabeth Place",
+      "city_iii": "Morningside",
+      "municipality_iii": "Arkansas",
+      "state_iii": "Oklahoma",
+      "tel_ext_iii": "(941) 477-2855",
+      "fax_iii": "(810) 597-3926",
+      "email_iii": "corinacox@cognicode.com",
+      "webpage_iii": "Comcur.com",
+      "boss_namejob": "Kerri Huffman",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 27,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Walker Atkinson",
+      "number_control": 233989,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Otro",
+      "actual_address": "545 Morton Street, Stewart, Idaho, 4476",
+      "actual_city": "Lookingglass",
+      "actual_municipality": "Santel",
+      "actual_state": "New Hampshire",
+      "phone": "+52 (921) 552-3094",
+      "email": "walkeratkinson@comcur.com",
+      "phone_alt": "+1 (937) 456-3376",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 20,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Buena",
+      "study_plan": "Mala",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Más de un año",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 20,
+      "perc_read": 60,
+      "perc_listen": 20,
+      "years_antiguaty": "Un año",
+      "year_income": 2014,
+      "minimum_salary": 29921,
+      "hierarchical_level": "Tecnico",
+      "work_condition": "Eventual",
+      "work_studyrel": "100%",
+      "organism": 80,
+      "business_act": "Salud",
+      "social_reason": "Aquamate SA",
+      "address_iii": "Cleveland Street",
+      "city_iii": "Delshire",
+      "municipality_iii": "Puerto Rico",
+      "state_iii": "Kentucky",
+      "tel_ext_iii": "(858) 427-2584",
+      "fax_iii": "(906) 585-2850",
+      "email_iii": "walkeratkinson@aquamate.com",
+      "webpage_iii": "Hairport.com",
+      "boss_namejob": "Nicholson Hayden",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 28,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Mccullough Head",
+      "number_control": 223702,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Otro",
+      "actual_address": "340 Aster Court, Edgewater, Mississippi, 6251",
+      "actual_city": "Deputy",
+      "actual_municipality": "Choctaw",
+      "actual_state": "Alaska",
+      "phone": "+52 (934) 480-2233",
+      "email": "mcculloughhead@hairport.com",
+      "phone_alt": "+1 (919) 512-3012",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Sistemas",
+      "certificated": false,
+      "english_mastery": 60,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Regular",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia y trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 40,
+      "perc_read": 100,
+      "perc_listen": 80,
+      "years_antiguaty": "Dos años",
+      "year_income": 2011,
+      "minimum_salary": 17715,
+      "hierarchical_level": "Directivo",
+      "work_condition": "Contrato",
+      "work_studyrel": "60%",
+      "organism": "Publico",
+      "business_act": "Industrial",
+      "social_reason": "Xiix SA",
+      "address_iii": "Bragg Court",
+      "city_iii": "Kempton",
+      "municipality_iii": "Federated States Of Micronesia",
+      "state_iii": "Nebraska",
+      "tel_ext_iii": "(839) 571-3240",
+      "fax_iii": "(935) 558-3509",
+      "email_iii": "mcculloughhead@xiix.com",
+      "webpage_iii": "Bicol.com",
+      "boss_namejob": "Spencer Zimmerman",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 29,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Brigitte Sosa",
+      "number_control": 252705,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Soltero",
+      "actual_address": "950 Hamilton Walk, Muir, Tennessee, 439",
+      "actual_city": "Russellville",
+      "actual_municipality": "Southview",
+      "actual_state": "New York",
+      "phone": "+52 (896) 571-2716",
+      "email": "brigittesosa@bicol.com",
+      "phone_alt": "+1 (807) 494-2521",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Informatica",
+      "certificated": true,
+      "english_mastery": 40,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Regular",
+      "study_plan": "Buena",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Mala",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "6 meses a 1 año",
+      "how_gotjob": "Residencia prof.",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 60,
+      "perc_read": 20,
+      "perc_listen": 100,
+      "years_antiguaty": "Un año",
+      "year_income": 2010,
+      "minimum_salary": 15355,
+      "hierarchical_level": "Supervisor",
+      "work_condition": "Base",
+      "work_studyrel": "40%",
+      "organism": 80,
+      "business_act": "Tecnologico",
+      "social_reason": "Eargo SA",
+      "address_iii": "Whitwell Place",
+      "city_iii": "Beyerville",
+      "municipality_iii": "Rhode Island",
+      "state_iii": "Palau",
+      "tel_ext_iii": "(849) 423-2693",
+      "fax_iii": "(973) 471-2409",
+      "email_iii": "brigittesosa@eargo.com",
+      "webpage_iii": "Cujo.com",
+      "boss_namejob": "Alvarado Navarro",
+      "economic_sector": "Tecnologico",
+      "comp_orgsize": "Pequeña (31-100)"
+    }
+  },
+  {
+    "id_student": 30,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Julianne Koch",
+      "number_control": 275380,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Casado",
+      "actual_address": "441 Ashland Place, Tilleda, Missouri, 6529",
+      "actual_city": "Sisquoc",
+      "actual_municipality": "Belva",
+      "actual_state": "West Virginia",
+      "phone": "+52 (844) 583-2352",
+      "email": "juliannekoch@cujo.com",
+      "phone_alt": "+1 (834) 535-3669",
+      "career": "Ingenieria En Gestion empresarial",
+      "speciality": "Gestion empresarial",
+      "certificated": true,
+      "english_mastery": 40,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Regular",
+      "study_plan": "Buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Mala",
+      "satisfaction_cond": "Buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Menos de 6 meses",
+      "how_gotjob": "Contactos personales",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 60,
+      "perc_read": 60,
+      "perc_listen": 40,
+      "years_antiguaty": "Dos años",
+      "year_income": 2015,
+      "minimum_salary": 20422,
+      "hierarchical_level": "Jefe de area",
+      "work_condition": "Eventual",
+      "work_studyrel": "40%",
+      "organism": 80,
+      "business_act": "Industrial",
+      "social_reason": "Softmicro SA",
+      "address_iii": "Ovington Court",
+      "city_iii": "Sattley",
+      "municipality_iii": "Minnesota",
+      "state_iii": "Michigan",
+      "tel_ext_iii": "(865) 595-2067",
+      "fax_iii": "(873) 472-3205",
+      "email_iii": "juliannekoch@softmicro.com",
+      "webpage_iii": "Unia.com",
+      "boss_namejob": "Williamson Glass",
+      "economic_sector": "Salud",
+      "comp_orgsize": "Mediana (101-500)"
+    }
+  },
+  {
+    "id_student": 31,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Chandler Cook",
+      "number_control": 291559,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Otro",
+      "actual_address": "301 Irving Street, Stagecoach, Kansas, 8565",
+      "actual_city": "Witmer",
+      "actual_municipality": "Chloride",
+      "actual_state": "Guam",
+      "phone": "+52 (892) 527-2200",
+      "email": "chandlercook@unia.com",
+      "phone_alt": "+1 (810) 537-2010",
+      "career": "Ingenieria En Gestion empresarial",
+      "speciality": "Industrial",
+      "certificated": true,
+      "english_mastery": 60,
+      "other_mastery": "Chino",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Regular",
+      "study_plan": "Buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Regular",
+      "satisfaction_cond": "Regular",
+      "experience_residence": "Regular"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Antes de egresar",
+      "how_gotjob": "Medios masivos cmncc",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 20,
+      "perc_write": 60,
+      "perc_read": 100,
+      "perc_listen": 60,
+      "years_antiguaty": "Tres años",
+      "year_income": 2017,
+      "minimum_salary": 27355,
+      "hierarchical_level": "Tecnico",
+      "work_condition": "Contrato",
+      "work_studyrel": "60%",
+      "organism": 80,
+      "business_act": "Industrial",
+      "social_reason": "Centuria SA",
+      "address_iii": "Driggs Avenue",
+      "city_iii": "Beason",
+      "municipality_iii": "Florida",
+      "state_iii": "Arizona",
+      "tel_ext_iii": "(935) 484-2776",
+      "fax_iii": "(846) 585-2287",
+      "email_iii": "chandlercook@centuria.com",
+      "webpage_iii": "Immunics.com",
+      "boss_namejob": "Desiree Delaney",
+      "economic_sector": "Salud",
+      "comp_orgsize": "Microempresa (1-30)"
+    }
+  },
+  {
+    "id_student": 32,
+    "school": "Instituto Tecnologico de Chihuahua",
+    "personal_data": {
+      "full_name": "Gina Fischer",
+      "number_control": 263164,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "female",
+      "civil_status": "Otro",
+      "actual_address": "524 Suydam Place, Datil, Wyoming, 5226",
+      "actual_city": "Fairview",
+      "actual_municipality": "Utting",
+      "actual_state": "Marshall Islands",
+      "phone": "+52 (999) 460-2994",
+      "email": "ginafischer@immunics.com",
+      "phone_alt": "+1 (818) 475-2637",
+      "career": "Ingenieria En Sistemas",
+      "speciality": "Gestion empresarial",
+      "certificated": true,
+      "english_mastery": 60,
+      "other_mastery": "Aleman",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Mala",
+      "study_plan": "Mala",
+      "oportunity_part": "Muy buena",
+      "emphasis_invest": "Muy buena",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Trabaja",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "6 meses a 1 año",
+      "how_gotjob": "Residencia prof.",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 60,
+      "perc_write": 40,
+      "perc_read": 40,
+      "perc_listen": 60,
+      "years_antiguaty": "Menos de un año",
+      "year_income": 2011,
+      "minimum_salary": 38461,
+      "hierarchical_level": "Directivo",
+      "work_condition": "Contrato",
+      "work_studyrel": "100%",
+      "organism": "Publico",
+      "business_act": "Industrial",
+      "social_reason": "Entroflex SA",
+      "address_iii": "Brooklyn Avenue",
+      "city_iii": "Malott",
+      "municipality_iii": "North Dakota",
+      "state_iii": "Virgin Islands",
+      "tel_ext_iii": "(986) 446-3384",
+      "fax_iii": "(826) 499-3003",
+      "email_iii": "ginafischer@entroflex.com",
+      "webpage_iii": "Idetica.com",
+      "boss_namejob": "Montoya Ware",
+      "economic_sector": "Industrial",
+      "comp_orgsize": "Grande (más de 500)"
+    }
+  },
+  {
+    "id_student": 33,
+    "school": "Instituto Tecnologico de Chihuahua II",
+    "personal_data": {
+      "full_name": "Hartman Patterson",
+      "number_control": 294784,
+      "birthdate": "30/08/1995",
+      "curp": "GAGL9508303212",
+      "true_gender": "male",
+      "civil_status": "Casado",
+      "actual_address": "944 Hicks Street, Interlochen, Texas, 7150",
+      "actual_city": "Allendale",
+      "actual_municipality": "Tyro",
+      "actual_state": "Vermont",
+      "phone": "+52 (854) 551-3515",
+      "email": "hartmanpatterson@idetica.com",
+      "phone_alt": "+1 (813) 521-2811",
+      "career": "Ingenieria En Informatica",
+      "speciality": "Sistemas",
+      "certificated": true,
+      "english_mastery": 80,
+      "other_mastery": "Ninguno",
+      "package_comp": [
+        {
+          "name": "SQL"
+        }
+      ]
+    },
+    "pertinence": {
+      "quality_teachers": "Muy buena",
+      "study_plan": "Muy buena",
+      "oportunity_part": "Mala",
+      "emphasis_invest": "Buena",
+      "satisfaction_cond": "Muy buena",
+      "experience_residence": "Muy buena"
+    },
+    "work_aspect": {
+      "actual_activity": "Estudia",
+      "activity_studies": "Ninguno",
+      "speciality_inst": "Ninguna",
+      "time_getjob": "Menos de 6 meses",
+      "how_gotjob": "Bolsa trabajo plante",
+      "recruitment_reqs": [
+        {
+          "description": "Idioma Extranjero"
+        }
+      ],
+      "language_job": "Inglés",
+      "perc_speak": 80,
+      "perc_write": 80,
+      "perc_read": 60,
+      "perc_listen": 60,
+      "years_antiguaty": "Tres años",
+      "year_income": 2014,
+      "minimum_salary": 26843,
+      "hierarchical_level": "Tecnico",
+      "work_condition": "Base",
+      "work_studyrel": "20%",
+      "organism": "Publico",
+      "business_act": "Seguridad",
+      "social_reason": "Magmina SA",
+      "address_iii": "Catherine Street",
+      "city_iii": "Wildwood",
+      "municipality_iii": "American Samoa",
+      "state_iii": "Georgia",
+      "tel_ext_iii": "(932) 590-2568",
+      "fax_iii": "(969) 526-2546",
+      "email_iii": "hartmanpatterson@magmina.com",
+      "webpage_iii": "Quizka.com",
+      "boss_namejob": "Elva Barron",
+      "economic_sector": "Seguridad",
+      "comp_orgsize": "Microempresa (1-30)"
+    }
+  }
+]
