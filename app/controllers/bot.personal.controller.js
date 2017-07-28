@@ -111,7 +111,8 @@ function registerPersonalData(req, res) {
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
         let arreglo = req.query[field].split(',');
-        value       = arreglo.map(function (item, index) {
+
+        value = arreglo.map(function (item) {
             return {
                 name: item
             }

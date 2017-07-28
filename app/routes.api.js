@@ -1,10 +1,10 @@
 const express = require('express');
 const router  = express.Router();
 
-const surveyController      = require('./controllers/survey.controller');
-const homeController        = require('./controllers/home.controller');
-const schoolControler       = require('./controllers/school.controller');
-const userController        = require('./controllers/user.controller');
+const surveyController = require('./controllers/survey.controller');
+const homeController   = require('./controllers/home.controller');
+const schoolControler  = require('./controllers/school.controller');
+const userController   = require('./controllers/user.controller');
 
 router.get('/', homeController.showHome);
 
