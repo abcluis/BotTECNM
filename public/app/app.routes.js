@@ -15,11 +15,17 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
+            .state('nav', {
+                templateUrl : 'app/shared/nav/nav.html',
+                controller : 'NavController as vm'
+            })
             .state('home', {
                 url :         '/',
+                parent : 'nav',
                 templateUrl : 'app/components/home/home.html',
                 controller :  'HomeController as vm',
                 resolve: {
+                    // TODO: LA COMPROBACION SE TIENE QUE MANDAR A OTRO LUGAR COMO UN SERVICE
                     surveys : ['SurveyService', function (SurveyService) {
                         return SurveyService.query().$promise
                             .then((surveys) => {

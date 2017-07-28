@@ -72,3 +72,15 @@
 }
   }
     ]
+
+
+    name: function(tags,parent) {
+                  return tags.random("SQL","JAVA","WORD","ANDROID","JAVASCRIPT");
+                  }
+  package_comp:        [
+            '{{ repeat(1,4) }}',
+            function(tags,parent) {
+                    return tags.random("SQL","JAVA","WORD","ANDROID","JAVASCRIPT");
+            }
+          ]
+

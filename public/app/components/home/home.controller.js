@@ -18,12 +18,6 @@
 
         vm.labels = [...new Set(surveys.map(element => element.school))];
         vm.data = [];
-        /*vm.data = [
-            surveys.filter((survey) => survey.school === vm.labels[0]).length,
-            surveys.filter((survey) => survey.school === vm.labels[1]).length,
-            surveys.filter((survey) => survey.school === vm.labels[2]).length,
-        ];*/
-
         vm.labels.map(function (element, index) {
             vm.data.push(surveys.filter((survey) => survey.school === vm.labels[index]).length)
         });
