@@ -14,8 +14,19 @@
     function HomeController(surveys, HomeService) {
         let vm     = this;
         vm.surveys = surveys;
-        vm.labels  = ["Instituto Tecnologico Chihuahua II", "Instituto Tecnologico Delicias", "Otros"];
-        vm.data    = [3, 1, 1];
+
+
+        vm.labels = [...new Set(surveys.map(element => element.school))];
+        vm.data = [];
+        /*vm.data = [
+            surveys.filter((survey) => survey.school === vm.labels[0]).length,
+            surveys.filter((survey) => survey.school === vm.labels[1]).length,
+            surveys.filter((survey) => survey.school === vm.labels[2]).length,
+        ];*/
+
+        vm.labels.map(function (element, index) {
+            vm.data.push(surveys.filter((survey) => survey.school === vm.labels[index]).length)
+        });
 
         vm.labelsradar = ["Enfasis en investigacion", "Experiencia en residencias", "Participacion proyectos", "Calidad docentes", "Infraestructura", "Plan de estudios"];
 
