@@ -1,9 +1,9 @@
 const express = require('express');
 const router  = express.Router();
 
-const botController         = require('./controllers/bot.personal.controller.js');
-const botPertContoller      = require('./controllers/bot.pertinence.controller');
-const botJobLocalController = require('./controllers/bot.job.location.controller');
+const perfilController         = require('./controllers/bot/perfil.controller.js');
+const botPertContoller      = require('./controllers/bot/bot.pertinence.controller');
+const botJobLocalController = require('./controllers/bot/bot.job.location.controller');
 const validations           = require('./middlewares/validations');
 const validationsErrors     = require('./middlewares/validations.errors.js');
 const surveyCreated         = require('./middlewares/surveyCreated');

@@ -2,13 +2,13 @@
  * Created by usuario1 on 6/21/2017.
  */
 
-const userService   = require('../services/user.service');
-const surveyService = require('../services/survey.service');
-const School        = require('../models/school.model');
-const blocks        = require('../utils/blocks.constants');
-const nextBlock     = require('../utils/blocks.order');
+const userService   = require('../../services/user.service');
+const surveyService = require('../../services/survey.service');
+const School        = require('../../models/school.model');
+const blocks        = require('../../utils/blocks.constants');
+const nextBlock     = require('../../utils/blocks.order');
 
-const templates = require('../templates');
+const templates = require('../../templates');
 
 let BodyCF   = templates.bodyChat;
 let TextCF   = templates.textChat;

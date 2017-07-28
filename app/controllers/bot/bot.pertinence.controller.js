@@ -1,8 +1,8 @@
-const surveyService = require("../services/survey.service");
-const templates = require("../templates");
-const blocks = require("../utils/blocks.constants");
-const nextBlock = require("../utils/blocks.order");
-const userService = require("../services/user.service");
+const surveyService = require("../../services/survey.service");
+const templates = require("../../templates");
+const blocks = require("../../utils/blocks.constants");
+const nextBlock = require("../../utils/blocks.order");
+const userService = require("../../services/user.service");
 
 module.exports = {
   registerPertData: registerPertData,
