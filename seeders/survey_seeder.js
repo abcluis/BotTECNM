@@ -2,8 +2,8 @@ let Survey       = require('../app/models/survey.model');
 const mongoose   = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function(err){
-    if(err)
+mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function (err) {
+    if (err)
         throw err;
     console.log('Connected to BotTECNM db');
 });
@@ -26,8 +26,8 @@ let survey1 = new Survey({
         phone:               6145134221,
         email:               'abc_luis30@hotmail.com',
         phone_alt:           3213213212,
-        career_speciality:   'Ingenieria En Sistemas Computacionales',
-        date_graduate:       '08/18',
+        career:              'Ingenieria En Informatica',
+        speciality:          'Seguridad Informatica',
         certificated:        true,
         english_mastery:     '50',
         other_mastery:       'Ninguna',
@@ -99,7 +99,8 @@ let survey2 = new Survey({
         phone:               3213213213,
         email:               'mario@hotmail.com',
         phone_alt:           4324324324,
-        career_speciality:   'Ingenieria En Sistemas Computacionales',
+        career:              'Ingenieria En Sistemas',
+        speciality:          'Dispositivos moviles',
         date_graduate:       '08/18',
         certificated:        true,
         english_mastery:     '80',
@@ -170,7 +171,8 @@ let survey3 = new Survey({
         phone:               3213213211,
         email:               'hugo@hotmail.com',
         phone_alt:           3213213232,
-        career_speciality:   'Ingenieria En Sistemas Computacionales',
+        career:              'Ingenieria En Sistemas',
+        speciality:          'Seguridad Informatica',
         date_graduate:       '08/15',
         certificated:        true,
         english_mastery:     '80',
@@ -190,8 +192,8 @@ let survey3 = new Survey({
         experience_residence: 'Muy buena'
     },
     work_aspect:   {
-        activity_studies:   'Maestria',
-        speciality_inst:    'Inteligencia artificial'
+        activity_studies: 'Maestria',
+        speciality_inst:  'Inteligencia artificial'
     }
 });
 
