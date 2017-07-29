@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function findOneSurvey(id) {
-  return Survey.findOne({ id_student: id });
+  return Survey.findOne({ id_student: id }).exec();
 }
 
 function createSurvey(body) {

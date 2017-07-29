@@ -38,6 +38,7 @@ function updateLastBlock(user) {
         .then((data) => {
             if(data){
                 data.last_block = user.last_block;
+                data.updated_at = new Date();
                 return data.save();
             }else {
                 throw new Error('User not register yet');

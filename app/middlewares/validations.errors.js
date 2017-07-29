@@ -13,7 +13,6 @@ function validationsErrors(err, req, res, next) {
         body.add(text);
         body.content.redirect_to_blocks = [];
         body.content.redirect_to_blocks.push(Object.keys(req.query)[1]);
-
         res.send(body.content);
     }else {
         next();

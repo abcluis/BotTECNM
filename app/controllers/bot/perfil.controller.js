@@ -102,12 +102,6 @@ function registerPersonalData(req, res) {
     let field = keys[1];
     let value = req.query[field];
 
-    let user = {
-        id:         id,
-        last_block: nextBlock(field)
-    };
-
-
     // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
         let arreglo = req.query[field].split(',');
@@ -119,10 +113,8 @@ function registerPersonalData(req, res) {
         });
     }
 
-    userService.updateLastBlock(user)
-        .then((data) => {
-            return surveyService.updatePersonalData(id, field, value);
-        })
+
+    surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 
             let body = new BodyCF();

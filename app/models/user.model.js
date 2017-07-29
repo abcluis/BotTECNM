@@ -8,7 +8,8 @@ const userSchema = new Schema({
     },
     last_block : String,
     name: String,
-    created_at: Date
+    created_at: Date,
+    updated_at: Date
 });
 
 userSchema.pre('save', function (next) {

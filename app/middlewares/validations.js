@@ -9,19 +9,41 @@ function validations(req,res,next) {
     let keys = Object.keys(req.query);
     let field = keys[1];
 
-
-    if(field === 'curp'){
-        if(validateCurp(req.query[field])){
+    switch (field) {
+        case 'curp':
+            if(isValidCurp(req.query[field])){
+                next();
+            }else {
+                next(new Error('Por favor ingresa una curp valida'));
+            }
+            break;
+        case 'birthdate': 
+            
+            if(isValidDate(req.query[field])){
+                next();
+            }else {
+                next(new Error('Por favor ingresa la fecha con el formato correcto'));
+            }
+            break;
+        default:
             next();
-        }else {
-            next(new Error('Por favor ingresa una curp valida'));
-        }
-    }else {
-        next();
+            break;
     }
+
+    
 }
 
-function validateCurp(curp) {
+function isValidDate(dateString) {
+    let regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if(!dateString.match(regEx))
+        return false;  // Invalid format
+    let d;
+    if(!((d = new Date(dateString))|0))
+        return false; // Invalid date (or this could be epoch)
+    return d.toISOString().slice(0,10) === dateString;
+}
+
+function isValidCurp(curp) {
 
     // Fuente
     // https://es.stackoverflow.com/questions/31039/c%C3%B3mo-validar-una-curp-de-m%C3%A9xico
@@ -41,7 +63,7 @@ function validateCurp(curp) {
         for(let i=0; i<17; i++)
             lngSuma = lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
         lngDigito = 10 - lngSuma % 10;
-        if (lngDigito == 10) return 0;
+        if (lngDigito === 10) return 0;
         return lngDigito;
     }
 

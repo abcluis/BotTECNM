@@ -9,6 +9,7 @@ let SurveyService = require('../services/survey.service');
 
 function surveyCreated(req, res, next) {
 
+
     let id = req.query['messenger user id'];
 
     SurveyService.findOneSurvey(id)
@@ -17,7 +18,7 @@ function surveyCreated(req, res, next) {
 
     function result(data) {
         if(data) {
-            next();
+            return next();
         }else {
             SurveyService.createSurvey({id_student: id})
                 .then(create);
@@ -25,7 +26,7 @@ function surveyCreated(req, res, next) {
     }
 
     function create() {
-        next();
+        return next();
     }
 
 }
