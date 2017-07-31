@@ -17,13 +17,13 @@ mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', funct
 
 let nextBlock = require('../app/utils/blocks.order');
 
-before(function () {
+/*before(function () {
     return Survey.remove({id_student: 101010})
         .then(() => {
             console.log('Survey eliminado');
         })
         .catch((err) => err);
-});
+});*/
 
 describe('Routes Test', function () {
     it('should send index', function (done) { // <= Pass in done callback
@@ -35,14 +35,6 @@ describe('Routes Test', function () {
                 done();
             });
 
-    });
-
-    it('should send all surveys', function (done) {
-        chai.request(app)
-            .get('/api/survey')
-            .end(function (err, res) {
-                done();
-            })
     });
 
     it('should return start message in the bot', function (done) {

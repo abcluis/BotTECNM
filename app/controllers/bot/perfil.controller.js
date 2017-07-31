@@ -69,7 +69,6 @@ function registerSchool(req, res) {
         })
         .then((result) => {
             if (result) {
-
                 survey.school = result.name;
                 return survey.save();
             } else {
