@@ -34,7 +34,7 @@ let job = schedule.scheduleJob('10 * * * *', function () {
                                 json: true // Automatically stringifies the body to JSON
                             };
 
-                            return rp(options)
+                            /*return rp(options)
                                 .then(() => {
                                     console.log('Enviado a ' + user.name);
                                     user.updated_at = new Date();
@@ -45,7 +45,7 @@ let job = schedule.scheduleJob('10 * * * *', function () {
                                 })
                                 .catch((err) => {
                                     console.error(err.message)
-                                });
+                                });*/
                         }
 
                     }

@@ -9,23 +9,21 @@ let app          = 'http://localhost:3000';
 let Survey       = require('../app/models/survey.model');
 let mongoose     = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function (err) {
-    if (err)
-        throw err;
-    console.log('Connected to BotTECNM db');
-});
+
 
 let nextBlock = require('../app/utils/blocks.order');
 
-/*before(function () {
-    return Survey.remove({id_student: 101010})
-        .then(() => {
-            console.log('Survey eliminado');
-        })
-        .catch((err) => err);
-});*/
 
 describe('Routes Test', function () {
+
+    before(function () {
+        mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function (err) {
+            if (err)
+                throw err;
+            console.log('Connected to BotTECNM db in routes.js');
+        });
+    });
+
     it('should send index', function (done) { // <= Pass in done callback
         chai.request(app)
             .get('/')
@@ -43,8 +41,8 @@ describe('Routes Test', function () {
             .post('/bot/start')
             .send({
                 'messenger user id': '101010',
-                'first name': 'Luis Fernando',
-                'last name': 'Gallegos'
+                'first name':        'Luis Fernando',
+                'last name':         'Gallegos'
             })
             .end(function (err, res) {
                 expect(res.body).to.be.an('object');
@@ -153,4 +151,9 @@ describe('Routes Test', function () {
             }));
     });
 
+    after(function () {
+        mongoose.connection.close();
+    });
+
 });
+

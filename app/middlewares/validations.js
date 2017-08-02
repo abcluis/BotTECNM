@@ -8,8 +8,9 @@ function validations(req, res, next) {
 
     let keys  = Object.keys(req.query);
     let field = keys[1];
+    console.log(req.method);
 
-    if (req.path === '/bot/start') {
+    if (req.method === 'POST') {
         return next();
     }
 
