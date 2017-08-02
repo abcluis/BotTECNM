@@ -36,12 +36,30 @@ let surveySchema = new Schema({
         ]
     },
     pertinence:    {
-        quality_teachers:     String,
-        study_plan:           String,
-        oportunity_part:      String,
-        emphasis_invest:      String,
-        satisfaction_cond:    String,
-        experience_residence: String
+        quality_teachers:     {
+            type: String,
+            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+        },
+        study_plan:           {
+            type: String,
+            enum: ['Muy bueno', 'Bueno' , 'Regular' , 'Malo']
+        },
+        oportunity_part:      {
+            type: String,
+            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+        },
+        emphasis_invest:      {
+            type: String,
+            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+        },
+        satisfaction_cond:    {
+            type: String,
+            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+        },
+        experience_residence: {
+            type: String,
+            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+        }
     },
     work_aspect:   {
         actual_activity:    String,
