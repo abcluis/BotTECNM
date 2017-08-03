@@ -3,6 +3,7 @@ const templates = require("../../templates");
 const blocks = require("../../utils/blocks.constants");
 const nextBlock = require("../../utils/blocks.order");
 const userService = require("../../services/user.service");
+const handleErrors = require('../../utils/handle.errors');
 
 module.exports = {
   registerPertData: registerPertData,
@@ -47,6 +48,8 @@ function registerPertData(req, res) {
       body.content.redirect_to_blocks.push(nextBlock(field));
       res.send(body.content);
     })
-    .catch(err => res.send(err));
+    .catch(function (err) {
+        handleErrors(err, res, field);
+    });
   //res.send({ id: id, field: field, value: value });
 }

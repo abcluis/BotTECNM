@@ -4,30 +4,24 @@
 let chai     = require('chai');
 let chaiHttp = require('chai-http');
 let expect   = require('chai').expect;
-let mongoose = require('mongoose');
 
 chai.use(chaiHttp);
 
-let app    = 'http://localhost:3000';
-let Survey = require('../app/models/survey.model');
+let app       = 'http://localhost:3000';
+let Survey    = require('../app/models/survey.model');
 let nextBlock = require('../app/utils/blocks.order');
 
-
-mongoose.Promise = global.Promise;
+let db = require('../config/db');
 
 
 describe('Routes Work Aspect', function () {
 
     before(function () {
-        mongoose.connect('mongodb://admin:admin@ds133582.mlab.com:33582/bottecnm', function (err) {
-            if (err)
-                throw err;
-            console.log('Connected to BotTECNM db');
-        });
+        return db.open();
     });
 
     beforeEach(function () {
-        return Survey.remove({id_student : 101010});
+        return Survey.remove({id_student: 101010});
     });
 
     let routes = [
@@ -232,18 +226,18 @@ describe('Routes Work Aspect', function () {
                         expect(res.body).to.have.property('redirect_to_blocks');
                         expect(res.body.redirect_to_blocks).to.be.an('array');
                         expect(res.body.redirect_to_blocks[0]).to.equal(nextBlock(route.field));
-
-                        return Survey.findOne({id_student : 101010});
+                        return Survey.findOne({id_student: 101010});
+                    })
+                    .catch(function (err) {
+                        throw err;
                     })
                     .then(function (survey) {
-                        console.log(survey);
                         expect(survey).to.have.property('work_aspect');
-                        if(route.field === 'recruitment_reqs') {
+                        if (route.field === 'recruitment_reqs') {
                             expect(survey.work_aspect.recruitment_reqs).to.be.an('array');
-                        }else {
+                        } else {
                             expect(survey.work_aspect).to.have.property(route.field, route.value_valid);
                         }
-                        //expect(survey.work_aspect).to.have.property(route.field, 'Holi');
 
                     })
                     .catch(function (err) {
@@ -257,32 +251,10 @@ describe('Routes Work Aspect', function () {
         }
 
     });
-    
-    describe('Routes invalid work aspect', function () {
-       
-        
-        function makeRequest(route) {
-            
-            it(route.describe, function () {
-                return chai.request(app)
-                    .get('/bot/joblocation/data?messenger user id=101010&' + route.field + '=' + route.value_valid)
-                    .then(function (res) {
-
-                    })
-            })
-            
-        }
-        
-        /*for(let i in routes) {
-            makeRequest(routes[i]);
-        }*/
-        
-        
-    });
 
 
     after(function () {
-        mongoose.connection.close();
+        db.close();
     });
 
 });

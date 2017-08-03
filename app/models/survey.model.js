@@ -4,6 +4,7 @@
 
 let mongoose = require('mongoose');
 let Schema   = mongoose.Schema;
+let messages = require('../utils/message.errors');
 
 let surveySchema = new Schema({
     id_student:    {
@@ -12,24 +13,98 @@ let surveySchema = new Schema({
     },
     school:        String,
     personal_data: {
-        full_name:           String,
-        number_control:      Number,
-        birthdate:           String,
+        full_name:           {
+            type : String,
+            validate: {
+                validator: function(v) {
+                    return /^[a-zA-Z ]+$/.test(v);
+                },
+                message: messages.full_name
+            },
+        },
+        number_control:      {
+            type : String,
+            validate: {
+                validator : function (v) {
+                    return /^[0-9]+$/.test(v);
+                },
+                message : messages.number_control
+            }
+        },
+        birthdate:           {
+            type: String,
+            validate: {
+                validator : isValidDate,
+                message: messages.birthdate
+            }
+        },
         curp:                String,
-        true_gender:         String,
+        true_gender:         {
+            type: String,
+            enum: {
+                values : ['Masculino', 'Femenino'],
+                message: messages.true_gender
+            }
+        },
         civil_status:        String,
         actual_address:      String,
         actual_city:         String,
         actual_municipality: String,
-        actual_state:        String,
-        phone:               String,
-        email:               String,
-        phone_alt:           String,
+        actual_state:        {
+            type: String,
+            validate: {
+                validator : isValidState,
+                message: messages.actual_state
+            }
+        },
+        phone:               {
+            type: String,
+            validate: {
+                validator : function (v) {
+                    return /^[0-9]+$/.test(v);
+                },
+                message: messages.phone
+            },
+        },
+        email:               {
+            type : String,
+            validate : {
+                validator : validateEmail,
+                message : messages.email
+            }
+        },
+        phone_alt:           {
+            type : String,
+            validate: {
+                validator : function (v) {
+                    return /^[0-9]+$/.test(v);
+                },
+                message: messages.phone_alt
+            }
+        },
         career:              String,
         speciality:          String,
-        date_graduate:       String,
-        certificated:        Boolean,
-        english_mastery:     String,
+        date_graduate:       {
+            type : String,
+            validate: {
+                validator : isValidGraduateDate,
+                message : messages.date_graduate
+            }
+        },
+        certificated:        {
+            type: String,
+            enum: {
+                values : ['Si' , 'No'],
+                message: messages.certificated
+            }
+        },
+        english_mastery:     {
+            type : String,
+            enum : {
+                values : ['20','40','60','80','100'],
+                message : messages.english_mastery
+            }
+        },
         other_mastery:       String,
         package_comp:        [
             {name: String}
@@ -38,27 +113,45 @@ let surveySchema = new Schema({
     pertinence:    {
         quality_teachers:     {
             type: String,
-            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+            enum: {
+                values:  ['Muy buena', 'Buena', 'Regular', 'Mala'],
+                message: messages.quality_teachers
+            }
         },
         study_plan:           {
             type: String,
-            enum: ['Muy bueno', 'Bueno' , 'Regular' , 'Malo']
+            enum: {
+                values : ['Muy bueno', 'Bueno', 'Regular', 'Malo'],
+                message: messages.study_plan
+            }
         },
         oportunity_part:      {
             type: String,
-            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+            enum: {
+                values:  ['Muy buena', 'Buena', 'Regular', 'Mala'],
+                message: messages.oportunity_part
+            }
         },
         emphasis_invest:      {
             type: String,
-            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+            enum: {
+                values:  ['Muy buena', 'Buena', 'Regular', 'Mala'],
+                message: messages.emphasis_invest
+            }
         },
         satisfaction_cond:    {
             type: String,
-            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+            enum: {
+                values:  ['Muy buena', 'Buena', 'Regular', 'Mala'],
+                message: messages.satisfaction_cond
+            }
         },
         experience_residence: {
             type: String,
-            enum: ['Muy buena', 'Buena' , 'Regular' , 'Mala']
+            enum: {
+                values:  ['Muy buena', 'Buena', 'Regular', 'Mala'],
+                message: messages.experience_residence
+            }
         }
     },
     work_aspect:   {
@@ -98,6 +191,38 @@ let surveySchema = new Schema({
     }
 
 });
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function isValidDate(dateString) {
+    let regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regEx))
+        return false;  // Invalid format
+    let d;
+    if (!((d = new Date(dateString)) | 0))
+        return false; // Invalid date (or this could be epoch)
+    return d.toISOString().slice(0, 10) === dateString;
+}
+function isValidGraduateDate(dateString) {
+    let regEx = /^\d{4}-\d{2}$/;
+    return dateString.match(regEx);
+}
+
+function isValidState(string) {
+    let state_names = [
+        'aguascalientes', 'baja california norte', 'baja california sur',
+        'campeche', 'chihuahua', 'chiapas', 'coahuila', 'colima',
+        'distrito federal', 'durango', 'guerrero', 'guanajuato', 'hidalgo',
+        'jalisco', 'estado de mexico', 'michoacan', 'morelos', 'nayarit', 'nuevo leon',
+        'oaxaca', 'puebla', 'queretaro', 'quintana Roo', 'sinaloa', 'san luis potosí',
+        'sonora', 'tabasco', 'tamaulipas', 'tlaxcala', 'veracruz', 'yucatán', 'zacatecas'
+    ];
+
+    return state_names.indexOf(string) > -1;
+}
 
 let survey = mongoose.model('Survey', surveySchema);
 

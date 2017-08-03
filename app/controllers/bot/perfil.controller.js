@@ -7,8 +7,8 @@ const surveyService = require('../../services/survey.service');
 const School        = require('../../models/school.model');
 const blocks        = require('../../utils/blocks.constants');
 const nextBlock     = require('../../utils/blocks.order');
-
-const templates = require('../../templates');
+const handleErrors  = require('../../utils/handle.errors');
+const templates     = require('../../templates');
 
 let BodyCF   = templates.bodyChat;
 let TextCF   = templates.textChat;
@@ -70,7 +70,17 @@ function registerSchool(req, res) {
         .then((result) => {
             if (result) {
                 survey.school = result.name;
-                return survey.save();
+                survey.save()
+                    .then(function (result) {
+                        let body   = new templates.bodyChat();
+                        let card   = new templates.cardChat('Asi que eres del ' + result.school);
+                        let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
+                        let btnNo  = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
+                        card.addButton(btnYes);
+                        card.addButton(btnNo);
+                        body.add(card);
+                        res.send(body.content);
+                    });
             } else {
                 let body  = new templates.bodyChat();
                 let card  = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
@@ -78,17 +88,8 @@ function registerSchool(req, res) {
                 card.addButton(btnOk);
                 body.add(card);
                 res.send(body.content);
+                console.log('Ya se envio prro');
             }
-        })
-        .then((result) => {
-            let body   = new templates.bodyChat();
-            let card   = new templates.cardChat('Asi que eres del ' + result.school);
-            let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
-            let btnNo  = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
-            card.addButton(btnYes);
-            card.addButton(btnNo);
-            body.add(card);
-            res.send(body.content);
         })
         .catch((err) => res.send(err));
 }
@@ -123,5 +124,7 @@ function registerPersonalData(req, res) {
             body.content.redirect_to_blocks.push(nextBlock(field));
             res.send(body.content);
         })
-        .catch((err) => res.send(err));
+        .catch(function (err) {
+            handleErrors(err,res,field);
+        });
 }

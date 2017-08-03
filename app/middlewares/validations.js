@@ -8,7 +8,6 @@ function validations(req, res, next) {
 
     let keys  = Object.keys(req.query);
     let field = keys[1];
-    console.log(req.method);
 
     if (req.method === 'POST') {
         return next();
@@ -22,22 +21,6 @@ function validations(req, res, next) {
                 next(new Error('Por favor ingresa una curp valida'));
             }
             break;
-        case 'birthdate':
-
-            if (isValidDate(req.query[field])) {
-                next();
-            } else {
-                next(new Error('Por favor ingresa la fecha con el formato correcto'));
-            }
-            break;
-        case 'actual_state':
-            if (isValidState(req.query[field].toLowerCase())) {
-                next();
-            } else {
-                next(new Error('Por favor debes ingresar un estado valido'));
-            }
-
-            break;
         case undefined:
 
             next(new Error('Por favor agregue el segundo campo'));
@@ -49,18 +32,7 @@ function validations(req, res, next) {
     }
 }
 
-function isValidState(string) {
-    let state_names = [
-        'aguascalientes', 'baja california norte', 'baja california sur',
-        'campeche', 'chihuahua', 'chiapas', 'coahuila', 'colima',
-        'distrito federal', 'durango', 'guerrero', 'guanajuato', 'hidalgo',
-        'jalisco', 'estado de mexico', 'michoacan', 'morelos', 'nayarit', 'nuevo leon',
-        'oaxaca', 'puebla', 'queretaro', 'quintana Roo', 'sinaloa', 'san luis potosí',
-        'sonora', 'tabasco', 'tamaulipas', 'tlaxcala', 'veracruz', 'yucatán', 'zacatecas'
-    ];
 
-    return state_names.indexOf(string) > -1;
-}
 
 function isValidDate(dateString) {
     let regEx = /^\d{4}-\d{2}-\d{2}$/;

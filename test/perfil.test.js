@@ -1,16 +1,26 @@
 const perfil = require('../app/controllers/bot/perfil.controller');
 
 
-const chai = require('chai');
-let expect = chai.expect;
-let sinon  = require('sinon');
+const chai    = require('chai');
+let expect    = chai.expect;
+let sinon     = require('sinon');
 let httpMocks = require('node-mocks-http');
 
-describe('Perfil Controller Test', function () {
+let chaiHttp = require('chai-http');
+
+chai.use(chaiHttp);
+
+let db = require('../config/db');
+
+describe('Controller Personal Data', function () {
+
+    before(function () {
+        db.open();
+    });
 
     it('register user', function (done) {
 
-        let req  = httpMocks.createRequest({
+        let req = httpMocks.createRequest({
             body: {
                 'messenger user id': 101010,
                 'first name':        'Luis Fernando',
@@ -18,39 +28,61 @@ describe('Perfil Controller Test', function () {
             }
         });
 
-        let res= {};
-        res.send = function(body) {
-            expect(body).to.be.an('object');
-            expect(body).to.have.property('messages');
-            expect(body.messages).to.be.an('array');
-            expect(body.messages[0]).to.have.property('text','Hola bienvenido Luis Fernando Gallegos');
-            done();
-        };
+        let res = httpMocks.createResponse({
+            eventEmitter: require('events').EventEmitter
+        });
 
-        perfil.registerUser(req,res);
-    });
+        perfil.registerUser(req, res);
 
-    
-    it('should register valid school', function (done) {
-        let req  = httpMocks.createRequest({
-            query: {
-                'messenger user id': 101010,
-                'school':        'itch ii'
+        res.on('end', function() {
+            try {
+                let body = res._getData();
+                expect(body).to.be.an('object');
+                expect(body).to.have.property('messages');
+                expect(body.messages).to.be.an('array');
+                expect(body.messages[0]).to.have.property('text', 'Hola bienvenido Luis Fernando Gallegos Gonzalez');
+                done();
+            } catch (e) {
+                done(e);
             }
         });
 
-        let res= {};
-        res.send = function (body) {
-            expect(body).to.have.property('messages');
-            expect(body.messages).to.be.an('array');
-            expect(body.messages).to.be.an('array');
-            expect(body.messages[0]).to.be.an('object');
-            expect(body.messages[0]).to.have.property('attachment');
+    });
 
-            done();
-        };
 
-        perfil.registerSchool(req,res);
+    it('should register valid school', function (done) {
+        let req = httpMocks.createRequest({
+            query: {
+                'messenger user id': 101010,
+                'school':            'itch ii'
+            }
+        });
+
+
+        let res = httpMocks.createResponse({
+            eventEmitter: require('events').EventEmitter
+        });
+
+
+
+
+        perfil.registerSchool(req, res);
+
+
+        res.on('end', function() {
+            try {
+                let body = res._getData();
+                expect(body).to.have.property('messages');
+                done();
+            } catch (e) {
+                done(e);
+            }
+        });
+
+    });
+
+    after(function () {
+        db.close();
     })
 
 });
