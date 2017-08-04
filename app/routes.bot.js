@@ -37,7 +37,7 @@ router.get('/bot/test', function (req,res) {
             for(let i in schools){
                 let aux = {
                     "title": schools[i].name,
-                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test= " + schools[i].name,
+                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + schools[i].name,
                     "type":"json_plugin_url"
                 };
 
