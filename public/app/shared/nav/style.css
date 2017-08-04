@@ -19,7 +19,19 @@
         overflow: hidden;
     }
 
-    li.txt-overflow:hover {
+    li.txt-overflow-1:hover {
+        text-overflow: inherit;
+        overflow: visible;
+        width: initial;
+    }
+
+    li.txt-overflow-2:hover {
+        text-overflow: inherit;
+        overflow: visible;
+        width: initial;
+    }
+
+    li.txt-overflow-3:hover {
         text-overflow: inherit;
         overflow: visible;
         width: initial;
