@@ -32,7 +32,7 @@ router.get('/bot/pertinence/data', botPertContoller.registerPertData);
 router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
 router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 
-router.get('/bot/test', function () {
+router.get('/bot/test', function (req,res) {
 
     res.send({
         "messages": [
