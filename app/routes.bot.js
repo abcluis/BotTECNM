@@ -32,6 +32,29 @@ router.get('/bot/pertinence/data', botPertContoller.registerPertData);
 router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
 router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 
+router.get('/bot/test', function () {
+
+    res.send({
+        "messages": [
+            {
+                "text":  "Did you enjoy the last game of the CF Rockets?",
+                "quick_replies": [
+                    {
+                        "title":"ITCH II",
+                        "block_name": "full_name"
+                    },
+                    {
+                        "title":"ITCH",
+                        "url": "https://rockets.chatfuel.com/api/sad-match",
+                        "type":"json_plugin_url"
+                    }
+                ]
+            }
+        ]
+    });
+
+});
+
 /*
     DESEMPEÑO EN EL TRABAJO RELACIONADO CON LA FORMACION RECIBIDA
     ---- PERFORMANCE -----
