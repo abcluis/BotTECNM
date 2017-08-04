@@ -41,6 +41,8 @@ router.get('/bot/test', function (req,res) {
                     "type":"json_plugin_url"
                 };
 
+                console.log(aux);
+
                 body.messages[0].quick_replies.push(aux);
             }
 
