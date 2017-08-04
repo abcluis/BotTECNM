@@ -1,12 +1,12 @@
 /* Small Devices, Tablets */
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
     li.txt-overflow-1 {
         white-space: nowrap;
         width: 1.5em;
         overflow: hidden;
     }
-    
+
     li.txt-overflow-2 {
         white-space: nowrap;
         width: 2em;
