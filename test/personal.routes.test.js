@@ -5,9 +5,9 @@ let chai       = require('chai')
     , chaiHttp = require('chai-http');
 let expect     = require('chai').expect;
 chai.use(chaiHttp);
-let app    = 'http://localhost:3000';
-let Survey = require('../app/models/survey.model');
-let User   = require('../app/models/user.model');
+let app            = 'http://localhost:3000';
+let Survey         = require('../app/models/survey.model');
+let User           = require('../app/models/user.model');
 let errorsMessages = require('../app/utils/message.errors');
 
 let db = require('../config/db');
@@ -21,12 +21,23 @@ describe('Routes Personal Data', function () {
         db.open();
     });
 
+
+    beforeEach(function () {
+        return Survey.remove({id_student: 101010});
+    });
+
     let routes = [
         {
             describe:      'Route full_name',
             field:         'full_name',
             value_valid:   'Muy buena',
             value_invalid: '321321'
+        },
+        {
+            describe:      'Route curp',
+            field:         'curp',
+            value_valid:   'GAGL950830HCHLNS06',
+            value_invalid: 'GAGL950830HCHLNS05'
         },
         {
             describe:      'Route number_control',
@@ -69,7 +80,7 @@ describe('Routes Personal Data', function () {
         {
             describe:      'Route actual_state',
             field:         'actual_state',
-            value_valid:   'chihuahua',
+            value_valid:   'Chihuahua',
             value_invalid: 'chihua hua'
         },
         {
@@ -128,14 +139,10 @@ describe('Routes Personal Data', function () {
             field:       'package_comp',
             value_valid: 'SQL, JAVA, Android'
         }
-
     ];
 
     describe('Valid Personal Data Routes', function () {
 
-        beforeEach(function () {
-            return Survey.remove({id_student: 101010});
-        });
 
 
         it('Register user', function () {
@@ -182,6 +189,7 @@ describe('Routes Personal Data', function () {
                 })
         });
 
+
         function makeRequest(route) {
             it(route.describe, function () {
 
@@ -215,13 +223,41 @@ describe('Routes Personal Data', function () {
         }
 
         for (let i in routes) {
-            makeRequest(routes[i]);
+            if(routes[i].value_valid){
+                makeRequest(routes[i]);
+            }
         }
 
 
     });
 
     describe('Invalid Personal Data Routes', function () {
+
+        it('Route fullname with typo', function () {
+
+            let uri = '/bot/personal/data?messenger user id=101010&fullname=Luis Gallegos';
+
+            return chai.request(app)
+                .get(uri)
+                .then(function (res) {
+                    expect(res).to.have.property('body');
+                    expect(res.body).to.be.an('object');
+                    expect(res.body).to.have.property('messages');
+                    expect(res.body).to.have.property('redirect_to_blocks');
+                    expect(res.body.redirect_to_blocks[0]).to.equal('school');
+                    expect(res.body.messages[0]).to.have.property('text', errorsMessages.fieldWithTypo);
+                    console.log(res.body);
+                    return Survey.findOne({id_student : 101010});
+                })
+                .then(function (survey) {
+
+                    expect(survey).to.be.null;
+                })
+                .catch(function (err) {
+                    throw err;
+                })
+        });
+
 
         function makeRequest(route) {
             it(route.describe, function () {
@@ -256,6 +292,9 @@ describe('Routes Personal Data', function () {
                 makeRequest(routes[i]);
             }
         }
+
+
+
 
 
     });

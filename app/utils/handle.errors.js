@@ -5,21 +5,21 @@
 
 
 const templates = require('../templates');
-let BodyCF   = templates.bodyChat;
-let TextCF   = templates.textChat;
+let BodyCF      = templates.bodyChat;
+let TextCF      = templates.textChat;
 
 
 // Funcion encargada de convertir los errores a cosas entendibles para el bot
 
-function handleErrors(err, res, field){
+function handleErrors(err, res, field) {
 
     // ValidatorError son errores en la validacion del survey.model.js
 
-    if(err.name === 'ValidationError'){
+    if (err.name === 'ValidationError') {
 
         let errors = err.errors;
 
-        for(var i in errors) {
+        for (let i in errors) {
             let body = new BodyCF();
             let text = new TextCF(errors[i].message);
             body.add(text);
@@ -29,8 +29,16 @@ function handleErrors(err, res, field){
         }
 
 
+    }else if(err.name === 'FieldInvalid') {
 
-    }else {
+        let body = new BodyCF();
+        let text = new TextCF(err.message);
+        body.add(text);
+        body.content.redirect_to_blocks = [];
+        body.content.redirect_to_blocks.push('school');
+        res.send(body.content);
+
+    } else {
         res.send(err);
     }
 

@@ -8,9 +8,9 @@ let expect   = require('chai').expect;
 
 chai.use(chaiHttp);
 
-let app      = 'http://localhost:3000';
-let Survey   = require('../app/models/survey.model');
-let db       = require('../config/db');
+let app           = 'http://localhost:3000';
+let Survey        = require('../app/models/survey.model');
+let db            = require('../config/db');
 let errorMessages = require('../app/utils/message.errors');
 
 

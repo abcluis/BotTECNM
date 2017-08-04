@@ -14,35 +14,41 @@ let surveySchema = new Schema({
     school:        String,
     personal_data: {
         full_name:           {
-            type : String,
+            type:     String,
             validate: {
-                validator: function(v) {
+                validator: function (v) {
                     return /^[a-zA-Z ]+$/.test(v);
                 },
-                message: messages.full_name
-            },
+                message:   messages.full_name
+            }
         },
         number_control:      {
-            type : String,
+            type:     String,
             validate: {
-                validator : function (v) {
+                validator: function (v) {
                     return /^[0-9]+$/.test(v);
                 },
-                message : messages.number_control
+                message:   messages.number_control
             }
         },
         birthdate:           {
-            type: String,
+            type:     String,
             validate: {
-                validator : isValidDate,
-                message: messages.birthdate
+                validator: isValidDate,
+                message:   messages.birthdate
             }
         },
-        curp:                String,
+        curp:                {
+            type:     String,
+            validate: {
+                validator: isValidCurp,
+                message:   messages.curp
+            }
+        },
         true_gender:         {
             type: String,
             enum: {
-                values : ['Masculino', 'Femenino'],
+                values:  ['Masculino', 'Femenino'],
                 message: messages.true_gender
             }
         },
@@ -51,58 +57,58 @@ let surveySchema = new Schema({
         actual_city:         String,
         actual_municipality: String,
         actual_state:        {
-            type: String,
+            type:     String,
             validate: {
-                validator : isValidState,
-                message: messages.actual_state
+                validator: isValidState,
+                message:   messages.actual_state
             }
         },
         phone:               {
-            type: String,
+            type:     String,
             validate: {
-                validator : function (v) {
+                validator: function (v) {
                     return /^[0-9]+$/.test(v);
                 },
-                message: messages.phone
-            },
+                message:   messages.phone
+            }
         },
         email:               {
-            type : String,
-            validate : {
-                validator : validateEmail,
-                message : messages.email
+            type:     String,
+            validate: {
+                validator: validateEmail,
+                message:   messages.email
             }
         },
         phone_alt:           {
-            type : String,
+            type:     String,
             validate: {
-                validator : function (v) {
+                validator: function (v) {
                     return /^[0-9]+$/.test(v);
                 },
-                message: messages.phone_alt
+                message:   messages.phone_alt
             }
         },
         career:              String,
         speciality:          String,
         date_graduate:       {
-            type : String,
+            type:     String,
             validate: {
-                validator : isValidGraduateDate,
-                message : messages.date_graduate
+                validator: isValidGraduateDate,
+                message:   messages.date_graduate
             }
         },
         certificated:        {
             type: String,
             enum: {
-                values : ['Si' , 'No'],
+                values:  ['Si', 'No'],
                 message: messages.certificated
             }
         },
         english_mastery:     {
-            type : String,
-            enum : {
-                values : ['20','40','60','80','100'],
-                message : messages.english_mastery
+            type: String,
+            enum: {
+                values:  ['20', '40', '60', '80', '100'],
+                message: messages.english_mastery
             }
         },
         other_mastery:       String,
@@ -121,7 +127,7 @@ let surveySchema = new Schema({
         study_plan:           {
             type: String,
             enum: {
-                values : ['Muy bueno', 'Bueno', 'Regular', 'Malo'],
+                values:  ['Muy bueno', 'Bueno', 'Regular', 'Malo'],
                 message: messages.study_plan
             }
         },
@@ -211,7 +217,38 @@ function isValidGraduateDate(dateString) {
     return dateString.match(regEx);
 }
 
+function isValidCurp(curp) {
+
+    // Fuente
+    // https://es.stackoverflow.com/questions/31039/c%C3%B3mo-validar-una-curp-de-m%C3%A9xico
+
+    let re       = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
+        validado = curp.match(re);
+
+    if (!validado)  //Coincide con el formato general?
+        return false;
+
+    //Validar que coincida el dígito verificador
+    function digitoVerificador(curp17) {
+        //Fuente https://consultas.curp.gob.mx/CurpSP/
+        let diccionario = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+            lngSuma     = 0.0,
+            lngDigito   = 0.0;
+        for (let i = 0; i < 17; i++)
+            lngSuma = lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
+        lngDigito = 10 - lngSuma % 10;
+        if (lngDigito === 10) return 0;
+        return lngDigito;
+    }
+
+    if (validado[2] != digitoVerificador(validado[1]))
+        return false;
+
+    return true; //Validado
+}
+
 function isValidState(string) {
+
     let state_names = [
         'aguascalientes', 'baja california norte', 'baja california sur',
         'campeche', 'chihuahua', 'chiapas', 'coahuila', 'colima',
@@ -221,7 +258,7 @@ function isValidState(string) {
         'sonora', 'tabasco', 'tamaulipas', 'tlaxcala', 'veracruz', 'yucatán', 'zacatecas'
     ];
 
-    return state_names.indexOf(string) > -1;
+    return state_names.indexOf(string.toLowerCase()) > -1;
 }
 
 let survey = mongoose.model('Survey', surveySchema);

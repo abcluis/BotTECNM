@@ -7,6 +7,7 @@ module.exports = {
     full_name:            'El nombre solo puede contener letras y espacios',
     number_control:       'El numero de control solo acepta numeros',
     birthdate:            'La fecha de nacimiento no tiene el formato correcto',
+    curp:                 'La curp ingresada no es valida',
     true_gender:          'El genero no es correcto ingrese una respuesta valida',
     actual_state:         'Ingresa un estado de mexico valido',
     phone:                'Ingresa un numero de telefono valido',
@@ -20,6 +21,10 @@ module.exports = {
     oportunity_part:      'Se ingreso un valor no permitido para participacion en proyectos',
     emphasis_invest:      'Se ingreso un valor no permitido para enfasis en la investigacion',
     satisfaction_cond:    'Se ingreso un valor no permitido para la infraestructura',
-    experience_residence: 'Se ingreso un valor no permitido para la experiencia en residencias'
+    experience_residence: 'Se ingreso un valor no permitido para la experiencia en residencias',
+    // Otros errores
+    withoutFields:        'No tiene un segundo campo para procesar la informacion',
+    fieldWithTypo:        'El segundo campo no se encuentra registrado como valido'
+
 
 };

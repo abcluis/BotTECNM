@@ -98,6 +98,9 @@ function registerPersonalData(req, res) {
     let keys = Object.keys(req.query);
 
     // id   field   value
+    for(let i in req.query){
+        console.log(i);
+    }
     let id    = req.query[user_id];
     let field = keys[1];
     let value = req.query[field];

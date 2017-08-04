@@ -1,8 +1,8 @@
 /**
  * Created by usuario1 on 7/29/2017.
  */
-let expect     = require('chai').expect;
-let sinon      = require('sinon');
+let expect = require('chai').expect;
+let sinon  = require('sinon');
 
 
 describe('Middlewares Test', function () {
@@ -93,10 +93,10 @@ describe('Middlewares Test', function () {
         });
 
         it('should continue to next with error of a invalid state', function () {
-            let req  = {
+            let req = {
                 query: {
                     'messenger user id': '101010',
-                    'actual_state' : 'Baja CaliFORNIAsur'
+                    'actual_state':      'Baja CaliFORNIAsur'
                 }
             };
 
@@ -112,10 +112,10 @@ describe('Middlewares Test', function () {
         });
 
         it('should to be true with a state in upper and lower case', function () {
-            let req  = {
+            let req = {
                 query: {
                     'messenger user id': '101010',
-                    'actual_state' : 'Baja CaliFORNIA sur'
+                    'actual_state':      'Baja CaliFORNIA sur'
                 }
             };
 
@@ -151,11 +151,7 @@ describe('Middlewares Test', function () {
         });
 
 
-
     });
-
-
-
 
 
 });

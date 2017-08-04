@@ -1,4 +1,4 @@
-const perfil = require('../app/controllers/bot/perfil.controller');
+const perfil = require('../app/controllers/bot/personal.data.controller');
 
 
 const chai    = require('chai');

@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-const perfilController      = require('./controllers/bot/perfil.controller.js');
+const perfilController      = require('./controllers/bot/personal.data.controller.js');
 const botPertContoller      = require('./controllers/bot/bot.pertinence.controller');
 const botJobLocalController = require('./controllers/bot/bot.job.location.controller');
 const resumeController      = require('./controllers/bot/resume.controller');
