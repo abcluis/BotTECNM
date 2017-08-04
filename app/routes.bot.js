@@ -13,30 +13,12 @@ const validationsErrors = require('./middlewares/validations.errors.js');
 const surveyCreated     = require('./middlewares/surveyCreated');
 const recordUser        = require('./middlewares/record');
 
-router.use(validations);
-router.use(validationsErrors);
-router.use(surveyCreated);
-router.use(recordUser);
-
-// router.get('/bot/resume', resumeController)
-
-router.post('/bot/start', perfilController.registerUser);
-router.get('/bot/school', perfilController.registerSchool);
-router.get('/bot/personal/data', perfilController.registerPersonalData);
-
-// PERTINENCIA Y DISPONIBILIDAD DE MEDIOS
-router.post('/bot/pertinence/init', botPertContoller.initPertData);
-router.get('/bot/pertinence/data', botPertContoller.registerPertData);
-
-//UBICACION LABORAL
-router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
-router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 
 let School = require('./models/school.model');
 
 router.get('/bot/test', function (req,res) {
 
-    let state = req.query.state;
+    let state = req.query.testing;
 
     School.find({state : state})
         .then(function (schools) {
@@ -79,6 +61,7 @@ router.get('/bot/test', function (req,res) {
 });
 
 
+
 router.get('/bot/test2/school' , function (req, res) {
 
     let school = req.query.test;
@@ -92,6 +75,30 @@ router.get('/bot/test2/school' , function (req, res) {
     });
 
 });
+
+
+router.use(validations);
+router.use(validationsErrors);
+router.use(surveyCreated);
+router.use(recordUser);
+
+// router.get('/bot/resume', resumeController)
+
+router.post('/bot/start', perfilController.registerUser);
+router.get('/bot/school', perfilController.registerSchool);
+router.get('/bot/personal/data', perfilController.registerPersonalData);
+
+// PERTINENCIA Y DISPONIBILIDAD DE MEDIOS
+router.post('/bot/pertinence/init', botPertContoller.initPertData);
+router.get('/bot/pertinence/data', botPertContoller.registerPertData);
+
+//UBICACION LABORAL
+router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
+router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
+
+
+
+
 
 /*
     DESEMPEÑO EN EL TRABAJO RELACIONADO CON LA FORMACION RECIBIDA
