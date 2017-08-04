@@ -5,7 +5,7 @@ const perfilController      = require('./controllers/bot/personal.data.controlle
 const botPertContoller      = require('./controllers/bot/bot.pertinence.controller');
 const botJobLocalController = require('./controllers/bot/bot.job.location.controller');
 const resumeController      = require('./controllers/bot/resume.controller');
-
+const performanceController = require('./controllers/bot/performance.controller');
 
 // -------- Middlewares --------
 const validations       = require('./middlewares/validations');
@@ -31,5 +31,16 @@ router.get('/bot/pertinence/data', botPertContoller.registerPertData);
 //UBICACION LABORAL
 router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
 router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
+
+/*
+    DESEMPEÑO EN EL TRABAJO RELACIONADO CON LA FORMACION RECIBIDA
+    ---- PERFORMANCE -----
+*/
+
+router.get('/bot/performance/data', performanceController.registerData);
+
+// Esta ruta sera la que manejara el mensaje del block Default answer para en caso de un error con el servidor
+// se encargara de redirigir al usuario de nuevo al bloque donde se quedo
+//router.get('/bot/error');
 
 module.exports = router;

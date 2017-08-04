@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 let app           = 'http://localhost:3000';
 let Survey        = require('../app/models/survey.model');
 let db            = require('../config/db');
-let errorMessages = require('../app/utils/message.errors');
+let errorMessages = require('../app/utils/messages.bot');
 
 
 describe('Routes Pertinence', function () {

@@ -4,7 +4,7 @@
 
 let mongoose = require('mongoose');
 let Schema   = mongoose.Schema;
-let messages = require('../utils/message.errors');
+let messages = require('../utils/messages.bot');
 
 let surveySchema = new Schema({
     id_student:    {
@@ -194,6 +194,27 @@ let surveySchema = new Schema({
         boss_namejob:       String,
         economic_sector:    String,
         comp_orgsize:       String
+    },
+    performance:   {
+        academic_efficiency:   {
+            type : String,
+            enum : {
+                values : ['Muy eficiente', 'Eficiente', 'Poco eficiente', 'Deficiente'],
+                message : messages.academic_efficiency
+            }
+        },
+        academic_calification: String,
+        residences_utility:    String,
+        field_of_study:        String,
+        academic_degree:       String,
+        work_experience:       String,
+        labor_competence:      String,
+        institute_position:    String,
+        knowledge_flanguages:  String,
+        references:            String,
+        personality:           String,
+        leadership:            String,
+        others_performance:    String
     }
 
 });

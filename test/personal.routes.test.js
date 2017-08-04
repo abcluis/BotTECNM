@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 let app            = 'http://localhost:3000';
 let Survey         = require('../app/models/survey.model');
 let User           = require('../app/models/user.model');
-let errorsMessages = require('../app/utils/message.errors');
+let errorsMessages = require('../app/utils/messages.bot');
 
 let db = require('../config/db');
 

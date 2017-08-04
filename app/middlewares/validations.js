@@ -5,7 +5,7 @@ module.exports = validations;
 
 let blocks = require('../utils/blocks.constants');
 let handleErrors = require('../utils/handle.errors');
-let messages = require('../utils/message.errors');
+let messages = require('../utils/messages.bot');
 
 function validations(req, res, next) {
 
@@ -15,8 +15,6 @@ function validations(req, res, next) {
     if (req.method === 'POST') {
         return next();
     }
-
-    console.log(isValidField(field));
 
     if(!isValidField(field)){
         // Campo no registrado

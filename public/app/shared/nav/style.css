@@ -1,6 +1,8 @@
 /* Small Devices, Tablets */
 
 @media (min-width: 768px) {
+
+
     li.txt-overflow-1 {
         white-space: nowrap;
         width: 1.5em;

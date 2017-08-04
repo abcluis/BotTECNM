@@ -8,7 +8,6 @@ const nextBlock   = require('../utils/blocks.order');
 
 function record(req, res, next) {
 
-    console.log(req.path);
 
     if(req.path === '/bot/start' || req.path === '/bot/pertinence/init'){
         next();
