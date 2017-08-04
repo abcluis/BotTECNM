@@ -33,11 +33,12 @@ router.get('/bot/test', function (req,res) {
                     }
                 ]
             };
+            let ddd = 'hola';
 
             for(let i in schools){
                 let aux = {
                     "title": schools[i].name,
-                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + schools[i].name.replace(' ', '%20'),
+                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + encodeURIComponent(schools[i].name),
                     "type":"json_plugin_url"
                 };
 
