@@ -8,23 +8,33 @@ module.exports = {
     cardChat:        cardChat,
     buttonBlockChat: buttonBlockChat,
     redirectChat:    redirectChat,
-    quickChat: quickChat
+    quickChat:       quickChat
 };
 
 
 function bodyChat() {
 
     this.add = function (text) {
-        this.content.messages.push(text.content);
+        if(this.content.messages[0]){
+            this.content.messages[0].text = text.content;
+        }else {
+            this.content.messages.push(text.content);
+        }
+
+    };
+
+    this.addRedirect = function (redirect) {
+        this.content.redirect_to_blocks = redirect;
     };
 
     this.addQuick = function (quick) {
-        if(this.content.quick_replies){
-            this.content.quick_replies = [];
-            this.content.quick_replies.push(quick.content);
-        }else {
-            this.content.quick_replies.push(quick.content);
+        if(!this.content.messages[0]){
+            this.content.messages[0] = {};
         }
+        if(!this.content.messages[0].quick_replies){
+            this.content.messages[0].quick_replies = [];
+        }
+        this.content.messages[0].quick_replies.push(quick.content);
     };
 
     this.content = {
@@ -64,16 +74,17 @@ function buttonBlockChat(title, blockName) {
     }
 }
 
-function redirectChat(blockName) {
+function redirectChat(block) {
     this.content = {
-        "redirect_to_blocks": ["number_control", "full_name"]
+        "redirect_to_blocks": [block]
     }
 }
 
-function quickChat(title, block) {
+function quickChat(title, url) {
     this.content = {
-        "title":title,
-        "block_name": block
+        "title": title,
+        "url":   url,
+        "type":  "json_plugin_url"
     }
 }
 

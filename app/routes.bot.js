@@ -15,6 +15,17 @@ const recordUser        = require('./middlewares/record');
 
 
 let School = require('./models/school.model');
+let messages = require('./utils/messages.bot');
+
+const templates     = require('./templates');
+
+let BodyCF   = templates.bodyChat;
+let TextCF   = templates.textChat;
+let CardCF   = templates.cardChat;
+let ButtonCF = templates.buttonBlockChat;
+let QuickCF = templates.quickChat;
+
+let blocks = require('./utils/blocks.constants');
 
 router.get('/bot/test', function (req,res) {
 
@@ -23,32 +34,41 @@ router.get('/bot/test', function (req,res) {
     School.find({state : state})
         .then(function (schools) {
 
-            let body = {
-                "messages": [
-                    {
-                        "text":  "Selecciona tu instituto",
-                        "quick_replies": [
 
-                        ]
-                    }
-                ]
-            };
-
-            for(let i in schools){
-                let aux = {
-                    "title": schools[i].nick,
-                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + encodeURIComponent(schools[i].name),
-                    "type":"json_plugin_url"
-                };
-
-                body.messages[0].quick_replies.push(aux);
-            }
 
             if(schools.length === 0){
-                body.messages[0].text = 'Lo sentimos no tenemos registrados escuelas para ese estado'
+
+
+
+                let body = {
+                    "messages": [
+                        {
+                            "text":  messages.schoolsNotFound
+                        }
+                    ],
+                    "redirect_to_blocks" : [ 'testing' ]
+                };
+
+                res.send(body);
+
+            }else {
+
+                let body = new BodyCF();
+                let text = new TextCF('Selecciona tu instituto');
+                body.add(text);
+                for(let i in schools){
+                    let uri = "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + encodeURIComponent(schools[i].name);
+                    let quick = new QuickCF(schools[i].nick, uri);
+                    body.addQuick(quick);
+                }
+
+
+                res.send(body.content);
             }
 
-            res.send(body);
+
+
+
 
         })
         .catch((function (err) {
@@ -67,16 +87,17 @@ router.get('/bot/test', function (req,res) {
 
 router.get('/bot/test2/school' , function (req, res) {
 
-    console.log('Entrando a la ruta secundaria');
     let school = req.query.test;
 
-    res.send({
-        "messages" : [
-            {
-                "text" : "asi que eres de " + school
-            }
-        ]
-    });
+    let body = new BodyCF();
+    let card = new CardCF('Asi que eres del ' + school);
+    let btnYes = new ButtonCF('Yes',blocks.BLOCK_FULL_NAME);
+    let btnNo = new ButtonCF('No', blocks.BLOCK_SCHOOL);
+    card.addButton(btnYes);
+    card.addButton(btnNo);
+    body.add(card);
+
+    res.send(body.content);
 
 });
 

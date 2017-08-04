@@ -39,7 +39,8 @@ module.exports = {
     withoutFields:         'No tiene un segundo campo para procesar la informacion',
     fieldWithTypo:         'El segundo campo no se encuentra registrado como valido',
     // Response text
-    nextSentence:          'La siguiente pregunta es :'
+    nextSentence:          'La siguiente pregunta es :',
+    schoolsNotFound:       'Lo sentimos no tenemos escuelas registradas para ese estado intente de nuevo'
 
 
 };

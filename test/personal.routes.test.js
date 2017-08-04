@@ -145,7 +145,7 @@ describe('Routes Personal Data', function () {
 
 
 
-        it('Register user', function () {
+        it.skip('Register user', function () {
             return chai.request(app)
                 .post('/bot/start')
                 .send({
@@ -169,7 +169,7 @@ describe('Routes Personal Data', function () {
                 })
         });
 
-        it('Register school', function () {
+        it.skip('Register school', function () {
             return chai.request(app)
                 .get('/bot/school?messenger user id=101010&school=itch ii')
                 .then(function (res) {
