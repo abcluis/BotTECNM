@@ -40,15 +40,26 @@ router.get('/bot/test', function (req,res) {
                 "text":  "Did you enjoy the last game of the CF Rockets?",
                 "quick_replies": [
                     {
-                        "title":"ITCH II",
+                        "title":"ITCH",
                         "block_name": "full_name"
                     },
                     {
-                        "title":"ITCH",
-                        "url": "https://rockets.chatfuel.com/api/sad-match",
+                        "title":"ITCH II",
+                        "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school",
                         "type":"json_plugin_url"
                     }
                 ]
+            }
+        ]
+    });
+});
+
+router.get('/bot/test2/school' , function (req, res) {
+
+    res.send({
+        "messages" : [
+            {
+                "text" : "asi que eres del instituto tecnologico de chihuahua II"
             }
         ]
     });

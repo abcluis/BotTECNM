@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "quick replies test"
+git commit -m "school response test"
 git push heroku test:master
 
 //
