@@ -81,6 +81,8 @@ module.exports = {
     BLOCK_REFERENCE:           'references',
     BLOCK_PERSONALITY:         'personality',
     BLOCK_LEADERSHIP:          'leadership',
-    BLOCK_OTHER_PERFORMANCE:   'others_performance'
+    BLOCK_OTHER_PERFORMANCE:   'others_performance',
+
+    BLOCK_TESTING : 'testing'
 };
 
