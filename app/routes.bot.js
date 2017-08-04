@@ -64,6 +64,7 @@ router.get('/bot/test', function (req,res) {
 
 router.get('/bot/test2/school' , function (req, res) {
 
+    console.log('Entrando a la ruta secundaria');
     let school = req.query.test;
 
     res.send({
