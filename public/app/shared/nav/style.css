@@ -1,11 +1,27 @@
-li.txt-overflow {
-    white-space: nowrap;
-    width: 8%;
-    overflow: hidden;
-}
+/* Small Devices, Tablets */
 
-li.txt-overflow:hover {
-    text-overflow: inherit;
-    overflow: visible;
-    width: initial;
+@media only screen and (min-width: 768px) {
+    li.txt-overflow-1 {
+        white-space: nowrap;
+        width: 1.5em;
+        overflow: hidden;
+    }
+    
+    li.txt-overflow-2 {
+        white-space: nowrap;
+        width: 2em;
+        overflow: hidden;
+    }
+
+    li.txt-overflow-3 {
+        white-space: nowrap;
+        width: 2.5em;
+        overflow: hidden;
+    }
+
+    li.txt-overflow:hover {
+        text-overflow: inherit;
+        overflow: visible;
+        width: initial;
+    }
 }
