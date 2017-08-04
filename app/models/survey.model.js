@@ -6,6 +6,8 @@ let mongoose = require('mongoose');
 let Schema   = mongoose.Schema;
 let messages = require('../utils/messages.bot');
 
+let valuesPerformance = ['1', '2', '3', '4', '5'];
+
 let surveySchema = new Schema({
     id_student:    {
         type:   String,
@@ -203,21 +205,95 @@ let surveySchema = new Schema({
                 message : messages.academic_efficiency
             }
         },
-        academic_calification: String,
-        residences_utility:    String,
-        field_of_study:        String,
-        academic_degree:       String,
-        work_experience:       String,
-        labor_competence:      String,
-        institute_position:    String,
-        knowledge_flanguages:  String,
-        references:            String,
-        personality:           String,
-        leadership:            String,
-        others_performance:    String
+        academic_calification: {
+            type : String,
+            enum : {
+                values : ['Excelente', 'Bueno', 'Regular', 'Malo', 'Pesimo'],
+                message: messages.academic_calification
+            }
+        },
+        residences_utility:    {
+            type : String,
+            enum : {
+                values : ['Excelente', 'Bueno', 'Regular', 'Malo', 'Pesimo'],
+                message : messages.residences_utility
+            }
+        },
+        field_of_study:        {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.field_of_study
+            }
+        },
+        academic_degree:       {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.academic_degree
+            }
+        },
+        work_experience:       {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.work_experience
+            }
+        },
+        labor_competence:      {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.labor_competence
+            }
+        },
+        institute_position:    {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.institute_position
+            }
+        },
+        knowledge_flanguages:  {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.knowledge_flanguages
+            }
+        },
+        references:            {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.references
+            }
+        },
+        personality:           {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.personality
+            }
+        },
+        leadership:            {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.leadership
+            }
+        },
+        others_performance:    {
+            type: String,
+            enum: {
+                values : valuesPerformance,
+                message: messages.others_performance
+            }
+        }
     }
 
 });
+
+
 
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
