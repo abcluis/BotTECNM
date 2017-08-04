@@ -8,6 +8,7 @@ const SchoolSchema = new Schema({
         type: String,
         unique: true
     },
+    nick : String,
     state : String
 });
 

@@ -26,29 +26,29 @@ router.get('/bot/test', function (req,res) {
             let body = {
                 "messages": [
                     {
-                        "text":  "Did you enjoy the last game of the CF Rockets?",
+                        "text":  "Selecciona tu instituto",
                         "quick_replies": [
 
                         ]
                     }
                 ]
             };
-            let ddd = 'hola';
 
             for(let i in schools){
                 let aux = {
-                    "title": schools[i].name,
+                    "title": schools[i].nick,
                     "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + encodeURIComponent(schools[i].name),
                     "type":"json_plugin_url"
                 };
 
-                console.log(aux);
-
                 body.messages[0].quick_replies.push(aux);
             }
 
-            res.send(body);
+            if(schools.length === 0){
+                body.messages[0].text = 'Lo sentimos no tenemos registrados escuelas para ese estado'
+            }
 
+            res.send(body);
 
         })
         .catch((function (err) {

@@ -1,18 +1,22 @@
 [
   {
     "name" : "Instituto Tecnologico de Chihuahua" ,
-    "state" : "chihuahua"
+    "state" : "chihuahua",
+    "nick" : "ITCH"
   },
   {
     "name" : "Instituto Tecnologico de Chihuahua II",
-    "state" : "chihuahua"
+    "state" : "chihuahua",
+    "nick" : "ITCH II"
   },
   {
     "name" : "Instituto Tecnológico de Tlajomulco",
-    "state" : "jalisco"
+    "state" : "jalisco",
+    "nick" : "ITTJ"
   },
   {
     "name" : "Instituto Tecnológico Superior de Zapotlanejo",
-    "state" : "jalisco"
+    "state" : "jalisco",
+    "nick" : "ITSZ"
   }
 ]
