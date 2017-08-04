@@ -7,3 +7,6 @@ git push heroku master
 var query = {};
     query[fieldId] = id;
     var promise = Model.findOne(query);
+
+Para probar en servidor local cambiar en el archivo config/db.js
+la linea 15 "let NODE_ENV..." de 'test' a 'production'
