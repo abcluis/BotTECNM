@@ -6,13 +6,15 @@ let BLOCKS = require('./blocks.constants');
 
 module.exports = nextBlock;
 
+let BLOCK_FINAL = 'finish';
+
 function nextBlock(BLOCK) {
 
     let arreglo = Object.keys(BLOCKS).map(key => BLOCKS[key]);
     let actual = arreglo.indexOf(BLOCK);
 
     if(actual === arreglo.length - 1){
-        return BLOCK;
+        return BLOCK_FINAL;
     }
     return arreglo[++actual];
 
