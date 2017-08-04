@@ -8,10 +8,7 @@ const SchoolSchema = new Schema({
         type: String,
         unique: true
     },
-    nicks : [
-        {name: String}
-    ],
-    city: String
+    state : String
 });
 
 SchoolSchema.pre('save', function(next){

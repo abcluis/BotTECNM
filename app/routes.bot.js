@@ -32,34 +32,61 @@ router.get('/bot/pertinence/data', botPertContoller.registerPertData);
 router.post('/bot/joblocation/init', botJobLocalController.initJobLocation);
 router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 
+let School = require('./models/school.model');
+
 router.get('/bot/test', function (req,res) {
 
-    res.send({
-        "messages": [
-            {
-                "text":  "Did you enjoy the last game of the CF Rockets?",
-                "quick_replies": [
+    let state = req.query.state;
+
+    School.find({state : state})
+        .then(function (schools) {
+
+            let body = {
+                "messages": [
                     {
-                        "title":"ITCH",
-                        "block_name": "full_name"
-                    },
-                    {
-                        "title":"ITCH II",
-                        "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school",
-                        "type":"json_plugin_url"
+                        "text":  "Did you enjoy the last game of the CF Rockets?",
+                        "quick_replies": [
+
+                        ]
                     }
                 ]
+            };
+
+            for(let i in schools){
+                let aux = {
+                    "title": schools[i].name,
+                    "url": "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test= " + schools[i].name,
+                    "type":"json_plugin_url"
+                };
+
+                body.messages[0].quick_replies.push(aux);
             }
-        ]
-    });
+
+            res.send(body);
+
+
+        })
+        .catch((function (err) {
+            res.send({
+                "messages" : [
+                    {
+                        "text" : err.message
+                    }
+                ]
+            })
+        }));
+
 });
 
+
 router.get('/bot/test2/school' , function (req, res) {
+
+    let school = req.query.test;
 
     res.send({
         "messages" : [
             {
-                "text" : "asi que eres del instituto tecnologico de chihuahua II"
+                "text" : "asi que eres de " + school
             }
         ]
     });
