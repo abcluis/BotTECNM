@@ -93,6 +93,8 @@ function registerSchool(req, res) {
                 }
 
 
+                console.log(body.content);
+
                 res.send(body.content);
             }
 
