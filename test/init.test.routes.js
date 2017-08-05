@@ -24,10 +24,16 @@ let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
 let QuickCF  = templates.quickChat;
 
+let User = require('../app/models/user.model');
+
 describe('Route School', function () {
 
     before(function () {
         db.open();
+    });
+
+    beforeEach(function () {
+       return Survey.remove({id_student: 101010})
     });
 
 
@@ -36,7 +42,7 @@ describe('Route School', function () {
         let response;
 
         return chai.request(app)
-            .get('/bot/test?testing=chihuahua')
+            .get('/bot/test?messenger user id=101010&school=chihuahua')
             .then(function (res) {
                 response = res;
 
@@ -56,7 +62,6 @@ describe('Route School', function () {
                     let quick = new QuickCF(title, uri);
                     body.addQuick(quick);
                 }
-
                 expect(response.body).to.deep.equal(body.content);
 
             })
@@ -72,7 +77,7 @@ describe('Route School', function () {
         let response;
 
         return chai.request(app)
-            .get('/bot/test?testing=chihuas')
+            .get('/bot/test?messenger user id=101010&school=chihuas')
             .then(function (res) {
                 response = res;
                 expect(res).to.have.property('body');
@@ -90,12 +95,10 @@ describe('Route School', function () {
 
     it('Should confirm school user input', function () {
 
-        let response;
 
         return chai.request(app)
-            .get('/bot/test2/school?test=Instituto Tecnologico de Chihuahua II')
+            .get('/bot/test2/school?messenger user id=101010&school=Instituto Tecnologico de Chihuahua II')
             .then(function (res) {
-
                 let body   = new templates.bodyChat();
                 let card   = new templates.cardChat('Asi que eres del Instituto Tecnologico de Chihuahua II');
                 let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
@@ -104,6 +107,16 @@ describe('Route School', function () {
                 card.addButton(btnNo);
                 body.add(card);
                 expect(res.body).to.deep.equal(body.content);
+                return Survey.findOne({id_student: 101010});
+            })
+            .then(function (survey) {
+                let school = 'Instituto Tecnologico de Chihuahua II';
+                expect(survey).to.have.property('school', school);
+                return User.findOne({id : 101010});
+            })
+            .then(function (user) {
+                console.log(user);
+                expect(user).to.have.property('last_block', nextBlock(blocks.BLOCK_SCHOOL));
             })
             .catch(function (err) {
                 throw err;

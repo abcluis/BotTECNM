@@ -24,12 +24,19 @@ let TextCF   = templates.textChat;
 let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
 let QuickCF = templates.quickChat;
+let surveyService  = require('./services/survey.service');
 
 let blocks = require('./utils/blocks.constants');
 
+router.use(surveyCreated);
+router.use(recordUser);
+router.use(validations);
+router.use(validationsErrors);
+
+
 router.get('/bot/test', function (req,res) {
 
-    let state = req.query.testing;
+    let state = req.query.school;
 
     School.find({state : state})
         .then(function (schools) {
@@ -87,25 +94,32 @@ router.get('/bot/test', function (req,res) {
 
 router.get('/bot/test2/school' , function (req, res) {
 
-    let school = req.query.test;
+    let school = req.query.school;
+    let id = req.query['messenger user id'];
 
-    let body = new BodyCF();
-    let card = new CardCF('Asi que eres del ' + school);
-    let btnYes = new ButtonCF('Yes',blocks.BLOCK_FULL_NAME);
-    let btnNo = new ButtonCF('No', blocks.BLOCK_SCHOOL);
-    card.addButton(btnYes);
-    card.addButton(btnNo);
-    body.add(card);
+    surveyService.findOneSurvey(id)
+        .then(function (survey) {
+            survey.school = school;
+            return survey.save();
+        })
+        .then(function (survey) {
+            let body = new BodyCF();
+            let card = new CardCF('Asi que eres del ' + school);
+            let btnYes = new ButtonCF('Yes',blocks.BLOCK_FULL_NAME);
+            let btnNo = new ButtonCF('No', blocks.BLOCK_SCHOOL);
+            card.addButton(btnYes);
+            card.addButton(btnNo);
+            body.add(card);
+            res.send(body.content);
+        })
+        .catch(function (err) {
+            res.send(err);
+        });
 
-    res.send(body.content);
+
 
 });
 
-
-router.use(validations);
-router.use(validationsErrors);
-router.use(surveyCreated);
-router.use(recordUser);
 
 // router.get('/bot/resume', resumeController)
 
