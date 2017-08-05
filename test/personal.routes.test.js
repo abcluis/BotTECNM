@@ -143,8 +143,6 @@ describe('Routes Personal Data', function () {
 
     describe('Valid Personal Data Routes', function () {
 
-
-
         it('Register user', function () {
             return chai.request(app)
                 .post('/bot/start')
