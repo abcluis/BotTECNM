@@ -87,7 +87,7 @@ function registerSchool(req, res) {
                 let text = new TextCF('Selecciona tu instituto');
                 body.add(text);
                 for (let i in schools) {
-                    let uri   = "https://peaceful-mesa-57140.herokuapp.com/bot/school/response?" + encodeURIComponent('messenger user id=' + id + '&school=' + schools[i].name);
+                    let uri   = "https://peaceful-mesa-57140.herokuapp.com/bot/school/response?" + encodeURIComponent('messenger user id=' + id) + '&school=' + encodeURIComponent(schools[i].name);
                     let quick = new QuickCF(schools[i].nick, uri);
                     body.addQuick(quick);
                 }
