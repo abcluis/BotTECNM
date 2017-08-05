@@ -14,9 +14,12 @@ module.exports = {
 
 function bodyChat() {
 
+    this.count = 0;
+
     this.add = function (text) {
         if(this.content.messages[0]){
-            this.content.messages[0].text = text.content;
+            this.count++;
+            this.content.messages[this.count] = text.content;
         }else {
             this.content.messages.push(text.content);
         }
