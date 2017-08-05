@@ -145,7 +145,7 @@ describe('Routes Personal Data', function () {
 
 
 
-        it.skip('Register user', function () {
+        it('Register user', function () {
             return chai.request(app)
                 .post('/bot/start')
                 .send({
@@ -157,7 +157,6 @@ describe('Routes Personal Data', function () {
                     expect(res.body).to.have.property('messages');
                     expect(res.body.messages).to.be.an('array');
                     expect(res.body.messages[0]).to.have.property('text');
-                    expect(res.body.messages[1]).to.have.property('attachment');
                     return User.findOne({id: 101010});
                 })
                 .then(function (res) {

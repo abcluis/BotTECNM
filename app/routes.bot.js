@@ -12,20 +12,6 @@ const validationsErrors = require('./middlewares/validations.errors.js');
 const surveyCreated     = require('./middlewares/surveyCreated');
 const recordUser        = require('./middlewares/record');
 
-
-let School   = require('./models/school.model');
-let messages = require('./utils/messages.bot');
-
-const templates = require('./templates');
-
-let BodyCF        = templates.bodyChat;
-let TextCF        = templates.textChat;
-let CardCF        = templates.cardChat;
-let ButtonCF      = templates.buttonBlockChat;
-let QuickCF       = templates.quickChat;
-let surveyService = require('./services/survey.service');
-
-
 router.use(surveyCreated);
 router.use(recordUser);
 router.use(validations);

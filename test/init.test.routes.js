@@ -58,7 +58,7 @@ describe('Route School', function () {
 
                 for (let i in schools) {
                     let title = schools[i].nick;
-                    let uri = "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + encodeURIComponent(schools[i].name)
+                    let uri = "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?" + encodeURIComponent('messenger user id=101010&school=' + schools[i].name);
                     let quick = new QuickCF(title, uri);
                     body.addQuick(quick);
                 }
