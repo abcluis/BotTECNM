@@ -42,7 +42,7 @@ describe('Route School', function () {
         let response;
 
         return chai.request(app)
-            .get('/bot/test?messenger user id=101010&school=chihuahua')
+            .get('/bot/school?messenger user id=101010&school=chihuahua')
             .then(function (res) {
                 response = res;
 
@@ -77,14 +77,14 @@ describe('Route School', function () {
         let response;
 
         return chai.request(app)
-            .get('/bot/test?messenger user id=101010&school=chihuas')
+            .get('/bot/school?messenger user id=101010&school=chihuas')
             .then(function (res) {
                 response = res;
                 expect(res).to.have.property('body');
                 expect(res.body).to.have.property('messages');
                 expect(res.body.messages[0]).to.have.property('text', messages.schoolsNotFound);
                 expect(res.body.messages[0]).to.not.have.property('quick_replies');
-                expect(res.body.redirect_to_blocks[0]).to.equal('testing');
+                expect(res.body.redirect_to_blocks[0]).to.equal(blocks.BLOCK_SCHOOL);
             })
             .catch(function (err) {
                 throw err;
@@ -97,7 +97,7 @@ describe('Route School', function () {
 
 
         return chai.request(app)
-            .get('/bot/test2/school?messenger user id=101010&school=Instituto Tecnologico de Chihuahua II')
+            .get('/bot/school/response?messenger user id=101010&school=Instituto Tecnologico de Chihuahua II')
             .then(function (res) {
                 let body   = new templates.bodyChat();
                 let card   = new templates.cardChat('Asi que eres del Instituto Tecnologico de Chihuahua II');

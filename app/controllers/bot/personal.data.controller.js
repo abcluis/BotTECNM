@@ -10,10 +10,13 @@ const nextBlock     = require('../../utils/blocks.order');
 const handleErrors  = require('../../utils/handle.errors');
 const templates     = require('../../templates');
 
+let messages = require('../../utils/messages.bot');
+
 let BodyCF   = templates.bodyChat;
 let TextCF   = templates.textChat;
 let CardCF   = templates.cardChat;
 let ButtonCF = templates.buttonBlockChat;
+let QuickCF  = templates.quickChat;
 
 let user_id = 'messenger user id';
 let HOME    = blocks.BLOCK_SCHOOL;
@@ -21,7 +24,8 @@ let HOME    = blocks.BLOCK_SCHOOL;
 module.exports = {
     registerUser:         registerUser,
     registerSchool:       registerSchool,
-    registerPersonalData: registerPersonalData
+    registerPersonalData: registerPersonalData,
+    responseSchool:       responseSchool
 };
 
 function registerUser(req, res) {
@@ -59,46 +63,85 @@ function registerUser(req, res) {
 
 function registerSchool(req, res) {
 
-    let survey;
-    let id = req.query['messenger user id'];
+    let state = req.query.school;
+
+    School.find({state: state})
+        .then(function (schools) {
+
+
+            if (schools.length === 0) {
+
+
+                let body = new BodyCF();
+                let text = new TextCF(messages.schoolsNotFound);
+
+                body.add(text);
+                body.content.redirect_to_blocks = [];
+                body.content.redirect_to_blocks.push(blocks.BLOCK_SCHOOL);
+                res.send(body.content);
+
+            } else {
+
+                let body = new BodyCF();
+                let text = new TextCF('Selecciona tu instituto');
+                body.add(text);
+                for (let i in schools) {
+                    let uri   = "https://peaceful-mesa-57140.herokuapp.com/bot/test2/school?test=" + encodeURIComponent(schools[i].name);
+                    let quick = new QuickCF(schools[i].nick, uri);
+                    body.addQuick(quick);
+                }
+
+
+                res.send(body.content);
+            }
+
+
+        })
+        .catch((function (err) {
+            res.send({
+                "messages": [
+                    {
+                        "text": err.message
+                    }
+                ]
+            })
+        }));
+}
+
+
+function responseSchool(req, res) {
+
+    let school = req.query.school;
+    let id     = req.query['messenger user id'];
 
     surveyService.findOneSurvey(id)
-        .then((result) => {
-            survey = result;
-            return School.findOne({'nicks.name': req.query.school});
+        .then(function (survey) {
+            survey.school = school;
+            return survey.save();
         })
-        .then((result) => {
-            if (result) {
-                survey.school = result.name;
-                survey.save()
-                    .then(function (result) {
-                        let body   = new templates.bodyChat();
-                        let card   = new templates.cardChat('Asi que eres del ' + result.school);
-                        let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
-                        let btnNo  = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
-                        card.addButton(btnYes);
-                        card.addButton(btnNo);
-                        body.add(card);
-                        res.send(body.content);
-                    });
-            } else {
-                let body  = new templates.bodyChat();
-                let card  = new templates.cardChat('Tu escuela no se encuentra registrada, puedes ingresar de nuevo la informacion');
-                let btnOk = new templates.buttonBlockChat('OK', blocks.BLOCK_SCHOOL);
-                card.addButton(btnOk);
-                body.add(card);
-                res.send(body.content);
-                console.log('Ya se envio prro');
-            }
+        .then(function (survey) {
+            let body   = new BodyCF();
+            let card   = new CardCF('Asi que eres del ' + school);
+            let btnYes = new ButtonCF('Yes', blocks.BLOCK_FULL_NAME);
+            let btnNo  = new ButtonCF('No', blocks.BLOCK_SCHOOL);
+            card.addButton(btnYes);
+            card.addButton(btnNo);
+            body.add(card);
+            res.send(body.content);
         })
-        .catch((err) => res.send(err));
+        .catch(function (err) {
+            res.send(err);
+        });
+
+
 }
+
 
 function registerPersonalData(req, res) {
     let keys = Object.keys(req.query);
 
     // id   field   value
-    for(let i in req.query){
+    for (let i in req.query) {
         console.log(i);
     }
     let id    = req.query[user_id];
@@ -128,6 +171,6 @@ function registerPersonalData(req, res) {
             res.send(body.content);
         })
         .catch(function (err) {
-            handleErrors(err,res,field);
+            handleErrors(err, res, field);
         });
 }
