@@ -26,6 +26,8 @@ router.get('/bot/test', function (req, res) {
                         "elements":[
                             {
                                 "title":"Ingenieria en Sistemas computacionales",
+                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
+                                "subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
                                 "buttons":[
                                     {
                                         "type":"json_plugin_url",
@@ -36,6 +38,8 @@ router.get('/bot/test', function (req, res) {
                             },
                             {
                                 "title":"Ingenieria en Informatica",
+                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
+                                "subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
                                 "buttons":[
                                     {
                                         "type":"json_plugin_url",
