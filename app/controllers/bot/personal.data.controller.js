@@ -65,7 +65,7 @@ function registerUser(req, res) {
 function registerSchool(req, res) {
 
     let id = req.query['messenger user id'];
-    let state = req.query.school;
+    let state = req.query.actual_state;
 
     School.find({state: state})
         .then(function (schools) {
