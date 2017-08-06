@@ -4,9 +4,11 @@
 
 
 
-const templates = require('../templates');
-let BodyCF      = templates.bodyChat;
-let TextCF      = templates.textChat;
+const templates   = require('../templates');
+const templatesOp = require('../templates.test');
+
+let BodyCF = templates.bodyChat;
+let TextCF = templates.textChat;
 
 
 // Funcion encargada de convertir los errores a cosas entendibles para el bot
@@ -20,16 +22,19 @@ function handleErrors(err, res, field) {
         let errors = err.errors;
 
         for (let i in errors) {
-            let body = new BodyCF();
-            let text = new TextCF(errors[i].message);
-            body.add(text);
-            body.content.redirect_to_blocks = [];
-            body.content.redirect_to_blocks.push(field);
-            res.send(body.content);
+
+            let generic = new templatesOp.generic();
+
+            let response = generic
+                .addText(errors[i].message)
+                .addRedirect(field)
+                .get();
+
+            res.send(response);
         }
 
 
-    }else if(err.name === 'FieldInvalid') {
+    } else if (err.name === 'FieldInvalid') {
 
         let body = new BodyCF();
         let text = new TextCF(err.message);

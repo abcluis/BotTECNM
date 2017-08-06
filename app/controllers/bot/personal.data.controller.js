@@ -6,17 +6,12 @@ const userService   = require('../../services/user.service');
 const surveyService = require('../../services/survey.service');
 const School        = require('../../models/school.model');
 const blocks        = require('../../utils/blocks.constants');
+let messages        = require('../../utils/messages.bot');
 const nextBlock     = require('../../utils/blocks.order');
-const handleErrors  = require('../../utils/handle.errors');
-const templates     = require('../../templates');
 
-let messages = require('../../utils/messages.bot');
+const handleErrors = require('../../utils/handle.errors');
 
-let BodyCF   = templates.bodyChat;
-let TextCF   = templates.textChat;
-let CardCF   = templates.cardChat;
-let ButtonCF = templates.buttonBlockChat;
-let QuickCF  = templates.quickChat;
+let templatesOP = require('../../templates.test');
 
 let user_id = 'messenger user id';
 let HOME    = blocks.BLOCK_SCHOOL;
@@ -42,29 +37,27 @@ function registerUser(req, res) {
 
     userService.findOneOrCreate(user)
         .then((data) => {
-            let response = new BodyCF();
-            let text     = new TextCF('Hola bienvenido ' + data.name);
-            let card     = new CardCF('Esto es una encuesta de los egresados gracias por tu participacion');
-            let btn1     = new ButtonCF('Desde el inicio', HOME);
-            if (data.last_block) {
-                let btn2 = new ButtonCF('Desde la ultima vez', data.last_block);
-                card.addButton(btn2);
-            }
-            card.addButton(btn1);
 
-            response.add(text);
-            response.add(card);
-            res.send(response.content);
+            let card = new templatesOP.card();
+
+            let response = card
+                .addText('Hola bienvenido ' + data.name)
+                .addCard('Esto es una encuesta de los egresados gracias por tu participacion')
+                .addButton('Desde la ultima vez', data.last_block)
+                .addButton('Desde el inicio', HOME)
+                .get();
+
+            res.send(response);
         })
         .catch((err) => {
-            console.log(err);
+            handleErrors(err, res);
         });
 
 }
 
 function registerSchool(req, res) {
 
-    let id = req.query['messenger user id'];
+    let id    = req.query['messenger user id'];
     let state = req.query.actual_state;
 
     School.find({state: state})
@@ -74,34 +67,37 @@ function registerSchool(req, res) {
             if (schools.length === 0) {
 
 
-                let body = new BodyCF();
-                let text = new TextCF(messages.schoolsNotFound);
+                let generic = new templatesOP.generic();
 
-                body.add(text);
-                body.content.redirect_to_blocks = [];
-                body.content.redirect_to_blocks.push(blocks.BLOCK_SCHOOL);
-                res.send(body.content);
+                let response = generic
+                    .addText(messages.schoolsNotFound)
+                    .addRedirect(blocks.BLOCK_SCHOOL)
+                    .get();
+
+                res.send(response);
 
             } else {
 
-                let body = new BodyCF();
-                let text = new TextCF('Selecciona tu instituto');
-                body.add(text);
+                let quick = new templatesOP.quick();
+
+                let response = quick
+                    .addText('Selecciona tu instituto');
+
                 for (let i in schools) {
-                    let uri   = "https://peaceful-mesa-57140.herokuapp.com/bot/school/response?" + encodeURIComponent('messenger user id=' + id) + '&school=' + encodeURIComponent(schools[i].name);
-                    let quick = new QuickCF(schools[i].nick, uri);
-                    body.addQuick(quick);
+                    let uri  = "https://peaceful-mesa-57140.herokuapp.com/bot/school/response?" + encodeURIComponent('messenger user id=' + id) + '&school=' + encodeURIComponent(schools[i].name);
+                    response = response
+                        .addQuick(schools[i].nick, uri);
                 }
 
+                response = response.get();
 
-                console.log(body.content);
-
-                res.send(body.content);
+                res.send(response);
             }
 
 
         })
         .catch((function (err) {
+            console.log(err);
             res.send({
                 "messages": [
                     {
@@ -124,14 +120,16 @@ function responseSchool(req, res) {
             return survey.save();
         })
         .then(function (survey) {
-            let body   = new BodyCF();
-            let card   = new CardCF('Asi que eres del ' + school);
-            let btnYes = new ButtonCF('Yes', blocks.BLOCK_FULL_NAME);
-            let btnNo  = new ButtonCF('No', blocks.BLOCK_SCHOOL);
-            card.addButton(btnYes);
-            card.addButton(btnNo);
-            body.add(card);
-            res.send(body.content);
+
+            let card = new templatesOP.card();
+
+            let response = card
+                .addCard('Asi que eres del ' + school)
+                .addButton('Yes', blocks.BLOCK_FULL_NAME)
+                .addButton('No', blocks.BLOCK_SCHOOL)
+                .get();
+
+            res.send(response);
         })
         .catch(function (err) {
             res.send(err);
@@ -141,13 +139,44 @@ function responseSchool(req, res) {
 }
 
 
+function registerCareer(req, res) {
+
+
+    let id = req.query['messenger user id'];
+
+    surveyService.findOneSurvey(id)
+        .then(function (doc) {
+            let school = doc.school;
+            return School.findOne({name: school});
+        })
+        .then(function (doc) {
+
+            let list = new templatesOP.list();
+
+            let response = list
+                .addList();
+
+            doc.careers.forEach(function (item) {
+                response = response
+                    .addElement(item.name, "https://peaceful-mesa-57140.herokuapp.com/bot/start");
+
+            });
+
+            response = response.get();
+
+            res.send(response);
+
+        })
+        .catch(function (err) {
+            res.send(err);
+        });
+
+
+}
+
 function registerPersonalData(req, res) {
     let keys = Object.keys(req.query);
 
-    // id   field   value
-    for (let i in req.query) {
-        console.log(i);
-    }
     let id    = req.query[user_id];
     let field = keys[1];
     let value = req.query[field];
@@ -163,66 +192,20 @@ function registerPersonalData(req, res) {
         });
     }
 
-
     surveyService.updatePersonalData(id, field, value)
         .then((survey) => {
 
-            let body = new BodyCF();
-            let text = new TextCF('La siguiente pregunta es : ');
-            body.add(text);
-            body.content.redirect_to_blocks = [];
-            body.content.redirect_to_blocks.push(nextBlock(field));
-            res.send(body.content);
+            let generic = new templatesOP.generic();
+
+            let response = generic
+                .addText(messages.nextSentence)
+                .addRedirect(nextBlock(field))
+                .get();
+
+            res.send(response);
+
         })
         .catch(function (err) {
             handleErrors(err, res, field);
         });
-}
-
-function registerCareer(req, res) {
-
-
-    let id = req.query['messenger user id'];
-
-    surveyService.findOneSurvey(id)
-        .then(function (doc) {
-            let school = doc.school;
-            return School.findOne({name: school});
-        })
-        .then(function (doc) {
-            let response = {
-                "messages": [
-                    {
-                        "attachment":{
-                            "type":"template",
-                            "payload":{
-                                "template_type":"list",
-                                "top_element_style":"large",
-                                "elements":[]
-                            }
-                        }
-                    }
-                ]
-            };
-
-            doc.careers.forEach(function (item, index) {
-                response.messages[0].attachment.payload.elements.push({
-                    "title": item.name,
-                    "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
-                    //"subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
-                    "buttons":[
-                        {
-                            "type":"json_plugin_url",
-                            "url":"https://peaceful-mesa-57140.herokuapp.com/bot/start",
-                            "title":"Elegir"
-                        }
-                    ]
-                });
-            });
-
-            res.send(response);
-
-        });
-
-
 }

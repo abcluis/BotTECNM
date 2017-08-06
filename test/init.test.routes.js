@@ -42,7 +42,7 @@ describe('Route School', function () {
         let response;
 
         return chai.request(app)
-            .get('/bot/school?messenger user id=101010&school=chihuahua')
+            .get('/bot/school?messenger user id=101010&actual_state=chihuahua')
             .then(function (res) {
                 response = res;
 
@@ -52,8 +52,8 @@ describe('Route School', function () {
             .then(function (schools) {
                 let body = new BodyCF();
                 let text = new TextCF('Selecciona tu instituto');
-
                 body.add(text);
+                console.log(response.body);
                 expect(response.body.messages[0].quick_replies).to.have.lengthOf(schools.length);
 
                 for (let i in schools) {
@@ -150,6 +150,10 @@ describe('Route School', function () {
             school : school
         };
 
+
+
+        let testCareer;
+
         return new Survey(survey).save()
             .then(function (res) {
                 expect(res).to.have.property('school', school);
@@ -162,7 +166,6 @@ describe('Route School', function () {
                     responseExpected.messages[0].attachment.payload.elements.push({
                         "title": item.name,
                         "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
-                        //"subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
                         "buttons":[
                             {
                                 "type":"json_plugin_url",
@@ -172,13 +175,33 @@ describe('Route School', function () {
                         ]
                     });
                 });
-
                 return chai.request(app)
                     .get('/bot/career?messenger user id=101010&school=' + school);
             })
             .then(function (res) {
                 expect(res).to.have.property('body');
                 expect(res.body).to.deep.equal(responseExpected);
+                testCareer = responseExpected.messages[0].attachment.payload.elements[0].title;
+                console.log(testCareer);
+                return chai.request(app)
+                    .get('/bot/personal/data?messenger user id=101010&career=' + testCareer);
+            })
+            .then(function (res) {
+                expect(res).to.have.property('body');
+
+                let body = new BodyCF();
+                let text = new TextCF(messages.nextSentence);
+
+
+                body.add(text);
+                body.content.redirect_to_blocks = [nextBlock(blocks.BLOCK_CAREER)];
+
+                expect(res.body).to.deep.equal(body.content);
+                return Survey.findOne({id_student: 101010});
+            })
+            .then(function (doc) {
+                expect(doc).to.have.property('personal_data');
+                expect(doc.personal_data).to.have.property('career', testCareer);
             })
             .catch(function (err) {
                 throw err;

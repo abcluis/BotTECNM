@@ -13,6 +13,8 @@ let errorsMessages = require('../app/utils/messages.bot');
 let db = require('../config/db');
 
 let nextBlock = require('../app/utils/blocks.order');
+let messages  = require('../app/utils/messages.bot');
+let templates = require('../app/templates.test');
 
 
 describe('Routes Personal Data', function () {
@@ -152,6 +154,35 @@ describe('Routes Personal Data', function () {
                     'last name':         'Gallegos Gonzalez'
                 })
                 .then(function (res) {
+
+                    expect(res.body).to.deep.equal({
+                        "messages": [
+                            {
+                                "text": "Hola bienvenido Luis Fernando Gallegos Gonzalez"
+                            },
+                            {
+                                "attachment": {
+                                    "payload": {
+                                        "buttons":       [
+                                            {
+                                                "block_name": "finish",
+                                                "title":      "Desde la ultima vez",
+                                                "type":       "show_block"
+                                            },
+                                            {
+                                                "block_name": "school",
+                                                "title":      "Desde el inicio",
+                                                "type":       "show_block"
+                                            }
+                                        ],
+                                        "template_type": "button",
+                                        "text":          "Esto es una encuesta de los egresados gracias por tu participacion"
+                                    },
+                                    "type":    "template"
+                                }
+                            }
+                        ]
+                    });
                     expect(res.body).to.have.property('messages');
                     expect(res.body.messages).to.be.an('array');
                     expect(res.body.messages[0]).to.have.property('text');
@@ -166,8 +197,6 @@ describe('Routes Personal Data', function () {
                 })
         });
 
-
-
         function makeRequest(route) {
             it(route.describe, function () {
 
@@ -176,11 +205,17 @@ describe('Routes Personal Data', function () {
                 return chai.request(app)
                     .get(uri)
                     .then(function (res) {
-                        console.log(res.body);
-                        expect(res).to.have.property('body');
-                        expect(res.body).to.have.property('messages');
-                        expect(res.body).to.have.property('redirect_to_blocks');
-                        expect(res.body.redirect_to_blocks[0]).to.equal(nextBlock(route.field));
+
+                        let generic = new templates.generic();
+                        let expected = generic
+                            .addText(messages.nextSentence)
+                            .addRedirect(nextBlock(route.field))
+                            .get();
+
+
+
+                        expect(res.body).to.deep.equal(expected);
+
                         return Survey.findOne({id_student: 101010});
                     })
                     .then(function (res) {
@@ -201,7 +236,7 @@ describe('Routes Personal Data', function () {
         }
 
         for (let i in routes) {
-            if(routes[i].value_valid){
+            if (routes[i].value_valid) {
                 makeRequest(routes[i]);
             }
         }
@@ -225,7 +260,7 @@ describe('Routes Personal Data', function () {
                     expect(res.body.redirect_to_blocks[0]).to.equal('school');
                     expect(res.body.messages[0]).to.have.property('text', errorsMessages.fieldWithTypo);
                     console.log(res.body);
-                    return Survey.findOne({id_student : 101010});
+                    return Survey.findOne({id_student: 101010});
                 })
                 .then(function (survey) {
                     console.log(survey);
@@ -271,9 +306,6 @@ describe('Routes Personal Data', function () {
                 makeRequest(routes[i]);
             }
         }
-
-
-
 
 
     });

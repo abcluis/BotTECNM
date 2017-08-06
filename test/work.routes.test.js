@@ -221,6 +221,7 @@ describe('Routes Work Aspect', function () {
                 return chai.request(app)
                     .get('/bot/joblocation/data?messenger user id=101010&' + route.field + '=' + route.value_valid)
                     .then(function (res) {
+                        console.log(res.body);
                         expect(res).to.have.property('body');
                         expect(res.body).to.have.property('messages');
                         expect(res.body).to.have.property('redirect_to_blocks');
@@ -251,7 +252,6 @@ describe('Routes Work Aspect', function () {
         }
 
     });
-
 
     after(function () {
         db.close();
