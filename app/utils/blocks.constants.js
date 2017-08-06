@@ -2,7 +2,6 @@
  * Created by usuario1 on 6/21/2017.
  */
 module.exports = {
-    BLOCK_SCHOOL:              'school',
     BLOCK_FULL_NAME:           'full_name',
     BLOCK_NUMBER_CONTROL:      'number_control',
     BLOCK_BIRTHDATE:           'birthdate',
@@ -16,6 +15,7 @@ module.exports = {
     BLOCK_PHONE:               'phone',
     BLOCK_EMAIL:               'email',
     BLOCK_PHONE_ALT:           'phone_alt',
+    BLOCK_SCHOOL:              'school',
     BLOCK_CAREER:              'career',
     BLOCK_SPECIALTY:           'speciality',
     BLOCK_MONTH_GRADUATE:      'date_graduate',

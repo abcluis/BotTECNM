@@ -33,7 +33,7 @@ describe('Route School', function () {
     });
 
     beforeEach(function () {
-       return Survey.remove({id_student: 101010})
+        return Survey.remove({id_student: 101010})
     });
 
 
@@ -58,7 +58,7 @@ describe('Route School', function () {
 
                 for (let i in schools) {
                     let title = schools[i].nick;
-                    let uri = "https://peaceful-mesa-57140.herokuapp.com/bot/school/response?" + encodeURIComponent('messenger user id=101010') + '&school=' + encodeURIComponent(schools[i].name);
+                    let uri   = "https://peaceful-mesa-57140.herokuapp.com/bot/school/response?" + encodeURIComponent('messenger user id=101010') + '&school=' + encodeURIComponent(schools[i].name);
                     let quick = new QuickCF(title, uri);
                     body.addQuick(quick);
                 }
@@ -112,7 +112,7 @@ describe('Route School', function () {
             .then(function (survey) {
                 let school = 'Instituto Tecnologico de Chihuahua II';
                 expect(survey).to.have.property('school', school);
-                return User.findOne({id : 101010});
+                return User.findOne({id: 101010});
             })
             .then(function (user) {
                 console.log(user);
