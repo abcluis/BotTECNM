@@ -101,4 +101,62 @@ describe('Templates JS', function () {
 
     });
 
+    it('should return a redirect with a text', function () {
+
+
+        let expected = {
+            "messages" : [
+                {
+                    "text" : 'This is a text'
+                }
+            ],
+            "redirect_to_blocks": ['block_1']
+        };
+
+        let generic = new templates.generic();
+
+        let response = generic
+            .addText('This is a text')
+            .addRedirect('block_1')
+            .get();
+
+        expect(response).to.deep.equal(expected);
+
+    });
+
+    it('should return a quick replies with a element and with a text', function () {
+
+        let expected = {
+            "messages" : [
+                {
+                    "text": "this is a text"
+                },
+                {
+                    "quick_replies" : [
+                        {
+                            "title": 'title_1',
+                            "url":   "url_1",
+                            "type":  "json_plugin_url"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        let quick = new templates.quick();
+
+        let response = quick
+            .addText('this is a text')
+            .addQuick('title_1','url_1')
+            .get();
+
+        console.log(response);
+
+        expect(response).to.deep.equal(expected);
+
+
+    });
+
+    it('should return a quick replies with two elements')
+
 });

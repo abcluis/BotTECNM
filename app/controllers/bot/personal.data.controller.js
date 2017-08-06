@@ -159,7 +159,6 @@ function registerCareer(req, res) {
             doc.careers.forEach(function (item) {
                 response = response
                     .addElement(item.name, "https://peaceful-mesa-57140.herokuapp.com/bot/start");
-
             });
 
             response = response.get();
@@ -181,7 +180,6 @@ function registerPersonalData(req, res) {
     let field = keys[1];
     let value = req.query[field];
 
-    // Metodo para detectar si es el campo package_comp y por tanto cambiar el body a un arreglo
     if (field === 'package_comp') {
         let arreglo = req.query[field].split(',');
 
