@@ -26,7 +26,7 @@ router.get('/bot/test', function (req, res) {
                         "elements":[
                             {
                                 "title":"Ingenieria en Sistemas computacionales",
-                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
+                                "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
                                 "subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
                                 "buttons":[
                                     {
@@ -38,7 +38,7 @@ router.get('/bot/test', function (req, res) {
                             },
                             {
                                 "title":"Ingenieria en Informatica",
-                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
+                                "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
                                 "subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
                                 "buttons":[
                                     {
