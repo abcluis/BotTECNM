@@ -125,6 +125,70 @@ describe('Route School', function () {
 
     });
 
+    it('Should return a list of all careers of university selected', function () {
+
+        let school = 'Instituto Tecnologico de Chihuahua II';
+
+        let responseExpected = {
+            "messages": [
+                {
+                    "attachment":{
+                        "type":"template",
+                        "payload":{
+                            "template_type":"list",
+                            "top_element_style":"large",
+                            "elements":[]
+                        }
+                    }
+                }
+            ]
+        };
+
+
+        let survey = {
+            id_student : 101010,
+            school : school
+        };
+
+        return new Survey(survey).save()
+            .then(function (res) {
+                expect(res).to.have.property('school', school);
+                return School.findOne({name : school}).exec();
+
+            })
+            .then(function (school_doc) {
+
+                school_doc.careers.forEach(function (item, index) {
+                    responseExpected.messages[0].attachment.payload.elements.push({
+                        "title": item.name,
+                        "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
+                        //"subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
+                        "buttons":[
+                            {
+                                "type":"json_plugin_url",
+                                "url":"https://peaceful-mesa-57140.herokuapp.com/bot/start",
+                                "title":"Elegir"
+                            }
+                        ]
+                    });
+                });
+
+                return chai.request(app)
+                    .get('/bot/career?messenger user id=101010&school=' + school);
+            })
+            .then(function (res) {
+                expect(res).to.have.property('body');
+                expect(res.body).to.deep.equal(responseExpected);
+            })
+            .catch(function (err) {
+                throw err;
+            });
+
+
+
+
+    });
+
 
     after(function () {
         db.close();

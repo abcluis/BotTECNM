@@ -25,7 +25,8 @@ module.exports = {
     registerUser:         registerUser,
     registerSchool:       registerSchool,
     registerPersonalData: registerPersonalData,
-    responseSchool:       responseSchool
+    responseSchool:       responseSchool,
+    registerCareer:       registerCareer
 };
 
 function registerUser(req, res) {
@@ -176,4 +177,52 @@ function registerPersonalData(req, res) {
         .catch(function (err) {
             handleErrors(err, res, field);
         });
+}
+
+function registerCareer(req, res) {
+
+
+    let id = req.query['messenger user id'];
+
+    surveyService.findOneSurvey(id)
+        .then(function (doc) {
+            let school = doc.school;
+            return School.findOne({name: school});
+        })
+        .then(function (doc) {
+            let response = {
+                "messages": [
+                    {
+                        "attachment":{
+                            "type":"template",
+                            "payload":{
+                                "template_type":"list",
+                                "top_element_style":"large",
+                                "elements":[]
+                            }
+                        }
+                    }
+                ]
+            };
+
+            doc.careers.forEach(function (item, index) {
+                response.messages[0].attachment.payload.elements.push({
+                    "title": item.name,
+                    "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
+                    //"subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
+                    "buttons":[
+                        {
+                            "type":"json_plugin_url",
+                            "url":"https://peaceful-mesa-57140.herokuapp.com/bot/start",
+                            "title":"Elegir"
+                        }
+                    ]
+                });
+            });
+
+            res.send(response);
+
+        });
+
+
 }

@@ -68,6 +68,7 @@ router.use(recordUser);
 router.post('/bot/start', personalDataController.registerUser);
 router.get('/bot/school', personalDataController.registerSchool);
 router.get('/bot/school/response', personalDataController.responseSchool);
+router.get('/bot/career', personalDataController.registerCareer);
 router.get('/bot/personal/data', personalDataController.registerPersonalData);
 
 // PERTINENCIA Y DISPONIBILIDAD DE MEDIOS

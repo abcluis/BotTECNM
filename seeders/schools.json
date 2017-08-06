@@ -7,7 +7,21 @@
   {
     "name" : "Instituto Tecnologico de Chihuahua II",
     "state" : "chihuahua",
-    "nick" : "ITCH II"
+    "nick" : "ITCH II",
+    "careers" : [
+      {
+        "name" : "Ingenieria en Sistemas Computacionales"
+      },
+      {
+        "name" : "Ingenieria en Informatica"
+      },
+      {
+        "name" : "Ingenieria en Gestion Empresarial"
+      },
+      {
+        "name" : "Arquitectura"
+      }
+    ]
   },
   {
     "name" : "Instituto Tecnológico de Tlajomulco",
