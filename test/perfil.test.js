@@ -18,7 +18,7 @@ describe('Controller Personal Data', function () {
         db.open();
     });
 
-    it.skip('register user', function (done) {
+    it('register user', function (done) {
 
         let req = httpMocks.createRequest({
             body: {

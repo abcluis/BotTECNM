@@ -166,25 +166,6 @@ describe('Routes Personal Data', function () {
                 })
         });
 
-        it.skip('Register school', function () {
-            return chai.request(app)
-                .get('/bot/school?messenger user id=101010&school=itch ii')
-                .then(function (res) {
-
-                    expect(res).to.have.property('body');
-                    expect(res.body).to.have.property('messages');
-                    expect(res.body.messages).to.be.an('array');
-                    expect(res.body.messages[0]).to.have.property('attachment');
-                    return Survey.findOne({id_student: 101010});
-                })
-                .then(function (res) {
-                    expect(res).to.be.an('object');
-                    expect(res).to.have.property('school', 'Instituto Tecnologico de Chihuahua II');
-                })
-                .catch(function (err) {
-                    throw err;
-                })
-        });
 
 
         function makeRequest(route) {
@@ -247,6 +228,7 @@ describe('Routes Personal Data', function () {
                     return Survey.findOne({id_student : 101010});
                 })
                 .then(function (survey) {
+                    console.log(survey);
 
                     expect(survey).to.be.null;
                 })

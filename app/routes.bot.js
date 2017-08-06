@@ -12,10 +12,11 @@ const validationsErrors = require('./middlewares/validations.errors.js');
 const surveyCreated     = require('./middlewares/surveyCreated');
 const recordUser        = require('./middlewares/record');
 
-router.use(surveyCreated);
-router.use(recordUser);
 router.use(validations);
 router.use(validationsErrors);
+router.use(surveyCreated);
+router.use(recordUser);
+
 
 // router.get('/bot/resume', resumeController)
 
