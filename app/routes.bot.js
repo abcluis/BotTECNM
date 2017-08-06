@@ -25,26 +25,22 @@ router.get('/bot/test', function (req, res) {
                         "top_element_style":"large",
                         "elements":[
                             {
-                                "title":"Chatfuel Rockets T-Shirt",
-                                "image_url":"http://rockets.chatfuel.com/img/shirt.png",
-                                "subtitle":"Soft white cotton t-shirt with CF Rockets logo",
+                                "title":"Ingenieria en Sistemas computacionales",
                                 "buttons":[
                                     {
-                                        "type":"web_url",
-                                        "url":"https://rockets.chatfuel.com/store/shirt",
-                                        "title":"View Item"
+                                        "type":"json_plugin_url",
+                                        "url":"https://peaceful-mesa-57140.herokuapp.com/bot/start",
+                                        "title":"Elegir"
                                     }
                                 ]
                             },
                             {
-                                "title":"Chatfuel Rockets Hoodie",
-                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
-                                "subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
+                                "title":"Ingenieria en Informatica",
                                 "buttons":[
                                     {
-                                        "type":"web_url",
-                                        "url":"https://rockets.chatfuel.com/store/hoodie",
-                                        "title":"View Item"
+                                        "type":"json_plugin_url",
+                                        "url":"https://peaceful-mesa-57140.herokuapp.com/bot/start",
+                                        "title":"Elegir"
                                     }
                                 ]
                             }
