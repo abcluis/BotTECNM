@@ -12,6 +12,51 @@ const validationsErrors = require('./middlewares/validations.errors.js');
 const surveyCreated     = require('./middlewares/surveyCreated');
 const recordUser        = require('./middlewares/record');
 
+
+router.get('/bot/test', function (req, res) {
+
+    res.send({
+        "messages": [
+            {
+                "attachment":{
+                    "type":"template",
+                    "payload":{
+                        "template_type":"list",
+                        "top_element_style":"large",
+                        "elements":[
+                            {
+                                "title":"Chatfuel Rockets T-Shirt",
+                                "image_url":"http://rockets.chatfuel.com/img/shirt.png",
+                                "subtitle":"Soft white cotton t-shirt with CF Rockets logo",
+                                "buttons":[
+                                    {
+                                        "type":"web_url",
+                                        "url":"https://rockets.chatfuel.com/store/shirt",
+                                        "title":"View Item"
+                                    }
+                                ]
+                            },
+                            {
+                                "title":"Chatfuel Rockets Hoodie",
+                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
+                                "subtitle":"Soft gray cotton t-shirt with CF Rockets logo",
+                                "buttons":[
+                                    {
+                                        "type":"web_url",
+                                        "url":"https://rockets.chatfuel.com/store/hoodie",
+                                        "title":"View Item"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    });
+
+});
+
 router.use(validations);
 router.use(validationsErrors);
 router.use(surveyCreated);
