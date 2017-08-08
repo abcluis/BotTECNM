@@ -44,7 +44,7 @@ router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
  */
 
 router.get('/bot/performance/data', performanceController.registerData);
-router.get('/bot/expectations/data', expectationsController.registerExpectations);
+router.get('/bot/expectations/boolean', expectationsController.storeBooleanExpectations);
 
 
 // Esta ruta sera la que manejara el mensaje del block Default answer para en caso de un error con el servidor

@@ -5,7 +5,7 @@ let nextBlock     = require('../../utils/blocks.order');
 
 let id_field = 'messenger user id';
 
-const templates = require('../../templates.testtes');
+const templates = require('../../templates.test');
 
 
 function storeBooleanExpectations(req, res) {
