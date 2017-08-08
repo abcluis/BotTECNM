@@ -82,6 +82,19 @@ module.exports = {
     BLOCK_REFERENCE:           'references',
     BLOCK_PERSONALITY:         'personality',
     BLOCK_LEADERSHIP:          'leadership',
-    BLOCK_OTHER_PERFORMANCE:   'others_performance'
+    BLOCK_OTHER_PERFORMANCE:   'others_performance',
+    // EXPECTATIONS
+    BLOCK_INTRO_V:             'V. Intro',
+    BLOCK_COURSES:             'courses',
+    BLOCK_WHAT_COURSES:        'what_courses',
+    BLOCK_POSTGRADUATE:        'postgraduate',
+    BLOCK_WHAT_POSTGRADUATE:   'what_postgraduate',
+    // BELONGS ORGANIZATIONS
+    BLOCK_INTRO_VI:            'VI. Intro',
+    BLOCK_BELONG_ORGS:         'belongs_orgs',
+    BLOCK_WHAT_ORGS:           'what_orgs',
+    BLOCK_BELONGS_PRO_ORGS:    'belongs_pro_orgs',
+    BLOCK_WHAT_PRO_ORGS:       'what_pro_orgs',
+    BLOCK_BELONGS_ASSOCIATION: 'belongs_association'
 };
 

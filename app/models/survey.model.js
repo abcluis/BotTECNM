@@ -289,8 +289,20 @@ let surveySchema = new Schema({
                 message: messages.others_performance
             }
         }
+    },
+    expectations : {
+        refresh_courses : Boolean,
+        courses : String,
+        postgraduate : Boolean,
+        what_postgraduate : String
+    },
+    social : {
+        belongs_orgs : Boolean,
+        what_orgs : String,
+        belongs_pro_orgs : Boolean,
+        what_pro_orgs : String,
+        belongs_association : Boolean
     }
-
 });
 
 

@@ -9,7 +9,8 @@ module.exports = {
     updatePersonalData:    updatePersonalData,
     updatePertinenceData:  updatePertinenceData,
     updateJobLocationData: updateJobLocationData,
-    updatePerformanceData: updatePerformanceData
+    updatePerformanceData: updatePerformanceData,
+    updateExpectationsData: updateExpectationsData
 };
 
 function findOneSurvey(id) {
@@ -52,6 +53,15 @@ function updatePerformanceData(id, field, value) {
     return Survey.findOne({id_student: id}).then(survey => {
         if (survey) {
             survey.performance[field] = value;
+            return survey.save();
+        }
+    });
+}
+
+function updateExpectationsData(id, field, value) {
+    return Survey.findOne({id_student: id}).then(survey => {
+        if (survey) {
+            survey.expectations[field] = value;
             return survey.save();
         }
     });

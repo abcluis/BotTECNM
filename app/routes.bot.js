@@ -5,51 +5,8 @@ const personalDataController = require('./controllers/bot/personal.data.controll
 const botPertContoller       = require('./controllers/bot/bot.pertinence.controller');
 const botJobLocalController  = require('./controllers/bot/bot.job.location.controller');
 const performanceController  = require('./controllers/bot/performance.controller');
+const expectationsController  = require('./controllers/bot/expectations.controller');
 
-router.get('/bot/test', function (req, res) {
-
-    res.send({
-        "messages": [
-            {
-                "text" : "This is a text",
-            },
-            {
-                "attachment":{
-                    "type":"template",
-                    "payload":{
-                        "template_type":"list",
-                        "top_element_style":"large",
-                        "elements":[
-                            {
-                                "title":"Element 1",
-                                "image_url":"http://rockets.chatfuel.com/img/shirt.png",
-                                "buttons":[
-                                    {
-                                        "type":"json_plugin_url",
-                                        "url":"url 1",
-                                        "title":"Elegir"
-                                    }
-                                ]
-                            },
-                            {
-                                "title":"Element 2",
-                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
-                                "buttons":[
-                                    {
-                                        "type":"json_plugin_url",
-                                        "url":"url 2",
-                                        "title":"Elegir"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                }
-            }
-        ]
-    });
-
-});
 // -------- Middlewares --------
 const validations       = require('./middlewares/validations');
 const validationsErrors = require('./middlewares/validations.errors.js');
@@ -87,6 +44,8 @@ router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
  */
 
 router.get('/bot/performance/data', performanceController.registerData);
+router.get('/bot/expectations/data', expectationsController.registerExpectations);
+
 
 // Esta ruta sera la que manejara el mensaje del block Default answer para en caso de un error con el servidor
 // se encargara de redirigir al usuario de nuevo al bloque donde se quedo

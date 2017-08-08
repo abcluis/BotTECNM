@@ -25,7 +25,6 @@ function registerData(req, res) {
         }
     }
 
-
     surveyService.updatePerformanceData(id, field, value)
         .then(function (survey) {
             let body = new BodyCF();
@@ -44,4 +43,5 @@ function registerData(req, res) {
 
 module.exports = {
     registerData: registerData
+
 };

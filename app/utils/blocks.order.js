@@ -51,6 +51,14 @@ function nextBlock(BLOCK, options) {
                     break;
             }
         }
+
+        if(options.courses){
+            if(options.courses === true){
+                return BLOCKS.BLOCK_WHAT_COURSES
+            }else {
+                return BLOCKS.BLOCK_POSTGRADUATE
+            }
+        }
     }
 
     switch (BLOCK){
