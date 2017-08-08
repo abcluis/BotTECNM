@@ -9,19 +9,42 @@ const performanceController  = require('./controllers/bot/performance.controller
 router.get('/bot/test', function (req, res) {
 
     res.send({
-        "messages" : [
+        "messages": [
             {
-                "text": "this is a text"
+                "text" : "This is a text",
             },
             {
-                "text" : "This is a quick replies",
-                "quick_replies" : [
-                    {
-                        "title": 'title_1',
-                        "url":   "url_1",
-                        "type":  "json_plugin_url"
+                "attachment":{
+                    "type":"template",
+                    "payload":{
+                        "template_type":"list",
+                        "top_element_style":"large",
+                        "elements":[
+                            {
+                                "title":"Element 1",
+                                "image_url":"http://rockets.chatfuel.com/img/shirt.png",
+                                "buttons":[
+                                    {
+                                        "type":"json_plugin_url",
+                                        "url":"url 1",
+                                        "title":"Elegir"
+                                    }
+                                ]
+                            },
+                            {
+                                "title":"Element 2",
+                                "image_url":"http://rockets.chatfuel.com/img/hoodie.png",
+                                "buttons":[
+                                    {
+                                        "type":"json_plugin_url",
+                                        "url":"url 2",
+                                        "title":"Elegir"
+                                    }
+                                ]
+                            }
+                        ]
                     }
-                ]
+                }
             }
         ]
     });

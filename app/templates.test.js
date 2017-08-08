@@ -102,10 +102,15 @@ function list() {
             currentMessage++;
             return this;
         },
-        addElement: function (name, url) {
+        addElement: function (name, url, image) {
+
+            if(!image){
+                image = "http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png";
+            }
+
             content.messages[currentMessage].attachment.payload.elements.push({
                 "title":     name,
-                "image_url": "http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
+                "image_url": image,
                 "buttons":   [
                     {
                         "type":  "json_plugin_url",
