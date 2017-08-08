@@ -150,7 +150,6 @@ describe('Templates JS', function () {
             .addQuick('title_1','url_1')
             .get();
 
-        console.log(response);
 
         expect(response).to.deep.equal(expected);
 
