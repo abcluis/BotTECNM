@@ -64,11 +64,12 @@ function createResponse(field,value, survey) {
             break;
         case blocks.BLOCK_SPECIALITY_INST:
             options['actual_activity'] = survey.work_aspect.actual_activity;
-            console.log(options);
+            break;
+        case blocks.BLOCK_ECONOMIC_SECTOR:
+
+            options[blocks.BLOCK_ECONOMIC_SECTOR] = value;
             break;
     }
-
-
 
     return generic
         .addText(messages.nextSentence)
