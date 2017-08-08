@@ -125,7 +125,7 @@ function responseSchool(req, res) {
 
             let response = card
                 .addCard('Asi que eres del ' + school)
-                .addButton('Yes', blocks.BLOCK_FULL_NAME)
+                .addButton('Yes', blocks.BLOCK_CAREER)
                 .addButton('No', blocks.BLOCK_SCHOOL)
                 .get();
 
@@ -140,7 +140,6 @@ function responseSchool(req, res) {
 
 
 function registerCareer(req, res) {
-
 
     let id = req.query['messenger user id'];
 
@@ -158,7 +157,9 @@ function registerCareer(req, res) {
 
             doc.careers.forEach(function (item) {
                 response = response
-                    .addElement(item.name, "https://peaceful-mesa-57140.herokuapp.com/bot/start");
+                    .addElement(item.name, "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?"
+                        + encodeURIComponent('messenger user id') + '=' + id
+                        + encodeURIComponent('career') + '=' + encodeURIComponent(item.name));
             });
 
             response = response.get();

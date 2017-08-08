@@ -289,6 +289,16 @@ describe('Templates JS', function () {
             ]
         };
 
+        let list = new templates.list();
+
+        let response = list
+            .addText('This is a text')
+            .addList()
+            .addElement('Element 1', 'url 1', 'http://rockets.chatfuel.com/img/shirt.png')
+            .addElement('Element 2', 'url 2', 'http://rockets.chatfuel.com/img/hoodie.png')
+            .get();
+
+        expect(response).to.deep.equal(expected);
 
     });
 

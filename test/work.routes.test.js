@@ -11,7 +11,10 @@ let app       = 'http://localhost:3000';
 let Survey    = require('../app/models/survey.model');
 let nextBlock = require('../app/utils/blocks.order');
 
-let db = require('../config/db');
+let templates = require('../app/templates.test');
+
+let db       = require('../config/db');
+let messages = require("../app/utils/messages.bot");
 
 
 describe('Routes Work Aspect', function () {
@@ -221,12 +224,16 @@ describe('Routes Work Aspect', function () {
                 return chai.request(app)
                     .get('/bot/joblocation/data?messenger user id=101010&' + route.field + '=' + route.value_valid)
                     .then(function (res) {
-                        console.log(res.body);
-                        expect(res).to.have.property('body');
-                        expect(res.body).to.have.property('messages');
-                        expect(res.body).to.have.property('redirect_to_blocks');
-                        expect(res.body.redirect_to_blocks).to.be.an('array');
-                        expect(res.body.redirect_to_blocks[0]).to.equal(nextBlock(route.field));
+
+                        let generic = new templates.generic();
+
+                        let expected = generic
+                            .addText(messages.nextSentence)
+                            .addRedirect(nextBlock(route.field))
+                            .get();
+
+                        expect(res.body).to.deep.equal(expected);
+
                         return Survey.findOne({id_student: 101010});
                     })
                     .catch(function (err) {

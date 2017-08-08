@@ -85,6 +85,16 @@ function list() {
     let currentMessage = -1;
 
     return {
+        addText:   function (text) {
+            if (!content.messages) {
+                content.messages = [];
+            }
+            content.messages.push({
+                "text": text
+            });
+            currentMessage++;
+            return this;
+        },
         addList:    function () {
             if (!content.messages) {
                 content.messages = [];

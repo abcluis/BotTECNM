@@ -1,28 +1,27 @@
 const userService   = require("../../services/user.service");
 const surveyService = require("../../services/survey.service");
-const templates     = require("../../templates");
+const templates     = require("../../templates.test");
 const blocks        = require("../../utils/blocks.constants");
 const nextBlock     = require("../../utils/blocks.order");
+const messages      = require("../../utils/messages.bot");
 
 module.exports = {
     registerJobLocation: registerJobLocation,
     initJobLocation:     initJobLocation
 };
 
-let user_id  = "messenger user id";
-let BodyCF   = templates.bodyChat;
-let TextCF   = templates.textChat;
-let CardCF   = templates.cardChat;
-let ButtonCF = templates.buttonBlockChat;
+let user_id = "messenger user id";
 
 function initJobLocation(req, res) {
-    let response = new templates.bodyChat();
-    let card     = new templates.cardChat("¿Continuamos?");
-    let btn1     = new templates.buttonBlockChat("OK", blocks.BLOCK_ACTUAL_ACTIVITY);
 
-    card.addButton(btn1);
-    response.add(card);
-    res.send(response.content);
+    let card = new templates.card();
+
+    let response = card
+        .addCard('¿Continuamos?')
+        .addButton('OK', blocks.BLOCK_ACTUAL_ACTIVITY)
+        .get();
+
+    res.send(response);
 }
 
 function registerJobLocation(req, res) {
@@ -56,13 +55,16 @@ function registerJobLocation(req, res) {
     userService
         .updateLastBlock(user)
         .then(data => surveyService.updateJobLocationData(id, field, value))
-        .then(survey => {
-            let body = new BodyCF();
-            let text = new TextCF("La siguiente pregunta es : ");
-            body.add(text);
-            body.content.redirect_to_blocks = [];
-            body.content.redirect_to_blocks.push(nextBlock(field));
-            res.send(body.content);
+        .then(() => {
+
+            let generic = new templates.generic();
+
+            let response = generic
+                .addText(messages.nextSentence)
+                .addRedirect(nextBlock(field))
+                .get();
+
+            res.send(response);
         })
         .catch(err => res.send(err));
 }

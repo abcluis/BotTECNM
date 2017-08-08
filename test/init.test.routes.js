@@ -101,7 +101,7 @@ describe('Route School', function () {
             .then(function (res) {
                 let body   = new templates.bodyChat();
                 let card   = new templates.cardChat('Asi que eres del Instituto Tecnologico de Chihuahua II');
-                let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_FULL_NAME);
+                let btnYes = new templates.buttonBlockChat('Yes', blocks.BLOCK_CAREER);
                 let btnNo  = new templates.buttonBlockChat('No', blocks.BLOCK_SCHOOL);
                 card.addButton(btnYes);
                 card.addButton(btnNo);
@@ -132,12 +132,12 @@ describe('Route School', function () {
         let responseExpected = {
             "messages": [
                 {
-                    "attachment":{
-                        "type":"template",
-                        "payload":{
-                            "template_type":"list",
-                            "top_element_style":"large",
-                            "elements":[]
+                    "attachment": {
+                        "type":    "template",
+                        "payload": {
+                            "template_type":     "list",
+                            "top_element_style": "large",
+                            "elements":          []
                         }
                     }
                 }
@@ -146,10 +146,9 @@ describe('Route School', function () {
 
 
         let survey = {
-            id_student : 101010,
-            school : school
+            id_student: 101010,
+            school:     school
         };
-
 
 
         let testCareer;
@@ -157,20 +156,22 @@ describe('Route School', function () {
         return new Survey(survey).save()
             .then(function (res) {
                 expect(res).to.have.property('school', school);
-                return School.findOne({name : school}).exec();
+                return School.findOne({name: school}).exec();
 
             })
             .then(function (school_doc) {
 
                 school_doc.careers.forEach(function (item, index) {
                     responseExpected.messages[0].attachment.payload.elements.push({
-                        "title": item.name,
-                        "image_url":"http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
-                        "buttons":[
+                        "title":     item.name,
+                        "image_url": "http://www.itmatamoros.edu.mx/wp-content/uploads/2017/05/Logo-TecNM-2017-Ganador.png",
+                        "buttons":   [
                             {
-                                "type":"json_plugin_url",
-                                "url":"https://peaceful-mesa-57140.herokuapp.com/bot/start",
-                                "title":"Elegir"
+                                "type":  "json_plugin_url",
+                                "url":   "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?"
+                                         + encodeURIComponent('messenger user id') + '=' + 101010
+                                         + encodeURIComponent('career') + '=' + encodeURIComponent(item.name),
+                                "title": "Elegir"
                             }
                         ]
                     });
@@ -182,7 +183,6 @@ describe('Route School', function () {
                 expect(res).to.have.property('body');
                 expect(res.body).to.deep.equal(responseExpected);
                 testCareer = responseExpected.messages[0].attachment.payload.elements[0].title;
-                console.log(testCareer);
                 return chai.request(app)
                     .get('/bot/personal/data?messenger user id=101010&career=' + testCareer);
             })
@@ -206,8 +206,6 @@ describe('Route School', function () {
             .catch(function (err) {
                 throw err;
             });
-
-
 
 
     });
