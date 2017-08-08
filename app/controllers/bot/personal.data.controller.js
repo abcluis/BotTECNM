@@ -158,11 +158,7 @@ function registerCareer(req, res) {
             doc.careers.forEach(function (item) {
                 response = response
                     .addElement(item.name, "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?"
-                        + encodeURIComponent('messenger user id') + '=' + id + '&' +
-                        + encodeURIComponent('career') + '=' + encodeURIComponent(item.name));
-                console.log("https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?"
-                    + encodeURIComponent('messenger user id') + '=' + id
-                    + encodeURIComponent('career') + '=' + encodeURIComponent(item.name));
+                        + encodeURIComponent('messenger user id') + '=' + id + '&career=' + encodeURIComponent(item.name));
             });
 
             response = response.get();

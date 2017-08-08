@@ -169,8 +169,7 @@ describe('Route School', function () {
                             {
                                 "type":  "json_plugin_url",
                                 "url":   "https://peaceful-mesa-57140.herokuapp.com/bot/personal/data?"
-                                         + encodeURIComponent('messenger user id') + '=' + 101010
-                                         + encodeURIComponent('career') + '=' + encodeURIComponent(item.name),
+                                         + encodeURIComponent('messenger user id') + '=' + 101010 + '&career=' + encodeURIComponent(item.name),
                                 "title": "Elegir"
                             }
                         ]

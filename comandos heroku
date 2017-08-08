@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "added route career with a list"
+git commit -m "fix a error with list template"
 git push heroku test:master
 
 //
