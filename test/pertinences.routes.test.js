@@ -13,6 +13,8 @@ let Survey        = require('../app/models/survey.model');
 let db            = require('../config/db');
 let errorMessages = require('../app/utils/messages.bot');
 
+let templates = require('../app/templates.test');
+
 
 describe('Routes Pertinence', function () {
 

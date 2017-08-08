@@ -68,6 +68,7 @@ module.exports = {
     BLOCK_TERTIARY_SECTOR:     "tertiary_sector",
     BLOCK_COMP_ORGSIZE:        "comp_orgsize",
     // PERFORMANCE
+    BLOCK_INTRO_IV:            'IV. Intro',
     BLOCK_EFFICENCY:           'academic_efficiency',
     BLOCK_CALIFICATION:        'academic_calification',
     BLOCK_RESIDENCE_UTILITY:   'residences_utility',

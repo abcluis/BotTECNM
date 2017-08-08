@@ -29,11 +29,30 @@ describe('Routes Work Aspect', function () {
 
     let routes = [
         {
-            describe:      'Route actual_activity',
+            describe:      'Route actual_activity Trabaja',
             field:         'actual_activity',
-            value_valid:   'Muy buena',
+            value_valid:   'Trabaja',
             value_invalid: 'buenos'
         },
+        {
+            describe:      'Route actual_activity Estudia',
+            field:         'actual_activity',
+            value_valid:   'Estudia',
+            value_invalid: 'buenos'
+        },
+        {
+            describe:      'Route actual_activity Estudia y trabaja',
+            field:         'actual_activity',
+            value_valid:   'Estudia y trabaja',
+            value_invalid: 'buenos'
+        },
+        {
+            describe:      'Route actual_activity No estudia o trabaja',
+            field:         'actual_activity',
+            value_valid:   'No estudia o trabaja',
+            value_invalid: 'buenos'
+        },
+
         {
             describe:      'Route activity_studies',
             field:         'activity_studies',
@@ -227,9 +246,14 @@ describe('Routes Work Aspect', function () {
 
                         let generic = new templates.generic();
 
+                        let options          = {};
+                        options[route.field] = route.value_valid;
+
+                        console.log(options);
+
                         let expected = generic
                             .addText(messages.nextSentence)
-                            .addRedirect(nextBlock(route.field))
+                            .addRedirect(nextBlock(route.field, options))
                             .get();
 
                         expect(res.body).to.deep.equal(expected);

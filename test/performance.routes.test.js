@@ -7,8 +7,11 @@ chai.use(chaiHttp);
 let app       = 'http://localhost:3000';
 let db        = require('../config/db');
 let Survey    = require('../app/models/survey.model');
+let User      = require('../app/models/user.model');
 let messages  = require('../app/utils/messages.bot');
 let nextBlock = require('../app/utils/blocks.order');
+
+let templates = require('../app/templates.test');
 
 describe('Routes Performance', function () {
 
@@ -109,19 +112,25 @@ describe('Routes Performance', function () {
                 return chai.request(app)
                     .get('/bot/performance/data?messenger user id=101010&' + route.field + '=' + route.value_valid)
                     .then(function (res) {
-                        console.log(res.body);
-                        expect(res).to.have.property('body');
-                        expect(res.body).to.have.property('messages');
-                        expect(res.body.messages).to.be.an('array');
-                        expect(res.body.messages[0]).to.have.property('text', messages.nextSentence);
-                        expect(res.body).to.have.property('redirect_to_blocks');
-                        expect(res.body.redirect_to_blocks[0]).to.equal(nextBlock(route.field));
+
+                        let generic = new templates.generic();
+
+                        let expected = generic
+                            .addText(messages.nextSentence)
+                            .addRedirect(nextBlock(route.field))
+                            .get();
+
+
+                        expect(res.body).to.deep.equal(expected);
                         return Survey.findOne({id_student: 101010});
                     })
                     .then(function (survey) {
-                        console.log(survey);
                         expect(survey).to.be.an('object');
                         expect(survey.performance).to.have.property(route.field, route.value_valid);
+                        return User.findOne({id : 101010});
+                    })
+                    .then(function (doc) {
+                        expect(doc).to.have.property('last_block',nextBlock(route.field));
                     })
                     .catch(function (err) {
                         throw err;
@@ -148,7 +157,6 @@ describe('Routes Performance', function () {
                 return chai.request(app)
                     .get(uri)
                     .then(function (res) {
-                        console.log(res.body);
                         expect(res).to.have.property('body');
                         expect(res.body).to.have.property('messages');
                         expect(res.body.messages[0]).to.have.property('text', messages[route.field]);
@@ -157,7 +165,6 @@ describe('Routes Performance', function () {
                         return Survey.findOne({id_student: 101010});
                     })
                     .then(function (survey) {
-                        console.log(survey);
                         expect(survey).to.not.have.property('performance', route.field);
                     })
                     .catch(function (err) {

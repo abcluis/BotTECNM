@@ -155,37 +155,16 @@ describe('Routes Personal Data', function () {
                 })
                 .then(function (res) {
 
-                    expect(res.body).to.deep.equal({
-                        "messages": [
-                            {
-                                "text": "Hola bienvenido Luis Fernando Gallegos Gonzalez"
-                            },
-                            {
-                                "attachment": {
-                                    "payload": {
-                                        "buttons":       [
-                                            {
-                                                "block_name": "finish",
-                                                "title":      "Desde la ultima vez",
-                                                "type":       "show_block"
-                                            },
-                                            {
-                                                "block_name": "school",
-                                                "title":      "Desde el inicio",
-                                                "type":       "show_block"
-                                            }
-                                        ],
-                                        "template_type": "button",
-                                        "text":          "Esto es una encuesta de los egresados gracias por tu participacion"
-                                    },
-                                    "type":    "template"
-                                }
-                            }
-                        ]
-                    });
-                    expect(res.body).to.have.property('messages');
-                    expect(res.body.messages).to.be.an('array');
-                    expect(res.body.messages[0]).to.have.property('text');
+                    let card = new templates.card();
+
+                    let expected = card
+                        .addText('Hola bienvenido Luis Fernando Gallegos Gonzalez')
+                        .addCard('Esto es una encuesta de los egresados gracias por tu participacion')
+                        .addButton('Desde la ultima vez', 'finish')
+                        .addButton('Desde el inicio', 'school')
+                        .get();
+
+                    expect(res.body).to.deep.equal(expected);
                     return User.findOne({id: 101010});
                 })
                 .then(function (res) {
@@ -211,9 +190,7 @@ describe('Routes Personal Data', function () {
                             .addText(messages.nextSentence)
                             .addRedirect(nextBlock(route.field))
                             .get();
-
-
-
+                        
                         expect(res.body).to.deep.equal(expected);
 
                         return Survey.findOne({id_student: 101010});
@@ -226,8 +203,11 @@ describe('Routes Personal Data', function () {
                             expect(res.personal_data[route.field]).to.lengthOf(3);
                         } else {
                             expect(res.personal_data).to.have.property(route.field, route.value_valid);
-
                         }
+                        return User.findOne({id : 101010})
+                    })
+                    .then(function (doc) {
+                        expect(doc.last_block).to.deep.equal(nextBlock(route.field));
                     })
                     .catch(function (err) {
                         throw err;
@@ -253,17 +233,18 @@ describe('Routes Personal Data', function () {
             return chai.request(app)
                 .get(uri)
                 .then(function (res) {
-                    expect(res).to.have.property('body');
-                    expect(res.body).to.be.an('object');
-                    expect(res.body).to.have.property('messages');
-                    expect(res.body).to.have.property('redirect_to_blocks');
-                    expect(res.body.redirect_to_blocks[0]).to.equal('school');
-                    expect(res.body.messages[0]).to.have.property('text', errorsMessages.fieldWithTypo);
-                    console.log(res.body);
+
+                    let generic = new templates.generic();
+
+                    let expected = generic
+                        .addText(errorsMessages.fieldWithTypo)
+                        .addRedirect('school')
+                        .get();
+
+                    expect(res.body).to.deep.equal(expected);
                     return Survey.findOne({id_student: 101010});
                 })
                 .then(function (survey) {
-                    console.log(survey);
 
                     expect(survey).to.be.null;
                 })

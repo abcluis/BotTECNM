@@ -53,7 +53,6 @@ describe('Route School', function () {
                 let body = new BodyCF();
                 let text = new TextCF('Selecciona tu instituto');
                 body.add(text);
-                console.log(response.body);
                 expect(response.body.messages[0].quick_replies).to.have.lengthOf(schools.length);
 
                 for (let i in schools) {
@@ -115,7 +114,6 @@ describe('Route School', function () {
                 return User.findOne({id: 101010});
             })
             .then(function (user) {
-                console.log(user);
                 expect(user).to.have.property('last_block', nextBlock(blocks.BLOCK_SCHOOL));
             })
             .catch(function (err) {
