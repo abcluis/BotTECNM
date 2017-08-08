@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "fix a error with list template"
+git commit -m "added order of actual activity"
 git push heroku test:master
 
 //

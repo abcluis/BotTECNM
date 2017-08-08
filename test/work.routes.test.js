@@ -16,6 +16,8 @@ let templates = require('../app/templates.test');
 let db       = require('../config/db');
 let messages = require("../app/utils/messages.bot");
 
+let blocks = require('../app/utils/blocks.constants');
+
 
 describe('Routes Work Aspect', function () {
 
@@ -62,7 +64,7 @@ describe('Routes Work Aspect', function () {
         {
             describe:      'Route speciality_inst',
             field:         'speciality_inst',
-            value_valid:   'Buena',
+            value_valid:   'Estudia',
             value_invalid: 20
         },
         {
@@ -283,6 +285,39 @@ describe('Routes Work Aspect', function () {
         }
 
     });
+
+    it('Should return IV intro after of answer speciality and only Estudia', function () {
+
+        return chai.request(app)
+            .get('/bot/joblocation/data?messenger user id=101010&actual_activity=Estudia')
+            .then(function (res) {
+                return Survey.findOne({id_student :101010});
+
+            })
+            .then(function (doc) {
+                expect(doc.work_aspect).to.have.property('actual_activity', 'Estudia');
+                return chai.request(app)
+                    .get('/bot/joblocation/data?messenger user id=101010&speciality_inst=Big Data')
+            })
+            .then(function (res) {
+
+                let generic = new templates.generic();
+
+                let expected = generic
+                    .addText(messages.nextSentence)
+                    .addRedirect(nextBlock(blocks.BLOCK_SPECIALITY_INST, {
+                        actual_activity : 'Estudia'
+                    }))
+                    .get();
+
+                expect(res.body).to.deep.equal(expected);
+            })
+            .catch(function (err) {
+                throw err;
+            })
+
+    });
+
 
     after(function () {
         db.close();

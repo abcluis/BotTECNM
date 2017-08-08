@@ -42,23 +42,37 @@ function registerJobLocation(req, res) {
     userService
         .updateLastBlock(user)
         .then(data => surveyService.updateJobLocationData(id, field, value))
-        .then(() => {
+        .then((survey) => {
 
-
-
-            let response = createResponse(field);
+            let response = createResponse(field,value, survey);
 
             res.send(response);
         })
         .catch(err => res.send(err));
 }
 
-function createResponse(field) {
+function createResponse(field,value, survey) {
     let generic = new templates.generic();
+
+    let options = {};
+
+    switch (field){
+
+        case blocks.BLOCK_ACTUAL_ACTIVITY:
+
+            options[field] = value;
+            break;
+        case blocks.BLOCK_SPECIALITY_INST:
+            options['actual_activity'] = survey.work_aspect.actual_activity;
+            console.log(options);
+            break;
+    }
+
+
 
     return generic
         .addText(messages.nextSentence)
-        .addRedirect(nextBlock(field))
+        .addRedirect(nextBlock(field, options))
         .get();
 
 }
