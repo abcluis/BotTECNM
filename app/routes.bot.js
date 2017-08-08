@@ -14,6 +14,7 @@ router.get('/bot/test', function (req, res) {
                 "text": "this is a text"
             },
             {
+                "text" : "This is a quick replies",
                 "quick_replies" : [
                     {
                         "title": 'title_1',
