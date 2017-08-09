@@ -1,80 +1,108 @@
+module.exports = nextBlock;
+
 /**
  * Created by usuario1 on 6/23/2017.
  */
 
-let BLOCKS = require('./blocks.constants');
-
-module.exports = nextBlock;
+let blocks = require('./blocks.constants');
 
 let BLOCK_FINAL = 'finish';
 
-function nextBlock(BLOCK, options) {
+function ifActualExist(block, options) {
+    switch (options.actual_activity + '-' + block) {
 
-    let arreglo = Object.keys(BLOCKS).map(key => BLOCKS[key]);
-    let actual = arreglo.indexOf(BLOCK);
+        case 'Trabaja-' + blocks.BLOCK_ACTUAL_ACTIVITY:
 
+            return blocks.BLOCK_TIME_GETJOB;
 
-    if(options){
-        if(options.actual_activity){
-            switch (options.actual_activity + '-' + BLOCK){
-
-                case 'Trabaja-' + BLOCKS.BLOCK_ACTUAL_ACTIVITY:
-
-                    return BLOCKS.BLOCK_TIME_GETJOB;
-
-                    break;
-                case 'Estudia-' + BLOCKS.BLOCK_ACTUAL_ACTIVITY:
-
-                    break;
-                case 'No estudia o trabaja-' + BLOCKS.BLOCK_ACTUAL_ACTIVITY:
-                    return BLOCKS.BLOCK_INTRO_IV;
-
-                    break;
-                case 'Estudia-' + BLOCKS.BLOCK_SPECIALITY_INST:
-                    return BLOCKS.BLOCK_INTRO_IV;
-
-                    break;
-
-            }
-        }
-        if(options.economic_sector){
-            switch (options.economic_sector + '-' + BLOCK){
-                case 'Sector secundario-' + BLOCKS.BLOCK_ECONOMIC_SECTOR:
-
-                    return BLOCKS.BLOCK_SECONDARY_SECTOR;
-
-                    break;
-                case 'Sector terciario-' + BLOCKS.BLOCK_ECONOMIC_SECTOR:
-
-                    return BLOCKS.BLOCK_TERTIARY_SECTOR;
-
-                    break;
-            }
-        }
-
-        if(options.courses){
-            if(options.courses === true){
-                return BLOCKS.BLOCK_WHAT_COURSES
-            }else {
-                return BLOCKS.BLOCK_POSTGRADUATE
-            }
-        }
-    }
-
-    switch (BLOCK){
-        case BLOCKS.BLOCK_PRIMARY_SECTOR:
-            return BLOCKS.BLOCK_COMP_ORGSIZE;
             break;
-        case BLOCKS.BLOCK_SECONDARY_SECTOR:
-            return BLOCKS.BLOCK_COMP_ORGSIZE;
+        case 'Estudia-' + blocks.BLOCK_ACTUAL_ACTIVITY:
+
+            return blocks.BLOCK_ACTIVITY_STUDIES;
+
+            break;
+        case 'Estudia y trabaja-' + blocks.BLOCK_ACTUAL_ACTIVITY:
+
+            return blocks.BLOCK_ACTIVITY_STUDIES;
+
+            break;
+        case 'No estudia o trabaja-' + blocks.BLOCK_ACTUAL_ACTIVITY:
+            return blocks.BLOCK_INTRO_IV;
+
+            break;
+        case 'Estudia y trabaja-' + blocks.BLOCK_SPECIALITY_INST:
+            return blocks.BLOCK_TIME_GETJOB;
+
+            break;
+        case 'Estudia-' + blocks.BLOCK_SPECIALITY_INST:
+            return blocks.BLOCK_INTRO_IV;
+
+            break;
+
+    }
+}
+
+function ifOptionsExist(block, options) {
+    if (options.actual_activity !== undefined) {
+        return ifActualExist(block,options);
+    } else if (options.economic_sector !== undefined) {
+        switch (options.economic_sector + '-' + block) {
+            case 'Sector secundario-' + blocks.BLOCK_ECONOMIC_SECTOR:
+
+                return blocks.BLOCK_SECONDARY_SECTOR;
+
+                break;
+            case 'Sector terciario-' + blocks.BLOCK_ECONOMIC_SECTOR:
+
+                return blocks.BLOCK_TERTIARY_SECTOR;
+                break;
+            case 'Sector primario-' + blocks.BLOCK_ECONOMIC_SECTOR:
+
+                return blocks.BLOCK_PRIMARY_SECTOR;
+
+                break;
+        }
+    }else if(options.courses !== undefined){
+        return options.courses ? blocks.BLOCK_WHAT_COURSES : blocks.BLOCK_POSTGRADUATE;
+    }else if(options.postgraduate !== undefined){
+        return options.postgraduate ? blocks.BLOCK_WHAT_POSTGRADUATE : blocks.BLOCK_INTRO_VI;
+    }else {
+        return defaultNextBlock(block);
+    }
+
+}
+
+function nextBlock(block, options) {
+
+
+
+    if (options !== undefined) {
+
+        return ifOptionsExist(block, options);
+
+    } else {
+        return defaultNextBlock(block);
+    }
+
+}
+
+function defaultNextBlock(block) {
+
+    let arreglo = Object.keys(blocks).map(key => blocks[key]);
+    let actual  = arreglo.indexOf(block);
+
+    switch (block) {
+        case blocks.BLOCK_PRIMARY_SECTOR:
+            return blocks.BLOCK_COMP_ORGSIZE;
+            break;
+        case blocks.BLOCK_SECONDARY_SECTOR:
+            return blocks.BLOCK_COMP_ORGSIZE;
+            break;
+        default :
+            if (actual === arreglo.length - 1) {
+                return BLOCK_FINAL;
+            }
+            return arreglo[++actual];
             break;
     }
-
-
-
-    if(actual === arreglo.length - 1){
-        return BLOCK_FINAL;
-    }
-    return arreglo[++actual];
-
 }

@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "added expectations booleans"
+git commit -m "added expectations data and test"
 git push heroku test:master
 
 //

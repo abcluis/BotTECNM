@@ -9,13 +9,23 @@ let blocks    = require('../app/utils/blocks.constants');
 
 describe('Order block', function () {
 
-    it('Should return next block', function () {
+    it('Should return next block with SCHOOL', function () {
 
         let response = nextBlock(blocks.BLOCK_SCHOOL);
 
         expect(response).to.deep.equal(blocks.BLOCK_CAREER);
 
     });
+
+    it('Should return next block with FULLNAME', function () {
+
+        let response = nextBlock(blocks.BLOCK_FULL_NAME);
+
+        expect(response).to.deep.equal(blocks.BLOCK_NUMBER_CONTROL);
+
+    });
+
+
 
 
     it('Should return time getjob if actual activity is equal Trabaja' , function () {
@@ -138,6 +148,47 @@ describe('Order block', function () {
         expect(response).to.deep.equal(expected);
     });
 
+
+    it('Should return what courses if courses is yes', function () {
+        let response = nextBlock(blocks.BLOCK_COURSES, {
+            courses : true
+        });
+
+        let expected = blocks.BLOCK_WHAT_COURSES;
+
+        expect(response).to.deep.equal(expected);
+
+    });
+
+    it('Should return postgraduates if courses is no', function () {
+        let response = nextBlock(blocks.BLOCK_COURSES, {
+            courses : false
+        });
+
+        let expected = blocks.BLOCK_POSTGRADUATE;
+
+        expect(response).to.deep.equal(expected);
+    });
+
+    it('Should return what postgraduates if postgraduates is yes', function () {
+        let response = nextBlock(blocks.BLOCK_POSTGRADUATE, {
+            postgraduate: true
+        });
+
+        let expected = blocks.BLOCK_WHAT_POSTGRADUATE;
+
+        expect(response).to.deep.equal(expected);
+    });
+
+    it('Should return INTRO VI if postgraduates is no', function () {
+        let response = nextBlock(blocks.BLOCK_POSTGRADUATE, {
+            postgraduate: false
+        });
+
+        let expected = blocks.BLOCK_INTRO_VI;
+
+        expect(response).to.deep.equal(expected);
+    });
 
 
 });

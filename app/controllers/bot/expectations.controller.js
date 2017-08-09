@@ -12,21 +12,22 @@ function storeBooleanExpectations(req, res) {
 
     let data = generateData(req);
 
-    data.value = convertToBoolean(value);
 
-    surveyService.updateExpectationsData(id,data.field, data.value)
+    data.value = convertToBoolean(data.value);
+
+    surveyService.updateExpectationsData(data.id, data.field, data.value)
         .then(() => res.send(createResponse(data.field, data.value)))
         .catch((err) => res.send(err));
 
 }
 
-function createResponse(field,value) {
+function createResponse(field, value) {
 
     let generic = new templates.generic();
 
-    let options = {
-        field : value
-    };
+    let options = {};
+
+    options[field] = value;
 
     return generic
         .addText('Perfecto avancemos a la siguiente pregunta')
@@ -60,7 +61,17 @@ function generateData(req) {
 
 }
 
+function storeExpectations(req, res) {
+
+    let data = generateData(req);
+
+    surveyService.updateExpectationsData(data.id,data.field, data.value)
+        .then((survey) => res.send(createResponse(data.field, data.value)))
+        .catch((err) => handleErrors(err,res, data.field));
+}
+
 
 module.exports = {
-    storeBooleanExpectations : storeBooleanExpectations
+    storeBooleanExpectations: storeBooleanExpectations,
+    storeExpectations:        storeExpectations
 };

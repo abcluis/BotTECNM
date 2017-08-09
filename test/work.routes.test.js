@@ -226,7 +226,7 @@ describe('Routes Work Aspect', function () {
         {
             describe:      'Route economic_sector',
             field:         'economic_sector',
-            value_valid:   'Regular',
+            value_valid:   'Sector primario',
             value_invalid: 'Muy Buena'
         },
         {
@@ -257,6 +257,8 @@ describe('Routes Work Aspect', function () {
                             .addText(messages.nextSentence)
                             .addRedirect(nextBlock(route.field, options))
                             .get();
+
+                        console.log(res.body);
 
                         expect(res.body).to.deep.equal(expected);
 

@@ -291,8 +291,8 @@ let surveySchema = new Schema({
         }
     },
     expectations : {
-        refresh_courses : Boolean,
-        courses : String,
+        courses : Boolean,
+        what_courses : String,
         postgraduate : Boolean,
         what_postgraduate : String
     },
