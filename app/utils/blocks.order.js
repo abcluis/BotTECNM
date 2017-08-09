@@ -66,6 +66,10 @@ function ifOptionsExist(block, options) {
         return options.courses ? blocks.BLOCK_WHAT_COURSES : blocks.BLOCK_POSTGRADUATE;
     }else if(options.postgraduate !== undefined){
         return options.postgraduate ? blocks.BLOCK_WHAT_POSTGRADUATE : blocks.BLOCK_INTRO_VI;
+    }else if(options.belongs_orgs !== undefined){
+        return options.belongs_orgs ? defaultNextBlock(block) : blocks.BLOCK_BELONGS_PRO_ORGS;
+    }else if(options.belongs_pro_orgs !== undefined){
+        return options.belongs_pro_orgs ? defaultNextBlock(block) : blocks.BLOCK_BELONGS_ASSOCIATION;
     }else {
         return defaultNextBlock(block);
     }

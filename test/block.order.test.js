@@ -26,8 +26,6 @@ describe('Order block', function () {
     });
 
 
-
-
     it('Should return time getjob if actual activity is equal Trabaja' , function () {
 
         let response = nextBlock(blocks.BLOCK_ACTUAL_ACTIVITY, {
@@ -186,6 +184,46 @@ describe('Order block', function () {
         });
 
         let expected = blocks.BLOCK_INTRO_VI;
+
+        expect(response).to.deep.equal(expected);
+    });
+
+    it('Should return what orgs if belongs orgs is true', function () {
+        let response = nextBlock(blocks.BLOCK_BELONG_ORGS, {
+            belongs_orgs: true
+        });
+
+        let expected = blocks.BLOCK_WHAT_ORGS;
+
+        expect(response).to.deep.equal(expected);
+    });
+
+    it('Should return belongs pro orgs if belongs orgs is false', function () {
+        let response = nextBlock(blocks.BLOCK_BELONG_ORGS, {
+            belongs_orgs: false
+        });
+
+        let expected = blocks.BLOCK_BELONGS_PRO_ORGS;
+
+        expect(response).to.deep.equal(expected);
+    });
+
+    it('Should return what pro orgs if belongs pro orgs is true', function () {
+        let response = nextBlock(blocks.BLOCK_BELONGS_PRO_ORGS, {
+            belongs_pro_orgs: true
+        });
+
+        let expected = blocks.BLOCK_WHAT_PRO_ORGS;
+
+        expect(response).to.deep.equal(expected);
+    });
+
+    it('Should return belong associations if belongs pro orgs is false', function () {
+        let response = nextBlock(blocks.BLOCK_BELONGS_PRO_ORGS, {
+            belongs_pro_orgs: false
+        });
+
+        let expected = blocks.BLOCK_BELONGS_ASSOCIATION;
 
         expect(response).to.deep.equal(expected);
     });

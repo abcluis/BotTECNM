@@ -5,7 +5,8 @@ const personalDataController = require('./controllers/bot/personal.data.controll
 const botPertContoller       = require('./controllers/bot/bot.pertinence.controller');
 const botJobLocalController  = require('./controllers/bot/bot.job.location.controller');
 const performanceController  = require('./controllers/bot/performance.controller');
-const expectationsController  = require('./controllers/bot/expectations.controller');
+const expectationsController = require('./controllers/bot/expectations.controller');
+const socialController       = require('./controllers/bot/social.controller');
 
 // -------- Middlewares --------
 const validations       = require('./middlewares/validations');
@@ -13,7 +14,7 @@ const validationsErrors = require('./middlewares/validations.errors.js');
 const surveyCreated     = require('./middlewares/surveyCreated');
 
 
-const recordUser        = require('./middlewares/record');
+const recordUser = require('./middlewares/record');
 
 router.use(validations);
 router.use(validationsErrors);
@@ -46,6 +47,9 @@ router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
 router.get('/bot/performance/data', performanceController.registerData);
 router.get('/bot/expectations/boolean', expectationsController.storeBooleanExpectations);
 router.get('/bot/expectations/data', expectationsController.storeExpectations);
+
+router.get('/bot/social/boolean', socialController.storeBooleanSocial);
+router.get('/bot/social/data', socialController.storeSocialData);
 
 
 // Esta ruta sera la que manejara el mensaje del block Default answer para en caso de un error con el servidor
