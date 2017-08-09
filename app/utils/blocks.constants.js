@@ -95,6 +95,7 @@ module.exports = {
     BLOCK_WHAT_ORGS:           'what_orgs',
     BLOCK_BELONGS_PRO_ORGS:    'belongs_pro_orgs',
     BLOCK_WHAT_PRO_ORGS:       'what_pro_orgs',
-    BLOCK_BELONGS_ASSOCIATION: 'belongs_association'
+    BLOCK_BELONGS_ASSOCIATION: 'belongs_association',
+    BLOCK_COMMENTS:            'comments'
 };
 

@@ -60,7 +60,7 @@ function registerSchool(req, res) {
     let id    = req.query['messenger user id'];
     let state = req.query.actual_state;
 
-    School.find({state: state})
+    School.find({state: state.toLowerCase()})
         .then(function (schools) {
 
 

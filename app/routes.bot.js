@@ -45,6 +45,7 @@ router.get('/bot/joblocation/data', botJobLocalController.registerJobLocation);
  */
 
 router.get('/bot/performance/data', performanceController.registerData);
+
 router.get('/bot/expectations/boolean', expectationsController.storeBooleanExpectations);
 router.get('/bot/expectations/data', expectationsController.storeExpectations);
 

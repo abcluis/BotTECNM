@@ -1,6 +1,6 @@
 git pull heroku master
 git add .
-git commit -m "added social data and social.test"
+git commit -m "added find state with lower case"
 git push heroku test:master
 
 //
