@@ -76,7 +76,7 @@ describe('Route School', function () {
         let response;
 
         return chai.request(app)
-            .get('/bot/school?messenger user id=101010&school=chihuas')
+            .get('/bot/school?messenger user id=101010&actual_state=chihuas')
             .then(function (res) {
                 response = res;
                 expect(res).to.have.property('body');

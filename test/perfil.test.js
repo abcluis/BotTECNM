@@ -54,7 +54,7 @@ describe('Controller Personal Data', function () {
         let req = httpMocks.createRequest({
             query: {
                 'messenger user id': 101010,
-                'school':            'itch ii'
+                'actual_state':            'itch ii'
             }
         });
 
